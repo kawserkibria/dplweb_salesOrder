@@ -39,6 +39,7 @@
                     <button title="New Order"
                             style="margin: 2px;"
                             class="btn btn-success"
+                            onclick="btnNewOrder();"
                             data-toggle="modal" id="myBtn" data-target=".bd-example-modal-lg">
                         <i class="fa fa-plus-circle" aria-="true"></i>&nbsp;New Order
                     </button>
@@ -75,6 +76,24 @@
                         <i class="fa fa-calculator" aria-="true"></i>&nbsp;Commission Cal.
                     </button>
                 </div>
+
+
+                <div class="btnApprove">
+                    <button title="Commission Cal."
+                            style="margin: 2px;"
+                            class="btn btn-success"
+                            onclick="App();">
+                        <i class="fa fa-paper-plane" aria-="true"></i>&nbsp;Submit
+                    </button>
+                </div>
+
+                <div class="btnExport" hidden>
+                    <select id="exportOption">
+                        <option value="Pdf">Pdf</option>
+                        <option value="Excel">Excel</option>
+                    </select>
+                </div>
+
             </div>
 
         </div>
@@ -82,39 +101,39 @@
         <div class="col-lg-6">
             <div class="row">
                 <div class="col-lg-2">
-                    <div class="row">
-                        <input type="radio" id="idneworder" checked style="height:15px;  width:35px; margin-top:5px" class="checkmarkl" name="rbtnname" value="NewInvoice" onclick="rbtnidNeworder();" />
-                        <label style="font-size:15px;"> New Order</label>
+                    <div class="row toggle-vis">
+                        <input type="radio" id="idneworder" checked style="height:18px;  width:35px; margin-top:5px" class="checkmarkl" name="rbtnname" value="NewInvoice" onclick="rbtnidNeworder();" />
+                        <label style="font-size:15px;">Order List</label>
                     </div>
                 </div>
                 <div class="col-lg-2">
-                    <div class="row">
+                    <div class="row toggle-vis">
+                        <input type="radio" id="idPendinglist" style="height:18px;  width:35px; margin-top:5px" class="checkmarkl" name="rbtnname" value="Pending" onclick="rbtnidPendinglist();" />
+                        <label style="font-size:15px;">Pending List</label>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row toggle-vis" data-column="14">
+
                         @*<input type="radio" id="idZhApprove" style="height:20px; width:35px;"  name=" rbtnname" value="ZhApprove" onclick="rbtnidZhApprove();" />*@
-                        <input type="radio" id="idZhApprove" style="height: 15px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="ZhApprove" onclick="rbtnidZhApprove();" />
+                        <input type="radio" id="idZhApprove" style="height: 18px; width: 35px; margin-top: 5px" class="checkmarkl toggle-vis" data-column="13" name="rbtnname" value="ZhApprove" onclick="rbtnidZhApprove();" />
+                        @*<a class="toggle-vis" data-column="13">ZH Approve</a>*@
                         <label style="font-size:15px;">ZH Approve</label>
                     </div>
                 </div>
                 <div class="col-lg-2">
-                    <div class="row">
-                        <input type="radio" id="idReturnOrder" style="height: 15px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="ReturnOrder" onclick="rbtnidReturnOrder();" />
+                    <div class="row toggle-vis">
+                        <input type="radio" id="idReturnOrder" style="height: 18px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="ReturnOrder" onclick="rbtnidReturnOrder();" />
                         <label style="font-size:15px;">Return Order</label>
                     </div>
                 </div>
                 <div class="col-lg-2">
-                    <div class="row">
-                        <input type="radio" id="idBillDone" style="height: 15px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="BillDone" onclick="rbtnidbilldone()" />
+                    <div class="row toggle-vis">
+                        <input type="radio" id="idBillDone" style="height: 18px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="BillDone" onclick="rbtnidbilldone()" />
                         <label style="font-size: 15px;"> Bill Done </label>
                     </div>
                 </div>
-                @*<div class="col-sm-2" style="font-size:19px;">
-                        <input type="radio" id="idZhApprove" style="height:35px; width:35px;" name="rbtnname" value="ZhApprove" onclick="rbtnidZhApprove();" /> ZH Approve <br />
-                    </div>
-                    <div class="col-sm-3" style="font-size:19px;">
-                        <input type="radio" id="idReturnOrder" style="height:35px; width:35px;" name="rbtnname" value="ReturnOrder" onclick="rbtnidReturnOrder();" /> Return Order <br />
-                    </div>
-                    <div class="col-sm-2" style="font-size:19px;">
-                        <input type="radio" id="idBillDone" style="height:35px; width:35px;" name="rbtnname" value="BillDone" onclick="rbtnidbilldone()" /> Bill Done <br />
-                    </div>*@
+
 
             </div>
         </div>
@@ -122,28 +141,25 @@
 </div>
 
 
-<div class="modal fade bd-example-modal-lg"  role="dialog" data-backdrop="static" aria-labelledby="myLargeModalLabel exampleModalCenterTitle" aria-="true" id="itemModal">
+<div class="modal fade bd-example-modal-lg" role="dialog" data-backdrop="static" aria-labelledby="myLargeModalLabel exampleModalCenterTitle" aria-="true" id="itemModal">
 
 
     <div class="modal-dialog modal-xl bd-example-modal-lg ">
         <div class="modal-content">
             <div class="modal-header " style="background:  #194771; color: white;">
-
-                <h5 class="modal-title  text-center" style="margin: 0 auto;" id="exampleModalLabel">Sales Order</h5>
                 <div class="col-5" hidden>
                     <h5 class="modal-title  text-left" style="margin: 0 auto;" id="userlevel">@ViewBag.UserLevel</h5>
                 </div>
-
-                <div class="col-5" hidden>
-                    <h5 class="modal-title  text-left" style="margin: 0 auto;" id="exampleModalLabel">@ViewBag.MName</h5>
+                <div class="col-5">
+                    <h5 class="modal-title  text-left" style="margin: 0 auto;" id="exampleModalLabel">Sales Order</h5>
 
                 </div>
                 <div class="col-6">
-                    <h5 class="modal-title  text-right" style="margin: 0 auto;" id="exampleModalLabel">@ViewBag.MNameMerz</h5>
+                    <h5 class="modal-title  text-right" style="margin: 0 auto;" id="exampleModalLabel"> MPO Name : @ViewBag.MNameMerz</h5>
 
                 </div>
 
-              
+
                 <div class="col-1">
 
                     <button type="button"
@@ -151,7 +167,8 @@
                             style=" color: white;"
                             data-dismiss="modal"
                             aria-label="Close"
-                            (click)="bsModalRef.hide()">
+                            onclick="clearFromData()"
+                            (click)=" bsmodalref.hide()">
                         <span>&times;</span>
                     </button>
                 </div>
@@ -163,22 +180,6 @@
                     <div class="row">
 
                         <div class="col-md-12">
-                            @*<div class="row">
-                                    <div class="col-sm-4" style="margin: 5px;">
-                                        <p style="text-align: right; font-size:15px;">Branch Name</p>
-                                    </div>
-                                    <div class="col-sm-7 " style="margin: 5px;">
-                                        <select id="responsid2" class="form-control">
-                                            <option value="">--Select One--</option>
-                                            @foreach (var item in ViewBag.BranchName)
-                                            {
-                                                <option value="@item.strBranch">@item.strBranch</option>
-                                            }
-                                        </select>
-
-                                    </div>
-
-                                </div>*@
 
                             <div class="row" hidden>
                                 <div class="col-sm-4" style="margin: 5px; ">
@@ -194,7 +195,7 @@
                                     <p style="text-align: right; font-size: 15px;">Order Number:</p>
                                 </div>
                                 <div class="col-sm-4 " style="margin: 5px;">
-                                    <input type="text" readonly class="form-control" id="ID_OrderNumber" value="@ViewBag.RefNo" placeholder="Order Number" />
+                                    <input type="text" class="form-control" id="ID_OrderNumber" value="@ViewBag.RefNo" placeholder="Order Number" />
 
                                 </div>
                             </div>
@@ -211,56 +212,42 @@
                             </div>
 
 
-
-
-
-
-
-
-                            @*<div class="row">
-                                <div class="col-sm-4" style="margin: 5px;">
+                            <div class="row" hidden>
+                                <div class="col-sm-4" style="margin: 5px; ">
                                     <p style="text-align: right; font-size: 15px;">MPO Name</p>
                                 </div>
                                 <div class="col-sm-7 " style="margin: 5px;">
-                                    <select id="responsid3" class="form-control">
-                                        @*<option value="">--Select One--</option>*@
-                            @*@foreach (var item in ViewBag.BranchName)
-                                {*@
-                            @* <option value="@item.strLedgerName">@item.strLedgerName</option>*@
-                            @*}*@
-                            @*</select>*@
+                                    <input readonly type="text" class="form-control" id="ID_Mpo" value="@ViewBag.MName" />
+                                </div>
+                            </div>
+                            <div class="row" hidden>
+                                <div class="col-sm-4" style="margin: 5px; ">
+                                    <p style="text-align: right; font-size: 15px;">MPO Name</p>
+                                </div>
+                                <div class="col-sm-7 " style="margin: 5px;">
+                                    <input readonly type="text" class="form-control" id="ID_MpoMerz" value="@ViewBag.MNameMerz" />
 
-
-
-                            @*</div>*@
-
-                            @*</div>*@
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-sm-4" style="margin: 5px;">
                                     <p style="text-align: right; font-size: 15px;">MPO</p>
                                 </div>
                                 <div class="col-sm-5 " style="margin: 5px;">
-                                    <select id="responsid3" onchange="mloadCustomer()" class="form-control"></select>
+                                    <select id="responsid3" onchange="mloadCustomerSelect()" class="form-control"></select>
 
 
 
                                 </div>
 
                             </div>
-
                             <div class="row">
                                 <div class="col-sm-4" style="margin: 5px; ">
                                     <p style="text-align: right; font-size: 15px;">Customer:</p>
                                 </div>
                                 <div class="col-sm-5 " style="margin: 5px;">
-                                    <select id="idcustomer" class="form-control">
-                                        @*<option value="">--Select One--</option>*@
-                                        @*@foreach (var item in ViewBag.reslist)
-                                            {
-                                            <option value="@item.strLocation">@item.strLocation</option>
-                                            }*@
-                                    </select>
+                                    <select id="idcustomer" class="form-control"></select>
                                 </div>
                             </div>
 
@@ -273,10 +260,7 @@
                                 <div class="col-sm-4 " style="margin: 5px;">
                                     <select id="ddllocationid" class="form-control">
                                         <option value="">--Select One--</option>
-                                        @*@foreach (var item in ViewBag.reslist)
-                                            {
-                                            <option value="@item.strLocation">@item.strLocation</option>
-                                            }*@
+
                                     </select>
                                 </div>
                             </div>
@@ -306,10 +290,6 @@
                                     <div>
                                         <select id="ddlStockGrouplist" onchange="changeFunc()" class="form-control">
                                             <option value="">--Select One--</option>
-                                            @*@foreach (var item in ViewBag.reslist)
-                                                {
-                                                    <option value="@item.strLocation">@item.strLocation</option>
-                                                }*@
                                         </select>
                                     </div>
                                 </div>
@@ -318,10 +298,7 @@
                                     <div>
                                         <select id="ddlStockItemlist" class="form-control">
                                             <option value="">--Select One--</option>
-                                            @*@foreach (var item in ViewBag.reslist)
-                                                {
-                                                <option value="@item.strLocation">@item.strLocation</option>
-                                                }*@
+
                                         </select>
                                     </div>
                                 </div>
@@ -333,7 +310,6 @@
                                                    class="form-control intRate"
                                                    name="intQty"
                                                    onchange=""
-                                                   @*onchange="calculateRate()"*@
                                                    id="intQty" />
                                         </div>
                                         <div class="col-md-7">
@@ -343,9 +319,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group" style=" float: right;">
-
-
-                                    @*<button type="submit" class="btn btn-dark"><i class="fa fa-plus"></i> Add to List</button>*@
 
                                 </div>
                             </div>
@@ -367,12 +340,12 @@
                     <div class="col-sm-8 ">
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="row">
+                                <div class="row" style="margin-left:10px;">
                                     <div>
                                         <h6>Total Item:</h6>
                                     </div>
                                     <div>
-                                        <h5 id="Totalitem" style="text-align: left; font-size: medium"></h5>
+                                        <h5 id="Totalitem" style="text-align: left;  font-size: medium"></h5>
                                     </div>
                                 </div>
                             </div>
@@ -432,7 +405,6 @@
 
 
                 <div class="modal-footer">
-                    @*<button type="submit" class="btn btn-outline-success " onclick="saveOrUpdates()">Submit</button>*@
                     <span><input type="button" class="btn btn-primary" id="btnsaveOrder" onclick="saveOrUpdates();" value="Save"></input></span>
                     <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="clearFromData();" (click)="bsModalRef.hide()">Cancel</button>
                 </div>
@@ -441,36 +413,24 @@
         </div>
     </div>
 </div>
-
 <div class="table-responsive">
     <table id="datatable4" class="table-bordered" style="width:100%"></table>
 </div>
-
-
-
-
 <script>
 
     $('#btnView').click(function () {
-
+        var ddlVal = $('#exportOption').val();
+        //alert(ddlVal)
         var x = document.getElementById("bloodgId").value;
+        //var x = document.getElementById("bloodgId").value;
         //alert(x)
         window.open(
 
-    "/RptSO/RptNewOrder?Rname=" + radioValue + " &division=" + $('#ID_Division').val() + "&strDepartmentCard=" + $('#ID').val() + "&strFromdate=" + $('#datepicker1').val() + "&strToDate=" + $('#datepicker2').val() + "&intBloodGroup=" + x,
+    "/RptSO/RptNewOrder?strVoucherNo=SO#038067&exportOpt=" + ddlVal,
     '_blank' // <- This is what makes it open in a new window.
-    );
+    );r
         //url: "/LeaveApplication/TourleaveSave?eid=" + empid + "&leaveid=" + lid + "&destination=" + Destinat + "&purpose=" + Purposee,
     });
-
-
-
-
-
-
-
-
-
 
 
     jQuery.ajaxSettings.traditional = true;
@@ -490,6 +450,8 @@
     var dblTotalAmt = 0;
 
     var gItemList = [];
+
+    var tempDataList = [];
 
     var type = 0;
     var strOrderNo = "";
@@ -536,15 +498,44 @@
     var totalcount =0;
     var totalAmount =0;
     var totalcommision =0;
-    var totalnetamount =0;
+    var totalnetamount = 0;
+
+    var checkboxColamstatus = true;
+    var editColamStatus = true;
+    var deleteColamStatus = true;
+    var CreditLimitColamStatus = true;
+    var selectMpo = "";
+
+
+
+
+
+
+    function btnNewOrder() {
+
+        orderdate();
+
+
+        document.getElementById('ID_OrderNumber').value = "";
+
+        $("#ID_OrderNumber").val = "";
+        $.ajax({
+            url: '@Url.Action("LastOrderNO")',
+            datatype: "json",
+
+            success: function (data) {
+                console.log(data);
+                document.getElementById('ID_OrderNumber').value = data;
+            }
+        })
+    }
+
 
     function changeFunc() {
 
         var selectStockGroup = document.getElementById("ddlStockGrouplist").value;
         console.log("Group name is:");
         var selectLocation = document.getElementById("ddllocationid").value;
-        //alert(selectLocation)
-
         var ddlStockItemlist = $("#ddlStockItemlist");
         ddlStockItemlist.html('');
         $.ajax({
@@ -559,7 +550,6 @@
                 ddlStockItemlist.append($('<option value=--Select One-->--Select One--</option>'));
                 $.each(data, function (id, option) {
                     ddlStockItemlist.append($('<option value="' + option.strItemName + '">' + option.strItemName + '</option>'));
-                    //ddlResponsid3.append($('<option></option>').val(option.strLedgerName).html(option.strLedgerName));
                 });
 
             }
@@ -567,17 +557,24 @@
     }
 
 
+    var table;
+
+
+
+
+
     $(document).ready(function () {
 
-      
         document.getElementById("Totalitem").innerHTML = 0;
         document.getElementById("qtyTotal").innerHTML = 0;
         document.getElementById("txtTotalAmount").innerHTML = 0;
         document.getElementById("txtCommAmount").innerHTML = 0;
         document.getElementById("txtnetAmount").innerHTML = 0;
+
         $("#responsid2").select2({ "width": '100%' });
         $("#responsid2").focus();
         $("#responsid3").select2({ "width": '100%' });
+
 
         orderdate();
 
@@ -587,26 +584,13 @@
         $("#ddlStockGrouplist").select2({ "width": '100%' });
         $("#ddlStockItemlist").select2({ "width": '100%' });
 
-
-
-
-
-
-        //showItemview();
-
-
-
         MPOLoad();
-
-
+        mloadCustomer();
         mloadLocation();
-
-        //mloadItem();
-       
-      
-        //mloadItemGroup();
+        mloadItemGroup();
         showGrid();
     });
+
 
 
     function MPOLoad() {
@@ -635,14 +619,69 @@
                     //ddlResponsid3.append($('<option></option>').val(option.strLedgerName).html(option.strLedgerName));
 
                 });
-                //alert($('#strTC').val());
-                $('#responsid3').val(selectdata.strTC);
+                //alert(selectdata.strLedgerName);
+                $('#responsid3').val(selectdata.strLedgerName);
                 //alert("selectd", $('#responsid3').val(selectdata.strTC))
                 //$('#responsid3').val(this.aktar);
                 $('#responsid3').trigger('change');
             }
         });
 
+
+    };
+
+    function mloadCustomer() {
+
+         selectMpo = document.getElementById("ID_Mpo").value;
+
+        //alert(selectMpo)
+        var ddlDoctorlist = $("#idcustomer");
+        $.ajax({
+            url: '@Url.Action("mGetCustomer")',
+            datatype: "json",
+            data: {
+                strLedgerName: selectdata.strLedgerName
+            },
+            success: function (data) {
+
+                ddlDoctorlist.html('');
+                ddlDoctorlist.append($('<option value=--Select One-->--Select One--</option>'));
+                $.each(data, function (id, option) {
+
+                    ddlDoctorlist.append($('<option value="' + option.strDoctorName + '">' + option.strCustomerName + '</option>'));
+                });
+                $('#idcustomer').val(selectdata.strDoctorName);
+                $('#idcustomer').trigger('change');
+
+            }
+        })
+
+    };
+    function mloadCustomerSelect() {
+
+        var selectMpod = document.getElementById("responsid3").value;
+
+        //alert(selectMpod)
+        var ddlDoctorlist = $("#idcustomer");
+        $.ajax({
+            url: '@Url.Action("mGetCustomer")',
+            datatype: "json",
+            data: {
+                strLedgerName: selectMpod
+            },
+            success: function (data) {
+
+                ddlDoctorlist.html('');
+                ddlDoctorlist.append($('<option value=--Select One-->--Select One--</option>'));
+                $.each(data, function (id, option) {
+
+                    ddlDoctorlist.append($('<option value="' + option.strDoctorName + '">' + option.strCustomerName + '</option>'));
+                });
+                $('#idcustomer').val(selectdata.strDoctorName);
+                $('#idcustomer').trigger('change');
+
+            }
+        })
 
     };
 
@@ -659,13 +698,11 @@
                 vstrUserName: ""
             },
             success: function (data) {
-
-           
                 ddlStockGrouplist.html('');
                 ddlStockGrouplist.append($('<option value=--Select One-->--Select One--</option>'));
                 $.each(data, function (id, option) {
                     ddlStockGrouplist.append($('<option value="' + option.strItemGroup + '">' + option.strItemGroup + '</option>'));
-                    //ddlResponsid3.append($('<option></option>').val(option.strLedgerName).html(option.strLedgerName));
+
                 });
 
             }
@@ -682,54 +719,19 @@
                 strBranchName: selectBranch
             },
             success: function (data) {
-                mloadItemGroup();
                 ddllocationid3.html('');
                 ddllocationid3.append($('<option value=--Select One-->--Select One--</option>'));
                 $.each(data, function (id, option) {
                     ddllocationid3.append($('<option value="' + option.strLocation + '">' + option.strLocation + '</option>'));
-                    //ddlResponsid3.append($('<option></option>').val(option.strLedgerName).html(option.strLedgerName));
                 });
                 $('#ddllocationid').val(selectdata.strLocation);
-                //$('#responsid3').val(this.aktar);
-                //$('#ddllocationid').trigger('change');
+
             }
         })
     }
 
 
 
-    function mloadCustomer() {
-        //selectMpo = $(this).val();
-
-
-        //var selectMpo = document.getElementById("ID_Mpo").value;
-        var selectMpo = $("#responsid3").val();
-        console.log( 'select MPO', selectMpo);
-        var ddlDoctorlist = $("#idcustomer");
-        $.ajax({
-            url: '@Url.Action("mGetCustomer")',
-            datatype: "json",
-            data: {
-                strLedgerName: selectMpo
-            },
-            success: function (data) {
-
-                ddlDoctorlist.html('');
-                ddlDoctorlist.append($('<option value=--Select One-->--Select One--</option>'));
-                $.each(data, function (id, option) {
-
-                    ddlDoctorlist.append($('<option value="' + option.strDoctorName + '">' + option.strCustomerName + '</option>'));
-                    //console.log('rbtnidNeworder',  option.strDoctorName );
-                });
-                //alert("2")
-                //$('#idcustomer').val($('#strDoctorName').val());
-                $('#idcustomer').val(selectdata.strDoctorName);
-                $('#idcustomer').trigger('change');
-
-            }
-        })
-
-    };
 
     function commtionCal() {
 
@@ -746,9 +748,6 @@
             }).then(function (isConfirm) {
                 if (isConfirm) {
 
-                    //alert("Alll")
-
-
                     $.ajax({
                         type: "POST",
                         url: "/SalesOrder/mUpdateSalesOrderOnlineComm",
@@ -756,12 +755,11 @@
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         success: function (r) {
-                            //alert(r + " record(s) inserted.");
                         }
                     });
 
                 } else {
-                    //alert("Cancel...")
+
                 }
             });
 
@@ -771,8 +769,11 @@
 
     }
 
-
-
+    
+    function rbtnidPendinglist() {
+        rtbtnStatus();
+        showGrid();
+    }
     function rbtnidNeworder() {
 
         rtbtnStatus();
@@ -782,6 +783,12 @@
     function rbtnidZhApprove() {
         rtbtnStatus();
         showGrid();
+
+
+
+
+
+
     }
     function rbtnidReturnOrder() {
         rtbtnStatus();
@@ -790,36 +797,62 @@
     }
     function rbtnidbilldone() {
         rtbtnStatus();
-        showGrid2();
+        showGrid();
     }
     function rtbtnStatus() {
         var radioValue = $("input[name='rbtnname']:checked").val();
 
 
+        if (radioValue == "Pending") {
 
+            rbtnStatus = 5;
+            checkboxColamstatus = true;
+            editColamStatus = true;
+            deleteColamStatus = true;
+            CreditLimitColamStatus = true;
+        }
 
-        if (radioValue == "NewInvoice") {
+       else if (radioValue == "NewInvoice") {
 
             rbtnStatus = 4;
-
+            checkboxColamstatus = true;
+            editColamStatus = true;
+            deleteColamStatus = true;
+            CreditLimitColamStatus = true;
         }
         else if (radioValue == "ZhApprove") {
             rbtnStatus = 3;
+            checkboxColamstatus = false;
+            editColamStatus = true;
+            deleteColamStatus = true;
+            CreditLimitColamStatus = true;
         }
         else if (radioValue == "ReturnOrder") {
             rbtnStatus = 2;
+            checkboxColamstatus = false;
+            editColamStatus = true;
+            deleteColamStatus = true;
+            CreditLimitColamStatus = true;
         }
         else if (radioValue == "BillDone") {
             rbtnStatus = 1;
+            checkboxColamstatus = false;
+            editColamStatus = false;
+            deleteColamStatus = false;
+            CreditLimitColamStatus = false;
         }
         else {
             rbtnStatus = 0;
+            checkboxColamstatus = true;
+            editColamStatus = true;
+            deleteColamStatus = true;
+            CreditLimitColamStatus = true;
         }
     }
 
     function clikRefresh() {
         rbtnStatus = 5;
-        showGrid2();
+        showGrid();
 
 
     }
@@ -830,16 +863,13 @@
         $('#idReturnOrder').prop('checked', false);
         $('#idBillDone').prop('checked', false);
         rbtnStatus = 5;
-        showGrid2();
-
+        showGrid();
      }
 
     function showGrid() {
         strUserName=   document.getElementById('lblledgerName').textContent
 
-        //alert(strUserName);
-
-        $('#datatable4').DataTable({
+        table = $('#datatable4').DataTable({
             "bDestroy": true,
             "select": true,
 
@@ -850,28 +880,16 @@
 
 
                 "dataSrc": function (response) {
+                    detailsList = response;
                     response.draw = response.draw;
                     response.recordsTotal = response.recordsTotal;
                     response.recordsFiltered = response.recordsFiltered;
                     console.log('request.responseText', response);
 
-
-
                     return response;
                 }
 
             },
-
-
-            //var tableee = $('#datatable4').DataTable( {
-            //    "scrollY": "200px",
-            //    "paging": false
-            //} );
-
-            //select: {
-            //    style: 'multi',
-            //    selector: 'td:first-child'
-            //},
 
             "order": [[1, 'asc']],
             "columns": [
@@ -886,9 +904,6 @@
                           return '<span>' + (meta.row + 1) + '</span>';
                       },
                   },
-                //{
-                //    return type == 'export' ? meta.row + 1 : data
-                //},
 
                     {
 
@@ -908,7 +923,6 @@
                             title: 'Voucher No',
                             data: 'strVoucherNo',
                             name: 'strVoucherNo',
-                            //"visible": false,
                         },
                     {
                         title: 'Voucher No',
@@ -920,7 +934,7 @@
                            title: 'Doctor Name',
                            data: 'strDoctorName',
                            name: 'strDoctorName',
-                           "visible": false,
+                           //"visible": false,
                        },
                     {
                         title: 'Date',
@@ -938,7 +952,6 @@
                         title: 'Branch Name',
                         data: 'strBranchName',
                         name: 'strBranchName',
-                        "visible": false,
                     },
                     {
                         title: 'Division Name',
@@ -960,40 +973,49 @@
                            title: 'Credit Limit',
                            data: 'dblCreditAmount',
                            name: 'dblCreditAmount',
-
+                           "visible": CreditLimitColamStatus,
 
                        },
 
-                   {
-                       title: 'check',
-                       data: 'fcheck',
 
-                       //className: 'select-checkbox sales-sloat-select',
-                       render: function (data, type) {
-                           data.trigger;
+                       {
+                           title: 'Check All' + '<input type="checkbox" id="chkAll" onclick="checkAll(this)">',
+                           data: '',
+                           "visible": checkboxColamstatus,
+                           render: function (data,
+                              type,
+                              row,
+                              meta) {
 
-
-
-                           return '<input type="checkbox" value= ' + data + ' class="select-checkbox sales-sloat-select" />';
-
-                       }
-
-                   },
+                               return '<input type="checkbox" id="chkSingle' + (meta.row + 1) + '" value= ' + data + '  class="select-checkbox sales-sloat-select"  />';
 
 
+                           },
+                       },
 
 
 
                               {
+                                title: 'Edit',
+                                "visible": editColamStatus,
                                   render: function (data, type, row) {
-                                      return '<button class="btn btn-info fontsize  sales-sloat-ak">   <i class="fa fa-pencil"></i></button>' + "&nbsp" + '<button class="btn btn-danger fontsize  delete-sloat-ak"> <i class="fa fa-trash"></i></button>';
+                                      return '<button class="btn btn-info fontsize  sales-sloat-ak">   <i class="fa fa-pencil"></i></button>';
                                   }
                               },
+                                {
+                                    title: 'Delete',
+                                    "visible": deleteColamStatus,
+                                    render: function (data, type, row) {
+                                        return '<button class="btn btn-danger fontsize  delete-sloat-ak"> <i class="fa fa-trash"></i></button>';
+                                    }
+                                },
                                  {
+                                     title: 'Print',
                                      render: function (data, type, row) {
                                          return '<button class="btn btn-info fontsize  print-sloat-ak">   <i class="fa fa-print"></i></button>';
                                      }
                                  },
+
             ],
 
             "responsive": true,
@@ -1047,9 +1069,11 @@
                     if (data.fcheck == 0) {
                         data.fcheck = 1;
                         addtoList(selectdata);
+
                     } else {
                         data.fcheck = 0;
                         delettoList(selectdata);
+
                     }
                     console.log('hello edit dddeeeee', data.fcheck);
 
@@ -1061,264 +1085,83 @@
                     selectdata = data;
                     console.log('hello edit dddeeeee', selectdata);
                     edit(selectdata);
-                    //that.salesss(data);
-                    //that.rerender();
+
+                });
+                $(row).find(".delete-sloat-ak").click(function () {
+                    selectdata = data;
+                    console.log('hello Delete data', selectdata);
+                    deleteItemsById(selectdata.strVoucherNoMerz)
+
                 });
                 $(row).find(".print-sloat-ak").click(function () {
                     selectdata = data;
                     orderprint(selectdata.strVoucherNoMerz, selectdata.strMerzeName)
-                    //that.salesss(data);
-                    //that.rerender();
+
                 });
 
             }
 
         });
+
     }
 
 
-    function showGrid2() {
+    function checkAll(chk) {
 
+        var checked = $('#' + chk.id).prop('checked');
+        finalList = [];
+        $('#datatable4').each(function (i, val) {
 
-       $('#datatable4').DataTable({
-            "bDestroy": true,
-            "select": true,
+            $(this).find('.sales-sloat-select').prop('checked', checked);
+            if (checked == true) {
 
-            "ajax": {
-                "url": "/SalesOrder/mShowMasterData?strUserName=" + strUserName + " &intStatusCol=" + rbtnStatus,
-                "type": "POST",
-                "datatype": "json",
-
-
-                "dataSrc": function (response) {
-                    response.draw = response.draw;
-                    response.recordsTotal = response.recordsTotal;
-                    response.recordsFiltered = response.recordsFiltered;
-                    console.log('request.responseText', response);
-
-
-
-                    return response;
-                }
-
-            },
-
-
-            //var tableee = $('#datatable4').DataTable( {
-            //    "scrollY": "200px",
-            //    "paging": false
-            //} );
-
-            //select: {
-            //    style: 'multi',
-            //    selector: 'td:first-child'
-            //},
-
-            "order": [[1, 'asc']],
-            "columns": [
-                  {
-                      title: 'SL',
-                      render: function (
-                          data,
-                          type,
-                          row,
-                          meta
-                      ) {
-                          return '<span>' + (meta.row + 1) + '</span>';
-                      },
-                  },
-                //{
-                //    return type == 'export' ? meta.row + 1 : data
-                //},
-
-                    {
-
-                        title: 'ID',
-                        data: 'lngSlNo',
-                        name: 'lngSlNo',
-                        "visible": false,
-
-                    },
-                       {
-                           title: 'Location',
-                           data: 'strLocation',
-                           name: 'strLocation',
-                           "visible": false,
-                       },
-                        {
-                            title: 'Voucher No',
-                            data: 'strVoucherNo',
-                            name: 'strVoucherNo',
-                        },
-                    {
-                        title: 'Voucher No',
-                        data: 'strVoucherNoMerz',
-                        name: 'strVoucherNoMerz',
-                        //"visible": false,
-                    },
-                       {
-                           title: 'Doctor Name',
-                           data: 'strDoctorName',
-                           name: 'strDoctorName',
-                           //"visible": false,
-                       },
-                    {
-                        title: 'Date',
-                        data: 'strTranDate',
-                        name: 'strTranDate',
-                    },
-                    {
-                        title: 'Ledger Name',
-                        data: 'strMerzeName',
-                        name: 'strMerzeName',
-                    },
-
-                    {
-                        title: 'Branch Name',
-                        data: 'strBranchName',
-                        name: 'strBranchName',
-                    },
-                    {
-                        title: 'Division Name',
-                        data: 'strDivisionName',
-                        name: 'strDivisionName',
-                    },
-                    {
-                        title: 'Area Name',
-                        data: 'strArea',
-                        name: 'strArea',
-                    },
-                    {
-                        title: 'Amount',
-                        data: 'dblAmount',
-                        name: 'dblAmount',
-                    },
-
-
-                       {
-                           title: 'Credit Limit',
-                           data: 'dblCreditAmount',
-                           name: 'dblCreditAmount',
-
-                           "visible": false,
-                       },
-
-
-                   {
-                       title: 'check',
-                       data: 'fcheck',
-
-                       //className: 'select-checkbox sales-sloat-select',
-                       render: function (data, type) {
-                           data.trigger;
-
-                           return '<input type="checkbox" value= ' + data + ' class="select-checkbox sales-sloat-select" />';
-
-                       }
-
-                   },
-
-
-                    {
-                        render: function (data, type, row) {
-                            return '<button class="btn btn-info fontsize  sales-sloat-ak">   <i class="fa fa-pencil"></i></button>' + "&nbsp" + '<button class="btn btn-danger fontsize  delete-sloat-ak"> <i class="fa fa-trash"></i></button>';
-                        }
-                    },
-
-            ],
-
-            "responsive": true,
-            "rowCallback": function (row, data) {
-
-
-
-
-
-                console.log('hello delete dataddddddddd', row, data);
-                var rowdata = data;
-                //if (rbtnStatus == 4) {
-                //    if (rowdata.dblNetAmount < rowdata.dblCreditAmount) {
-                //        console.log('hello check data 6000+', rowdata.dblCreditAmount);
-                //        $(row).css({ "background-color": "#47F90A" })
-                //    }
-                //    else {
-                //        $(row).css({ "background-color": "#FCFCFC" })
-                //    }
-                //}
-                //if (rbtnStatus == 3) {
-                //    if (rowdata.dblNetAmount < rowdata.dblCreditAmount) {
-                //        console.log('hello check data 6000+', rowdata.dblCreditAmount);
-                //        $(row).css({ "background-color": "#47F90A" })
-                //    }
-                //    else {
-                //        $(row).css({ "background-color": "#FCFCFC" })
-                //    }
-                //}
-                //if (rbtnStatus == 2) {
-                //    if (rowdata.dblNetAmount < rowdata.dblCreditAmount) {
-                //        console.log('hello check data 6000+', rowdata.dblCreditAmount);
-                //        $(row).css({ "background-color": "#47F90A" })
-                //    }
-                //    else {
-                //        $(row).css({ "background-color": "#FCFCFC" })
-                //    }
-                //}
-                //if (rbtnStatus == 1) {
-                //    if (rowdata.dblNetAmount < rowdata.dblCreditAmount) {
-                //        console.log('hello check data 6000+', rowdata.dblCreditAmount);
-                //        $(row).css({ "background-color": "#47F90A" })
-                //    }
-                //    else {
-                //        $(row).css({ "background-color": "#FCFCFC" })
-                //    }
-                //}
-                //$(row).find(".sales-sloat-select").click(function () {
-                //    selectdata = data;
-
-                //    if (data.fcheck == 0) {
-                //        data.fcheck = 1;
-                //        addtoList(selectdata);
-                //    } else {
-                //        data.fcheck = 0;
-                //        delettoList(selectdata);
-                //    }
-                //    console.log('hello edit dddeeeee', data.fcheck);
-
-
-                //});
-
-
-                $(row).find(".sales-sloat-ak").click(function () {
-                    selectdata = data;
-                    console.log('hello edit dddeeeee', selectdata);
-                    edit(selectdata);
-                    //that.salesss(data);
-                    //that.rerender();
-                });
-                $(row).find(".delete-sloat-ak").click(function () {
-                    selectdata = data;
-                    deleteItemsById(selectdata.lngSlNo)
-                    //that.salesss(data);
-                    //that.rerender();
-                });
+                finalList = detailsList;
+                //$(this).addClass('bg-danger');
+                //console.log(i, selectData);
+            }
+            else {
+                //$(this).removeClass('bg-success');
 
             }
-
         });
     }
 
+    function App() {
 
+        var empObj = {
+
+
+            detailsList: finalList,
+
+        };
+        console.log("Order master and details list", empObj);
+
+        $.ajax({
+            url: "/SalesOrder/mpoApprove",
+            type: "POST",
+            data: JSON.stringify(empObj),
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                if (result == "OK") {
+                } else {
+                    //alert("resutl is ", result);
+                };
+
+                showGrid();
+
+            }
+        });
+
+    }
     var selectList = [];
 
     function orderprint(strVNo, strMerzeNamee) {
+        var ddlVal = $('#exportOption').val();
         console.log('voucher No', strVNo)
         console.log('voucher led', strMerzeNamee)
-        //var x = document.getElementById("bloodgId").value;
-        //alert(x)
-
         window.open(
-
-    "/RptSO/RptNewOrder?strVoucherNO=" + encodeURIComponent(strVNo) + " &vstrLedgerName=" + strMerzeNamee,
+    "/RptSO/RptNewOrder?strVoucherNO=" + encodeURIComponent(strVNo) + " &vstrLedgerName=" + strMerzeNamee+"&exportOpt=" + ddlVal,
     '_blank' // <- This is what makes it open in a new window.
     );
 
@@ -1394,10 +1237,6 @@
                 }
 
             }
-
-
-            //console.log('check strue', countt);
-
         }
 
 
@@ -1408,26 +1247,18 @@
         $('#responsid2').val(selectdata.strBranchName);
         $('#responsid2').trigger('change');
 
-
+        MPOLoad();
         mloadCustomer();
 
 
 
 
         $('#idcustomer').val(selectdata.strDoctorName);
-        //$('#idcustomer').trigger('change');
-
         mloadLocation();
 
         $('#ddllocationid').val(selectdata.strLocation);
         $('#OrDate').val(selectdata.strTranDate);
-        //alert(selectdata.strTranDate)
         $('#ID_OrderNumber').val(selectdata.strVoucherNo);
-
-        //idcustomer
-
-
-        //mloadCustomer(selectdata.strVoucherNo)
         mloadOrderDetails(selectdata.strVoucherNo)
         $('#btnsaveOrder').val("Update");
         $('#btnsaveOrder').val("Update");
@@ -1435,28 +1266,6 @@
 
     }
 
-    //function mloadCustomer(OrderNO) {
-    //    //$('#ID_OrderNumber').val(selectdata.strVoucherNo);
-
-    //    var empObj = {
-    //        strOrderNo: OrderNO,
-    //    };
-    //    $.ajax({
-    //        url: "/SalesOrder/mloadCusotmer",
-    //        data: JSON.stringify(empObj),
-    //        type: "POST",
-    //        contentType: "application/json;charset=utf-8",
-    //        dataType: "json",
-    //        success: function (strLocation) {
-    //            strLocatioandd = strLocation;
-    //            console.log('1');
-    //            console.log('1st-', strLocatioandd);
-    //            //$('#ddllocationid').val(data);
-    //            //$('#ddllocationid').val(selectdata.strDoctorName);
-    //            //$('#idcustomer').trigger('change');
-    //        }
-    //    });
-    //}
     function mloadOrderDetails(OrderNO) {
         var empObj = {
             strOrderNo: OrderNO,
@@ -1471,72 +1280,55 @@
                 addItemList =[];
                 addItemList= data;
                 gItemList = data;
-                //console.log('hello edit', addItemList);
-                //console.log('hello edit New', data);
-                showItemview(data);
+                tempDataList = [];
+                tempDataList = data;
+
+
+
+                console.log('he',tempDataList);
+                calculateData();
+                showItemview();
             }
         });
     }
+    function deleteItem(itemName) {
+        for (i = 0; i < tempDataList.length; i++) {
+            if (tempDataList[i].strItemName == itemName) {
 
-    function deleteitem(data) {
-        $.each(gItemList, function (key, item) {
+                tempDataList.splice(i, 1);
+            }
 
-            $.each(gItemList[0], function (key1, item1) {
-
-                var a = $('#ddlStockItemlist').val();
-                if (item1.strItemName == a) {
-                    swal("Adding Failed!", "You Alrady Add This Item.", "warning");
-                    return
-                } else {
-                    itemRate('0003', $('#ddlStockGrouplist').val(), $('#ddlStockItemlist').val(), order_date, $('#intQty').val(), $('#responsid2').val());
-                }
-
-            });
-        });
-
+        }
+        deleteitemcommCall();
+        showItemview();
+        calculateData();
     }
+
 
     function locationListByItemId(id) {
 
 
         $.ajax({
             url: "/Item/locationListByItemId?id=" + id,
-            //data: JSON.stringify(empObj),
             type: "POST",
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             success: function (result) {
-                //alert("result ",result)
                 gLocationList = result;
 
                 if (gLocationList.length > 0) {
 
                     showlocationlview();
-                    //calculateData();
                 }
-
-
-
             }
         });
 
     }
-    function calculateRate() {
 
-        //itemRate = $('#intRate').val();
-        //itemQty = $('#intQty').val();
-        ////alert(itemQty)
-        //itemAmount = itemRate * itemQty;
-        ////alert(itemAmount)
-        //$("#itemAmount").val(itemAmount);
-        //console.log(itemRate, itemQty, itemAmount);
-
-    }
     function deleteItemsById(id) {
-
+        alert(id)
         $.ajax({
-            url: "/Item/deleteItemById?id=" + id,
-            //data: JSON.stringify(empObj),
+            url: "/SalesOrder/deleteItemById?voucherNo=" + id ,
             type: "POST",
             contentType: "application/json;charset=utf-8",
             dataType: "json",
@@ -1558,9 +1350,6 @@
 
 
     function addOrEditItem() {
-
-     //var   btn = $('#btnsaveOrder').val();
-
         var OrderDate = $('#OrDate').val();
         if (OrderDate == undefined || OrderDate == null || OrderDate == "") {
             swal('Required!!!', 'Required Order Date', 'warning')
@@ -1569,22 +1358,14 @@
         var order_date = $('#OrDate').val();
 
         var selectedItem = $('#ddlStockItemlist').val();
-
-
-
         var addStaus = "";
-
-
-
         $.each(addItemList, function (key, itemddd) {
             console.log('new list add item', gItemList);
-            //debugger
+
             var aa = $('#ddlStockItemlist').val();
-                //alert(aa);
-                //alert(itemddd.strItemName);
+
                 if (itemddd.strItemName == aa) {
 
-                    //alert(a);
                     addStaus = 'True';
                     return
                 }
@@ -1592,24 +1373,11 @@
 
         });
 
-        //for (var i = 0; i < gItemList.length; i++) {
-
-        //    var aa = $('#ddlStockItemlist').val();
-
-        //    if (gItemList.strItemName == aa) {
-        //        alert(gItemList.strItemName);
-        //        addStaus = 'True';
-        //        return
-        //    }
-        //}
-
-
         var obj = {
             "flammable": "inflammable",
             "duh": "no duh"
         };
         $.each(obj, function (key, value) {
-            //alert(key + ": " + value);
         });
 
         if (addStaus=='True')
@@ -1631,17 +1399,8 @@
     function clearitem() {
         $('#intQty').val("");
         $("#ddlStockItemlist").val('').trigger('change')
-        //ddlStockItemlist.html('');
-        //$('#ddlStockItemlist').val("");
-        //$("#ddlStockItemlist").select2("val", "");
-        //document.getElementById("ddlStockItemlist").innerHTML = "";
     }
     function itemRate(strComid, strItemGroup, strItemName, strOrderDate, intQty, strBranchName) {
-
-
-
-
-
         $.ajax({
             url: '@Url.Action("gFillStockItemRate")',
             datatype: "json",
@@ -1659,13 +1418,10 @@
                 this.strPowerClassGet = data.strPowerClass;
                 this.strPackSizeGet = data.strPackSize;
                 this.dblItemRatesGet = data.dblBranchRate;
-                //this.strUnitGet = data.strUnit;
                 this.intBonusQtyGet = data.dblbonusQty;
                 this.strSubGroup_NameGet = data.strSubGroup_Name;
 
                 var result = false;
-
-
 
                     addItemList.push({
                         strItemGroup: $('#ddlStockGrouplist').val(),
@@ -1676,15 +1432,11 @@
                         intItemQty: $('#intQty').val(),
                         dblItemRate: this.dblItemRatesGet,
                         strUnit: this.strUnitGet,
-                        //dblCommission: this.dblcom,
                         intBonusQty: this.intBonusQtyGet,
                         dblTotalAmount: $('#intQty').val() * this.dblItemRatesGet,
                         strCustomer: $('#idcustomer').val(),
                         strDate: $('#OrDate').val()
                     });
-
-                //debugger detailsList
-
 
                 $.ajax({
                     type: "POST",
@@ -1693,39 +1445,48 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (data) {
-                           //gItemList = [];
                            gItemList.push(data);
-
-
-                        showItemview(data);
+                           tempDataList = data;
+                           showItemview();
                     }
 
                 });
                 console.log('list', gItemList);
-                //commissionCal();
-                //showItemview();
-
-
             }
 
         })
          //return type;
     }
 
-    function showItemview(gItemList) {
-        //TotalQty(gItemList);
+    function deleteitemcommCall() {
+        $.ajax({
+            type: "POST",
+            url: "/SalesOrder/CommossionCalculet",
+            data: JSON.stringify(tempDataList),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                gItemList.push(data);
+                tempDataList = data;
+                showItemview();
+            }
+
+        });
+        console.log('list', gItemList);
 
 
+    }
+
+    function showItemview() {
+        console.log(tempDataList);
         intItemQty = 0;
         totalAmount = 0;
         totalcommision = 0;
         totalnetamount = 0;
 
-        this.detailsList = gItemList;
-
-        //calculateData(detailsList);
+        this.detailsList = this.tempDataList;
         $('#itemDatatable').DataTable({
-            data: gItemList,
+            data: this.tempDataList,
             "bDestroy": true,
             "dataSrc": function (response) {
                 response.draw = response.draw;
@@ -1736,9 +1497,6 @@
                 console.log('request.responseText', response);
                 return response;
             },
-
-
-            //"scrollX": true,
             "select": true,
             columns: [
 
@@ -1752,10 +1510,8 @@
                     ) {
                         return '<span>' + (meta.row + 1) + '</span>';
                     },
+                    "visible": false,
                 },
-
-                    //{ title: 'Location Name', data: 'strLocation' },dblPercent
-
                         { title: 'Sub Group', data: 'strSubGroup_Name' , "visible": false,},
                         { title: 'Per', data: 'dblPercent', "visible": false, },
                         { title: 'Group Name', data: 'strItemGroup' },
@@ -1764,19 +1520,13 @@
                         { title: 'Powre/Calss', data: 'strPowerClass', "visible": false, },
                         { title: 'Pack Size', data: 'strPackSize', "visible": false, },
                         { title: 'Qty', data: 'intItemQty', className: 'editable' },
-                        { title: 'Rate', data: 'dblItemRate', className: 'editable' },
-                        { title: 'Per', data: 'strUnit' },
+                        { title: 'Rate', data: 'dblItemRate', className: 'editable', "visible": false, },
+                        { title: 'Per', data: 'strUnit', "visible": false,},
                         { title: 'Total Amount', data: 'dblTotalAmount' },
-                        { title: 'Commission', data: 'dblCommitionVal' },
+                        { title: 'Commission', data: 'dblCommitionVal', "visible": false, },
                         { title: 'Bonus Qty', data: 'intBonusQty' },
                         { title: 'Net Amount', data: 'dblItemNetVal', width: 100 },
 
-                         //{
-                         //    title: 'Edit',
-                         //    render: function (data, type, row) {
-                         //        return '<button type="button"   class="btn btn-info fontsize  sales-sloat-ak">Edit</button>';
-                         //    }
-                         //},
                         {
                             title: 'Delete',
                             render: function (data, type, row) {
@@ -1788,45 +1538,26 @@
             "responsive": true,
             "rowCallback": function (row, data) {
 
-
-
-                intItemQty += data.intItemQty;
-                totalAmount =totalAmount + data.dblTotalAmount;
-                totalcommision =totalcommision + data.dblCommitionVal;
-                totalnetamount = totalnetamount + data.dblItemNetVal;
-
-
-                document.getElementById("qtyTotal").innerHTML = intItemQty;
-                document.getElementById("txtTotalAmount").innerHTML = totalAmount;
-                document.getElementById("txtCommAmount").innerHTML = totalcommision;
-                document.getElementById("txtnetAmount").innerHTML = totalnetamount;
-
                 $(row)
                  .bind('click')
                  .click(function () {
-
                      selectlocationItem = data;
-                     //console.log('hello delete dataddddddddd', selectlocationItem);
-                     //rerender();
                  });
                 $(row).find(".sales-sloat-ak").click(function () {
                     selectlocationItem = data;
                     editLocation(selectlocationItem);
-                    //that.salesss(data);
-                    //that.rerender();
                 });
                 $(row).find(".delete-sloat-ak").click(function () {
                     selectlocationItem = data;
-                    //console.log('hello kkk', selectlocationItem);
-                    deleteitem(selectlocationItem.strItemName)
-
-                    //that.salesss(data);
-                    //that.rerender();
+                    console.log('hello kkk', selectlocationItem);
+                    deleteItem(selectlocationItem.strItemName);
                 });
 
             }
         });
         clearitem();
+        calculateData();
+
     }
     function saveOrUpdates() {
         var btn = $('#btnsaveOrder').val()
@@ -1835,22 +1566,12 @@
 
         } else {
 
-            //console.log('request.responseText', selectdata);
             UpdateData();
         }
 
     }
     function saveData() {
-
-        //alert(brandId);
-
-        //alert(brandName);
         jQuery.ajaxSettings.traditional = true;
-        //var list = [];
-        //list = gItemList;
-
-
-
 
         console.log('list list', this.detailsList);
 
@@ -1859,8 +1580,8 @@
 
             strBranchName: $('#responsid2').val(),
             strCustomer: $('#idcustomer').val(),
-            strLedgerName: $('#ID_Mpo').val(),
-            strOrderNo: $('#ID_OrderNumber').val(),
+            strLedgerName: $('#responsid3').val(),
+            strOrderNo: 'SO0001' + $('#ID_OrderNumber').val(),
             strOrderDate: $('#OrDate').val(),
             strLocation: $('#ddllocationid').val(),
             dblTotalAmount: $('#txtTotalAmount').text(),
@@ -1880,18 +1601,28 @@
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             success: function (result) {
+                if (result == "OK") {
 
-                //alert(result);
-                if (result != "error") {
+                    var toastMixin = Swal.mixin({
+                        toast: true,
+                        icon: 'success',
+                        title: 'General Title',
+                        animation: false,
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
 
 
-                    var idd = result;
-                    saveimage(idd);
-                    $('#itemModal').modal('hide');
+                    });
+                    toastMixin.fire({
+                        animation: true,
+                        title: 'Save Successfully',
+
+                    });
                     clearFromData();
                     showGrid();
                 } else {
-                    //alert("resutl is ", result);
                 };
 
             }
@@ -1899,24 +1630,12 @@
     }
 
     function clearFromData() {
-        $('#btnAddlocation').text("Add");
-        $('#idcustomer').text("");
-        $('#responsid3').text("");
-        //$('#ID_OrderNumber').text("");
-        $('#OrDate').val("");
-        //$('#ddllocationid').text("");
-        $('#btnsaveOrder').val("Save")
-        $('#txtCommAmount').val("");
-        $('#strNaration').val("");
-        $('#itemDatatable').dataTable().fnClearTable();
-        orderdate();
-
-            //document.getElementById("Totalitem").innerHTML = 0;
-            //document.getElementById("qtyTotal").innerHTML = 0;
-            //document.getElementById("txtTotalAmount").innerHTML = 0;
-            //document.getElementById("txtCommAmount").innerHTML = 0;
-            //document.getElementById("txtnetAmount").innerHTML = 0;
-
+        console.log('Clear','ok')
+        $('#idcustomer').val();
+        tempDataList = [];
+        addItemList = [];
+        $('#btnsaveOrder').val("Save");
+        showItemview();
 
     }
 
@@ -1927,23 +1646,14 @@
         var _dt = new Date();
 
         console.log(new Date(_dt).toLocaleString().split(',')[0]);
-
-        //var datev=  (new Date(date).toLocaleString().split(',')[0]);
-        //document.getElementById('OrDate').value = new Date(date).toLocaleString('en-US').split(',')[0];
         console.log([_dt.getDate(), _dt.getMonth(), _dt.getFullYear()]);
         document.getElementById('OrDate').value = [_dt.getDate(), _dt.getMonth() + 1, _dt.getFullYear()].join('/')
     }
     function UpdateData() {
-
-        //alert('lskdjfl');
         var list = [];
-        //list = gLocationList;
         console.log('list list', list);
         var empObj = {
-
             lngSlNo: lngSlNo,
-
-
             strBranchName: $('#responsid2').val(),
             strCustomer: $('#idcustomer').val(),
             strLedgerName: $('#responsid3').val(),
@@ -1966,12 +1676,28 @@
             dataType: "json",
             success: function (result) {
 
-                if (result == "Ok") {
-                    var idd = result;
-                    saveimage(idd);
-                    $('#itemModal').modal('hide');
-                    //cleardatda();
-                    //showGrid();
+                if (result == "Updated") {
+                    console.log('Update')
+
+                    var toastMixin = Swal.mixin({
+                        toast: true,
+                        icon: 'success',
+                        title: 'General Title',
+                        animation: false,
+                        //position: 'top-right',
+                        position: 'center',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                    });
+                        toastMixin.fire({
+                            animation: true,
+                            title: 'Update Successfully',
+
+                        });
+
+                        clearFromData();
+
                 } else {
                     cleardatda();
                     //alert("resutl sssssis ", result);
@@ -1982,23 +1708,31 @@
 
     }
 
-    //function calculateData(gItemList) {
-    //    var qtyTotalll = 0;
-    //    console.log('data check', gItemList)
-    //    if (gItemList.length === 0) {
-    //        for (i = 0; i < gItemList.length; i++) {
-    //            qtyTotalll += parseInt(gItemList[i].intItemQty);
+    function calculateData() {
+        var qtyTotalll = 0;
+        var qtyTotaAmount = 0;
+        var qtyTotaCommition = 0;
+        var qtyNetAmount = 0;
+        var totalItem = 0;
+        console.log('data check', tempDataList)
+        if (tempDataList.length >= 0) {
+            for (i = 0; i < tempDataList.length; i++) {
+                qtyTotalll += parseInt(tempDataList[i].intItemQty);
+                qtyTotaAmount += parseInt(tempDataList[i].dblTotalAmount);
+                qtyTotaCommition += parseInt(tempDataList[i].dblCommitionVal);
+                qtyNetAmount += parseInt(tempDataList[i].dblItemNetVal);
+                totalItem += parseInt(1);
+            }
+            //alert(qtyTotalll);
+            document.getElementById("Totalitem").innerHTML = totalItem;
+            document.getElementById("qtyTotal").innerHTML = qtyTotalll;
+            document.getElementById("txtTotalAmount").innerHTML = qtyTotaAmount;
+            document.getElementById("txtCommAmount").innerHTML = qtyTotaCommition;
+            document.getElementById("txtnetAmount").innerHTML = qtyNetAmount;
+        }
 
-
-    //        }
-    //        alert(qtyTotalll);
-    //        document.getElementById("qtyTotal").innerHTML = qtyTotalll;
-    //    }
-
-    //}
+    }
 
 </script>
-
-
 
 

@@ -85,7 +85,7 @@
                             style="margin: 2px;"
                             class="btn btn-success"
                             onclick="App();">
-                        <i class="fa fa-calculator" aria-="true"></i>&nbsp;Apprpve.
+                        <i class="fa fa-paper-plane" aria-="true"></i>&nbsp;Submit
                     </button>
                 </div>
 
@@ -100,43 +100,64 @@
 
         </div>
 
+
+
+
+
         <div class="col-lg-6">
-            <div class="row">
-                <div class="col-lg-2">
-                    <div class="row toggle-vis">
-                        <input type="radio" id="idneworder" checked style="height:18px;  width:35px; margin-top:5px" class="checkmarkl" name="rbtnname" value="NewInvoice" onclick="rbtnidNeworder();" />
-                        <label style="font-size:15px;"> New Order</label>
-                    </div>
+            <div class="row justify-content-end">
+
+
+
+
+                <div class="btnZhApprovedList">
+                    <button title="Order List."
+                            style="margin: 2px;"
+                            class="btn btn-success "
+                            id="btnnewlist"
+                            onclick="rbtnidNeworder();">
+                        <i class="fas fa-list" aria-="true"></i>&nbsp;Draft Order
+                    </button>
                 </div>
-                <div class="col-lg-2">
-                    <div class="row toggle-vis" data-column="14">
-                        
-                        @*<input type="radio" id="idZhApprove" style="height:20px; width:35px;"  name=" rbtnname" value="ZhApprove" onclick="rbtnidZhApprove();" />*@
-                        <input type="radio" id="idZhApprove" style="height: 18px; width: 35px; margin-top: 5px" class="checkmarkl toggle-vis" data-column="13" name="rbtnname" value="ZhApprove" onclick="rbtnidZhApprove();" />
-                        @*<a class="toggle-vis" data-column="13">ZH Approve</a>*@
-                        <label style="font-size:15px;">ZH Approve</label>
-                    </div>
+
+                <div class="btnZhApprovedList">
+                    <button title="Order List."
+                            style="margin: 2px;"
+                            class="btn btn-success "
+                            id="btnzhlist"
+                            onclick="rbtnidZhApprove();">
+                        <i class="fas fa-list" aria-="true"></i>&nbsp;ZH Approve List
+                    </button>
                 </div>
-                <div class="col-lg-2">
-                    <div class="row toggle-vis">
-                        <input type="radio" id="idReturnOrder" style="height: 18px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="ReturnOrder" onclick="rbtnidReturnOrder();" />
-                        <label style="font-size:15px;">Return Order</label>
-                    </div>
+
+                <div class="rbtnidReturnOrder">
+                    <button title="Order List."
+                            style="margin: 2px;"
+                            class="btn btn-success "
+                            id="btnreturn"
+                            onclick="rbtnidReturnOrder();">
+                        <i class="fas fa-undo-alt" aria-="true"></i>&nbsp;Return Order
+                    </button>
                 </div>
-                <div class="col-lg-2">
-                    <div class="row toggle-vis">
-                        <input type="radio" id="idBillDone" style="height: 18px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="BillDone" onclick="rbtnidbilldone()" />
-                        <label style="font-size: 15px;"> Bill Done </label>
-                    </div>
+
+                <div class="rbtnidbilldone">
+                    <button title="Order List."
+                            style="margin: 2px;"
+                            class="btn btn-success "
+                            id="idBillDone"
+                            onclick="rbtnidbilldone();">
+                        <i class="fas fa-thumbs-up" aria-="true"></i>&nbsp;Bill Done
+                    </button>
                 </div>
-     
 
             </div>
+
         </div>
+
+
+   
     </div>
-    @*<div>
-        Toggle column: <a class="toggle-vis" data-column="0">Name</a> - <a class="toggle-vis" data-column="1">Position</a> - <a class="toggle-vis" data-column="2">Office</a> - <a class="toggle-vis" data-column="3">Age</a> - <a class="toggle-vis" data-column="4">Start date</a> - <a class="toggle-vis" data-column="5">Salary</a>
-    </div>*@
+
 </div>
 <div class="modal fade bd-example-modal-lg"  role="dialog" data-backdrop="static" aria-labelledby="myLargeModalLabel exampleModalCenterTitle" aria-="true" id="itemModal">
 
@@ -175,22 +196,6 @@
                     <div class="row">
 
                         <div class="col-md-12">
-                            @*<div class="row">
-                                    <div class="col-sm-4" style="margin: 5px;">
-                                        <p style="text-align: right; font-size:15px;">Branch Name</p>
-                                    </div>
-                                    <div class="col-sm-7 " style="margin: 5px;">
-                                        <select id="responsid2" class="form-control">
-                                            <option value="">--Select One--</option>
-                                            @foreach (var item in ViewBag.BranchName)
-                                            {
-                                                <option value="@item.strBranch">@item.strBranch</option>
-                                            }
-                                        </select>
-
-                                    </div>
-
-                                </div>*@
 
                             <div class="row" hidden>
                                 <div class="col-sm-4" style="margin: 5px; ">
@@ -223,31 +228,6 @@
                             </div>
 
 
-
-
-
-
-
-
-                            @*<div class="row">
-                                <div class="col-sm-4" style="margin: 5px;">
-                                    <p style="text-align: right; font-size: 15px;">MPO Name</p>
-                                </div>
-                                <div class="col-sm-7 " style="margin: 5px;">
-                                    <select id="responsid3" class="form-control">
-                                        @*<option value="">--Select One--</option>*@
-                            @*@foreach (var item in ViewBag.BranchName)
-                                {*@
-                            @* <option value="@item.strLedgerName">@item.strLedgerName</option>*@
-                            @*}*@
-                            @*</select>*@
-
-
-
-                            @*</div>*@
-
-                            @*</div>*@
-
                             <div class="row" hidden>
                                 <div class="col-sm-4" style="margin: 5px; ">
                                     <p style="text-align: right; font-size: 15px;">MPO Name</p>
@@ -273,28 +253,21 @@
                                 </div>
                                 <div class="col-sm-5 " style="margin: 5px;">
                                     <select id="idcustomer" class="form-control">
-                                        @*<option value="">--Select One--</option>*@
-                                        @*@foreach (var item in ViewBag.reslist)
-                                            {
-                                            <option value="@item.strLocation">@item.strLocation</option>
-                                            }*@
+                                       
                                     </select>
                                 </div>
                             </div>
 
 
 
-                            <div class="row">
+                            <div class="row" hidden>
                                 <div class="col-sm-4" style="margin: 5px; ">
                                     <p style="text-align: right; font-size: 15px;">Location Name:</p>
                                 </div>
                                 <div class="col-sm-4 " style="margin: 5px;">
                                     <select id="ddllocationid" class="form-control">
                                         <option value="">--Select One--</option>
-                                        @*@foreach (var item in ViewBag.reslist)
-                                            {
-                                            <option value="@item.strLocation">@item.strLocation</option>
-                                            }*@
+                                      
                                     </select>
                                 </div>
                             </div>
@@ -324,10 +297,6 @@
                                     <div>
                                         <select id="ddlStockGrouplist" onchange="changeFunc()" class="form-control">
                                             <option value="">--Select One--</option>
-                                            @*@foreach (var item in ViewBag.reslist)
-                                                {
-                                                    <option value="@item.strLocation">@item.strLocation</option>
-                                                }*@
                                         </select>
                                     </div>
                                 </div>
@@ -336,10 +305,7 @@
                                     <div>
                                         <select id="ddlStockItemlist" class="form-control">
                                             <option value="">--Select One--</option>
-                                            @*@foreach (var item in ViewBag.reslist)
-                                                {
-                                                <option value="@item.strLocation">@item.strLocation</option>
-                                                }*@
+                                           
                                         </select>
                                     </div>
                                 </div>
@@ -351,7 +317,7 @@
                                                    class="form-control intRate"
                                                    name="intQty"
                                                    onchange=""
-                                                   @*onchange="calculateRate()"*@
+                                                 
                                                    id="intQty" />
                                         </div>
                                         <div class="col-md-7">
@@ -361,9 +327,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group" style=" float: right;">
-
-
-                                    @*<button type="submit" class="btn btn-dark"><i class="fa fa-plus"></i> Add to List</button>*@
 
                                 </div>
                             </div>
@@ -382,9 +345,9 @@
 
                 <div class="row">
 
-                    <div class="col-sm-8 ">
+                    <div class="col-sm-9 ">
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="row" style="margin-left:10px;">
                                     <div>
                                         <h6>Total Item:</h6>
@@ -394,7 +357,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="row">
                                     <div>
                                         <h6>Item Qty:</h6>
@@ -404,18 +367,43 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-lg-4">
+                                <div class="row">
+                                    <div>
+                                        <u style="text-align: left; font-size: medium">-------Delivery Address-------</u>
+                                    </div>
+                           
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
 
-                            <div class="col-sm-2" style="margin:0px; ">
+                            <div  style="margin-left :25px; ">
                                 <h5 style="text-align: left; font-size:12px;">Narration :</h5>
                             </div>
-                            <div class="col-lg-9 " style="margin: 0px;">
-                                <input type="text" class="form-control" id="strNaration" placeholder="Narration" />
+                            <div class="col-lg-6 " style="margin: 0px;">
+                                <input type="text"  class="form-control " id="strNaration" placeholder="Narration" />
                             </div>
+
+                            <div class="col-lg-2">
+                                <div class="row toggle-vis">
+                                    <input type="radio" id="idPartyAddress" style="height: 18px; width: 35px; margin-top: 5px" name="rbtnaddress" value="PartyAddress" onclick="rbtnidDeliveryAddress()" />
+                                    <label style="font-size:15px;">Party Address</label>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2">
+                                <div class="row toggle-vis">
+                                    <input type="radio" id="idMPOAddress" style="height: 18px; width: 35px; margin-top: 5px" name="rbtnaddress" value="MPOAddress" onclick="rbtnidDeliveryAddress()" />
+                                    <label style="font-size:15px;">MPO Address</label>
+                                </div>
+                            </div>
+
                         </div>
+                 
+
                     </div>
-                    <div class="col-sm-4 ">
+                    <div class="col-sm-3 ">
                         <div class="row">
                             <div class="col-sm-12 ">
                                 <div class="row">
@@ -431,7 +419,7 @@
                         </div>
                         <div class="row">
                             <div>
-                                <h6 style="text-align: left">Commition Amount:</h6>
+                                <h6 style="text-align: left">Commission Amount:</h6>
                             </div>
                             <div>
                                 <h5 style="text-align: right; font-size: medium" id="txtCommAmount"></h5>
@@ -450,9 +438,6 @@
 
 
                 <div class="modal-footer">
-                    @*<button type="submit" class="btn btn-outline-success " onclick="saveOrUpdates()">Submit</button>*@
-
-         
                     <span><input type="button" class="btn btn-primary" id="btnsaveOrder" onclick="saveOrUpdates();" value="Save"></input></span>
                     <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="clearFromData();" (click)="bsModalRef.hide()">Cancel</button>
                 </div>
@@ -465,27 +450,66 @@
     <table id="datatable4" class="table-bordered" style="width:100%"></table>
 </div>
 <script>
+    function rbtnidDeliveryAddress()
+    {
+        var radioValue = $("input[name='rbtnaddress']:checked").val();
+
+        console.log(radioValue)
+        if (radioValue == "PartyAddress") {
+
+            $('#strNaration').val ('Delivery In Party Address');
+        }
+        else {
+
+            $('#strNaration').val ('Delivery In MPO Address');
+        }
+    }
 
 
 
+    function rbtnidNeworder() {
+        document.getElementById('btnnewlist').style.backgroundColor = 'purple';
+        document.getElementById('btnzhlist').style.backgroundColor = 'green';
+        document.getElementById('btnreturn').style.backgroundColor = 'green';
+        document.getElementById('idBillDone').style.backgroundColor = 'green';
+        rbtnStatus = 4;
+        console.log('rbtnidNeworder', rbtnStatus);
+        showGrid();
+    }
+    function rbtnidZhApprove() {
+        document.getElementById('btnnewlist').style.backgroundColor = 'green';
+        document.getElementById('btnzhlist').style.backgroundColor = 'purple';
+        document.getElementById('btnreturn').style.backgroundColor = 'green';
+        document.getElementById('idBillDone').style.backgroundColor = 'green';
+        rbtnStatus = 3;
+        showGrid();
 
- 
- 
+    }
+    function rbtnidReturnOrder() {
+        document.getElementById('btnnewlist').style.backgroundColor = 'green';
+        document.getElementById('btnzhlist').style.backgroundColor = 'green';
+        document.getElementById('btnreturn').style.backgroundColor = 'purple';
+        document.getElementById('idBillDone').style.backgroundColor = 'green';
+        rbtnStatus = 2;
+        console.log('rbtnidNeworder', rbtnStatus);
+        showGrid();
+    }
+    function rbtnidbilldone() {
+        document.getElementById('btnnewlist').style.backgroundColor = 'green';
+        document.getElementById('btnzhlist').style.backgroundColor = 'green';
+        document.getElementById('btnreturn').style.backgroundColor = 'green';
+        document.getElementById('idBillDone').style.backgroundColor = 'purple';
+        rbtnStatus = 1;
+        console.log('rbtnidNeworder', rbtnStatus);
+        showGrid();
+    }
 
 
 
-
-
-    //function exportTo() {
-    //    var ddlVal = $('#exportOption').val();
-
-    //    window.open(
-
-    //"/RptSO/RptNewOrder?Rname=VSX &division=" + $('#ID_Division').val() + "&strDepartmentCard=" + $('#ID').val() + "&strFromdate=" + $('#datepicker1').val() + "&strToDate=" + $('#datepicker2').val() + "&intBloodGroup=" + x,
-    //'_blank' // <- This is what makes it open in a new window.
-    //);
-    //}
-
+    function cleardatda() {
+        document.getElementById('intQty').value = 0;
+        document.getElementById('ddlStockItemlist').value = "";
+    }
     $('#btnView').click(function () {
         var ddlVal = $('#exportOption').val();
         alert(ddlVal)
@@ -499,15 +523,6 @@
     );r
         //url: "/LeaveApplication/TourleaveSave?eid=" + empid + "&leaveid=" + lid + "&destination=" + Destinat + "&purpose=" + Purposee,
     });
-
-
-
-
-
-
-
-
-
 
 
     jQuery.ajaxSettings.traditional = true;
@@ -595,8 +610,6 @@
 
         document.getElementById('ID_OrderNumber').value = "";
 
-        //var idtxtOrder = $("#ID_OrderNumber");
-        //idtxtOrder.html('');
         $("#ID_OrderNumber").val = "";
         $.ajax({
             url: '@Url.Action("LastOrderNO")',
@@ -615,8 +628,6 @@
         var selectStockGroup = document.getElementById("ddlStockGrouplist").value;
         console.log("Group name is:");
         var selectLocation = document.getElementById("ddllocationid").value;
-        //alert(selectLocation)
-
         var ddlStockItemlist = $("#ddlStockItemlist");
         ddlStockItemlist.html('');
         $.ajax({
@@ -631,7 +642,6 @@
                 ddlStockItemlist.append($('<option value=--Select One-->--Select One--</option>'));
                 $.each(data, function (id, option) {
                     ddlStockItemlist.append($('<option value="' + option.strItemName + '">' + option.strItemName + '</option>'));
-                    //ddlResponsid3.append($('<option></option>').val(option.strLedgerName).html(option.strLedgerName));
                 });
 
             }
@@ -646,47 +656,7 @@
 
 
     $(document).ready(function () {
-        //swal({
-        //    title: "Sorry!",
-        //    text: "User Id or Password Mismathc",
-        //    type: "warning",
-        //    timer: 6000
-        //});
-
-        //var toastMixin = Swal.mixin({
-        //    toast: true,
-        //    icon: 'success',
-        //    title: 'General Title',
-        //    animation: false,
-        //    position: 'top-right',
-        //    showConfirmButton: false,
-        //    timer: 3000,
-        //    timerProgressBar: true,
-
-
-        //});
-
-
-        //document.querySelector(".second").addEventListener('click', function () {
-        //    toastMixin.fire({
-        //        animation: true,
-        //        title: 'Signed in Successfully',
-      
-        //    });
-        //});
-
-
-        //var table = $('#datatable4').DataTable({
-            
-        //});
-
-
-
-
-
-
-
-     
+        document.getElementById('btnnewlist').style.backgroundColor = 'purple';
         document.getElementById("Totalitem").innerHTML = 0;
         document.getElementById("qtyTotal").innerHTML = 0;
         document.getElementById("txtTotalAmount").innerHTML = 0;
@@ -751,7 +721,6 @@
                 ddllocationid3.append($('<option value=--Select One-->--Select One--</option>'));
                 $.each(data, function (id, option) {
                     ddllocationid3.append($('<option value="' + option.strLocation + '">' + option.strLocation + '</option>'));
-                    //ddlResponsid3.append($('<option></option>').val(option.strLedgerName).html(option.strLedgerName));
                 });
                 $('#ddllocationid').val(selectdata.strLocation);
 
@@ -762,7 +731,6 @@
 
 
     function mloadCustomer() {
-        //selectMpo = $(this).val();
 
         var selectMpo = document.getElementById("ID_Mpo").value;
         var ddlDoctorlist = $("#idcustomer");
@@ -779,10 +747,7 @@
                 $.each(data, function (id, option) {
 
                     ddlDoctorlist.append($('<option value="' + option.strDoctorName + '">' + option.strCustomerName + '</option>'));
-                    //console.log('rbtnidNeworder',  option.strDoctorName );
                 });
-                //alert("2")
-                //$('#idcustomer').val($('#strDoctorName').val());
                 $('#idcustomer').val(selectdata.strDoctorName);
                 $('#idcustomer').trigger('change');
 
@@ -806,9 +771,6 @@
             }).then(function (isConfirm) {
                 if (isConfirm) {
 
-                    //alert("Alll")
-
-
                     $.ajax({
                         type: "POST",
                         url: "/SalesOrder/mUpdateSalesOrderOnlineComm",
@@ -816,12 +778,11 @@
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         success: function (r) {
-                            //alert(r + " record(s) inserted.");
                         }
                     });
 
                 } else {
-                    //alert("Cancel...")
+            
                 }
             });
 
@@ -833,74 +794,6 @@
 
 
 
-    function rbtnidNeworder() {
-
-        rtbtnStatus();
-        console.log('rbtnidNeworder', rbtnStatus);
-        showGrid();
-    }
-    function rbtnidZhApprove() {
-        rtbtnStatus();
-        showGrid();
-
-
-
-     
-
-
-    }
-    function rbtnidReturnOrder() {
-        rtbtnStatus();
-        console.log('rbtnidNeworder', rbtnStatus);
-        showGrid();
-    }
-    function rbtnidbilldone() {
-        rtbtnStatus();
-        showGrid();
-    }
-    function rtbtnStatus() {
-        var radioValue = $("input[name='rbtnname']:checked").val();
-
-
-
-
-        if (radioValue == "NewInvoice") {
-
-            rbtnStatus = 4;
-            checkboxColamstatus = true;
-            editColamStatus = true;
-            deleteColamStatus = true;
-            CreditLimitColamStatus = true;
-        }
-        else if (radioValue == "ZhApprove") {
-            rbtnStatus = 3;
-            checkboxColamstatus = false;
-            editColamStatus = true;
-            deleteColamStatus = true;
-            CreditLimitColamStatus = true;
-        }
-        else if (radioValue == "ReturnOrder") {
-            rbtnStatus = 2;
-            checkboxColamstatus = false;
-            editColamStatus = true;
-            deleteColamStatus = true;
-            CreditLimitColamStatus = true;
-        }
-        else if (radioValue == "BillDone") {
-            rbtnStatus = 1;
-            checkboxColamstatus = false;
-            editColamStatus = false;
-            deleteColamStatus = false;
-            CreditLimitColamStatus = false;
-        }
-        else {
-            rbtnStatus = 0;
-            checkboxColamstatus = true;
-            editColamStatus = true;
-            deleteColamStatus = true;
-            CreditLimitColamStatus = true;
-        }
-    }
 
     function clikRefresh() {
         rbtnStatus = 5;
@@ -921,8 +814,6 @@
     function showGrid() {
         strUserName=   document.getElementById('lblledgerName').textContent
 
-        //alert(strUserName);
-
         table = $('#datatable4').DataTable({
             "bDestroy": true,
             "select": true,
@@ -934,12 +825,12 @@
 
 
                 "dataSrc": function (response) {
+
+                    detailsList=response;
                     response.draw = response.draw;
                     response.recordsTotal = response.recordsTotal;
                     response.recordsFiltered = response.recordsFiltered;
                     console.log('request.responseText', response);
-
-
 
                     return response;
                 }
@@ -1042,7 +933,7 @@
                               row,
                               meta) {
                                
-                               return '<input type="checkbox" id="chkSingle' + (meta.row + 1) + '" value= ' + data + '  class="select-checkbox sales-sloat-select"  />';
+                               return '<input type="checkbox"  name="chkSingle" id="chkSingle' + (meta.row + 1) + '" value= ' + data + '  class="select-checkbox sales-sloat-select"  />';
 
            
                            },
@@ -1120,7 +1011,7 @@
                 }
                 $(row).find(".sales-sloat-select").click(function () {
                     selectdata = data;
-
+                    //alert("ok");
                     if (data.fcheck == 0) {
                         data.fcheck = 1;
                         addtoList(selectdata);
@@ -1130,7 +1021,7 @@
                         delettoList(selectdata);
                 
                     }
-                    console.log('hello edit dddeeeee', data.fcheck);
+                    console.log('kib', data.fcheck);
 
 
                 });
@@ -1157,40 +1048,36 @@
             }
 
         });
-
-     
-
-
       
     }
 
 
     function checkAll(chk) {
-
         var checked = $('#' + chk.id).prop('checked');
         //alert(checked)
+        finalList = [];
         $('#datatable4').each(function (i, val) {
-      
-            $(this).find('.chkSingle').prop('checked', checked);
+
+            $(this).find('.sales-sloat-select').prop('checked', checked);
+
             if (checked == true) {
-                $(this).addClass('bg-danger');
-                console.log(i, selectData);
+
+                finalList=detailsList;
+         
+
+
+                //$(this).addClass('bg-danger');
+                //console.log(i, selectData);
             }
             else {
-                $(this).removeClass('bg-success');
-               
+                //$(this).removeClass('bg-success');
+
             }
         });
+
     }
 
     function App() {
-
-        //for (var i = 0; i < finalList.length; i++) {
-
-        //    //console.log(finalList[i].strVoucherNo);
-
-        //}
-
 
         var empObj = {
 
@@ -1207,16 +1094,7 @@
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             success: function (result) {
-
-                //alert(result);
                 if (result == "OK") {
-
-
-                    //var idd = result;
-                    //saveimage(idd);
-                    //$('#itemModal').modal('hide');
-                    //clearFromData();
-                 
                 } else {
                     //alert("resutl is ", result);
                 };
@@ -1226,24 +1104,13 @@
             }
         });
 
-
-
-
-
-
- 
     }
     var selectList = [];
 
     function orderprint(strVNo, strMerzeNamee) {
         var ddlVal = $('#exportOption').val();
-        //alert(ddlVal)
-
         console.log('voucher No', strVNo)
         console.log('voucher led', strMerzeNamee)
-        //var x = document.getElementById("bloodgId").value;
-        //alert(x)
-
         window.open(
     "/RptSO/RptNewOrder?strVoucherNO=" + encodeURIComponent(strVNo) + " &vstrLedgerName=" + strMerzeNamee+"&exportOpt=" + ddlVal,
     '_blank' // <- This is what makes it open in a new window.
@@ -1321,10 +1188,6 @@
                 }
 
             }
-
-
-            //console.log('check strue', countt);
-
         }
 
 
@@ -1342,19 +1205,11 @@
 
 
         $('#idcustomer').val(selectdata.strDoctorName);
-        //$('#idcustomer').trigger('change');
-
         mloadLocation();
 
         $('#ddllocationid').val(selectdata.strLocation);
         $('#OrDate').val(selectdata.strTranDate);
-        //alert(selectdata.strTranDate)
         $('#ID_OrderNumber').val(selectdata.strVoucherNo);
-
-        //idcustomer
-
-
-        //mloadCustomer(selectdata.strVoucherNo)
         mloadOrderDetails(selectdata.strVoucherNo)
         $('#btnsaveOrder').val("Update");
         $('#btnsaveOrder').val("Update");
@@ -1362,28 +1217,6 @@
 
     }
 
-    //function mloadCustomer(OrderNO) {
-    //    //$('#ID_OrderNumber').val(selectdata.strVoucherNo);
-
-    //    var empObj = {
-    //        strOrderNo: OrderNO,
-    //    };
-    //    $.ajax({
-    //        url: "/SalesOrder/mloadCusotmer",
-    //        data: JSON.stringify(empObj),
-    //        type: "POST",
-    //        contentType: "application/json;charset=utf-8",
-    //        dataType: "json",
-    //        success: function (strLocation) {
-    //            strLocatioandd = strLocation;
-    //            console.log('1');
-    //            console.log('1st-', strLocatioandd);
-    //            //$('#ddllocationid').val(data);
-    //            //$('#ddllocationid').val(selectdata.strDoctorName);
-    //            //$('#idcustomer').trigger('change');
-    //        }
-    //    });
-    //}
     function mloadOrderDetails(OrderNO) {
         var empObj = {
             strOrderNo: OrderNO,
@@ -1404,16 +1237,12 @@
 
 
                 console.log('he',tempDataList);
-                //console.log('hello edit New', data);
-                //showItemview(data);
                 calculateData();
                 showItemview();
             }
         });
     }
     function deleteItem(itemName) {
-        //console.log("before delete"+tempDataList.length);
-
         for (i = 0; i < tempDataList.length; i++) {
             if (tempDataList[i].strItemName == itemName) {
 
@@ -1421,8 +1250,6 @@
             }
 
         }
-        //console.log("after delete" + tempDataList.length);
-
         deleteitemcommCall();
         showItemview();
         calculateData();
@@ -1434,42 +1261,25 @@
 
         $.ajax({
             url: "/Item/locationListByItemId?id=" + id,
-            //data: JSON.stringify(empObj),
             type: "POST",
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             success: function (result) {
-                //alert("result ",result)
                 gLocationList = result;
 
                 if (gLocationList.length > 0) {
 
                     showlocationlview();
-                    //calculateData();
                 }
-
-
-
             }
         });
 
     }
-    function calculateRate() {
 
-        //itemRate = $('#intRate').val();
-        //itemQty = $('#intQty').val();
-        ////alert(itemQty)
-        //itemAmount = itemRate * itemQty;
-        ////alert(itemAmount)
-        //$("#itemAmount").val(itemAmount);
-        //console.log(itemRate, itemQty, itemAmount);
-
-    }
     function deleteItemsById(id) {
         alert(id)
         $.ajax({
             url: "/SalesOrder/deleteItemById?voucherNo=" + id ,
-            //data: JSON.stringify(empObj),
             type: "POST",
             contentType: "application/json;charset=utf-8",
             dataType: "json",
@@ -1491,9 +1301,6 @@
 
 
     function addOrEditItem() {
-
-     //var   btn = $('#btnsaveOrder').val();
-
         var OrderDate = $('#OrDate').val();
         if (OrderDate == undefined || OrderDate == null || OrderDate == "") {
             swal('Required!!!', 'Required Order Date', 'warning')
@@ -1502,22 +1309,14 @@
         var order_date = $('#OrDate').val();
 
         var selectedItem = $('#ddlStockItemlist').val();
-
-
-
         var addStaus = "";
-
-
-
         $.each(addItemList, function (key, itemddd) {
             console.log('new list add item', gItemList);
-            //debugger
+        
             var aa = $('#ddlStockItemlist').val();
-                //alert(aa);
-                //alert(itemddd.strItemName);
+        
                 if (itemddd.strItemName == aa) {
 
-                    //alert(a);
                     addStaus = 'True';
                     return
                 }
@@ -1525,24 +1324,11 @@
 
         });
 
-        //for (var i = 0; i < gItemList.length; i++) {
-
-        //    var aa = $('#ddlStockItemlist').val();
-
-        //    if (gItemList.strItemName == aa) {
-        //        alert(gItemList.strItemName);
-        //        addStaus = 'True';
-        //        return
-        //    }
-        //}
-
-
         var obj = {
             "flammable": "inflammable",
             "duh": "no duh"
         };
         $.each(obj, function (key, value) {
-            //alert(key + ": " + value);
         });
 
         if (addStaus=='True')
@@ -1564,17 +1350,8 @@
     function clearitem() {
         $('#intQty').val("");
         $("#ddlStockItemlist").val('').trigger('change')
-        //ddlStockItemlist.html('');
-        //$('#ddlStockItemlist').val("");
-        //$("#ddlStockItemlist").select2("val", "");
-        //document.getElementById("ddlStockItemlist").innerHTML = "";
     }
     function itemRate(strComid, strItemGroup, strItemName, strOrderDate, intQty, strBranchName) {
-
-
-
-
-
         $.ajax({
             url: '@Url.Action("gFillStockItemRate")',
             datatype: "json",
@@ -1592,13 +1369,10 @@
                 this.strPowerClassGet = data.strPowerClass;
                 this.strPackSizeGet = data.strPackSize;
                 this.dblItemRatesGet = data.dblBranchRate;
-                //this.strUnitGet = data.strUnit;
                 this.intBonusQtyGet = data.dblbonusQty;
                 this.strSubGroup_NameGet = data.strSubGroup_Name;
 
                 var result = false;
-
-
 
                     addItemList.push({
                         strItemGroup: $('#ddlStockGrouplist').val(),
@@ -1609,15 +1383,11 @@
                         intItemQty: $('#intQty').val(),
                         dblItemRate: this.dblItemRatesGet,
                         strUnit: this.strUnitGet,
-                        //dblCommission: this.dblcom,
                         intBonusQty: this.intBonusQtyGet,
                         dblTotalAmount: $('#intQty').val() * this.dblItemRatesGet,
                         strCustomer: $('#idcustomer').val(),
                         strDate: $('#OrDate').val()
                     });
-
-                //debugger detailsList
-
 
                 $.ajax({
                     type: "POST",
@@ -1626,22 +1396,13 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (data) {
-                           //gItemList = [];
                            gItemList.push(data);
-
-
-                        //showItemview(data);
-
                            tempDataList = data;
                            showItemview();
                     }
 
                 });
                 console.log('list', gItemList);
-                //commissionCal();
-                //showItemview();
-
-
             }
 
         })
@@ -1649,9 +1410,6 @@
     }
 
     function deleteitemcommCall() {
-
-
-
         $.ajax({
             type: "POST",
             url: "/SalesOrder/CommossionCalculet",
@@ -1659,12 +1417,7 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (data) {
-                //gItemList = [];
                 gItemList.push(data);
-
-
-                //showItemview(data);
-
                 tempDataList = data;
                 showItemview();
             }
@@ -1676,17 +1429,13 @@
     }
 
     function showItemview() {
-        //TotalQty(gItemList);
         console.log(tempDataList);
-
         intItemQty = 0;
         totalAmount = 0;
         totalcommision = 0;
         totalnetamount = 0;
 
         this.detailsList = this.tempDataList;
-
-        //calculateData(detailsList);
         $('#itemDatatable').DataTable({
             data: this.tempDataList,
             "bDestroy": true,
@@ -1699,9 +1448,6 @@
                 console.log('request.responseText', response);
                 return response;
             },
-
-
-            //"scrollX": true,
             "select": true,
             columns: [
 
@@ -1717,30 +1463,19 @@
                     },
                     "visible": false,
                 },
-
-                    //{ title: 'Location Name', data: 'strLocation' },dblPercent
-
                         { title: 'Sub Group', data: 'strSubGroup_Name' , "visible": false,},
                         { title: 'Per', data: 'dblPercent', "visible": false, },
-                        { title: 'Group Name', data: 'strItemGroup' },
-                        { title: 'Item Name', data: 'strItemName' },
-
+                        { title: 'Group', data: 'strItemGroup' },
+                        { title: 'Item', data: 'strItemName' },
+                        { title: 'Bonus Qty', data: 'intBonusQty' },
                         { title: 'Powre/Calss', data: 'strPowerClass', "visible": false, },
                         { title: 'Pack Size', data: 'strPackSize', "visible": false, },
                         { title: 'Qty', data: 'intItemQty', className: 'editable' },
                         { title: 'Rate', data: 'dblItemRate', className: 'editable', "visible": false, },
                         { title: 'Per', data: 'strUnit', "visible": false,},
-                        { title: 'Total Amount', data: 'dblTotalAmount' },
+                        { title: 'Sub.Total', data: 'dblTotalAmount' },
                         { title: 'Commission', data: 'dblCommitionVal', "visible": false, },
-                        { title: 'Bonus Qty', data: 'intBonusQty' },
-                        { title: 'Net Amount', data: 'dblItemNetVal', width: 100 },
-
-                         //{
-                         //    title: 'Edit',
-                         //    render: function (data, type, row) {
-                         //        return '<button type="button"   class="btn btn-info fontsize  sales-sloat-ak">Edit</button>';
-                         //    }
-                         //},
+                        { title: 'Total', data: 'dblItemNetVal', width: 100 },
                         {
                             title: 'Delete',
                             render: function (data, type, row) {
@@ -1752,40 +1487,19 @@
             "responsive": true,
             "rowCallback": function (row, data) {
 
-
-
-                //intItemQty += data.intItemQty;
-                //totalAmount =totalAmount + data.dblTotalAmount;
-                //totalcommision =totalcommision + data.dblCommitionVal;
-                //totalnetamount = totalnetamount + data.dblItemNetVal;
-
-
-                //document.getElementById("qtyTotal").innerHTML = intItemQty;
-                //document.getElementById("txtTotalAmount").innerHTML = totalAmount;
-                //document.getElementById("txtCommAmount").innerHTML = totalcommision;
-                //document.getElementById("txtnetAmount").innerHTML = totalnetamount;
-
                 $(row)
                  .bind('click')
                  .click(function () {
-
                      selectlocationItem = data;
-                     //console.log('hello delete dataddddddddd', selectlocationItem);
-                     //rerender();
                  });
                 $(row).find(".sales-sloat-ak").click(function () {
                     selectlocationItem = data;
                     editLocation(selectlocationItem);
-                    //that.salesss(data);
-                    //that.rerender();
                 });
                 $(row).find(".delete-sloat-ak").click(function () {
                     selectlocationItem = data;
                     console.log('hello kkk', selectlocationItem);
                     deleteItem(selectlocationItem.strItemName);
-                   
-                    //that.salesss(data);
-                    //that.rerender();
                 });
 
             }
@@ -1801,23 +1515,13 @@
 
         } else {
 
-            //console.log('request.responseText', selectdata);
             UpdateData();
         }
 
     }
     function saveData() {
-
-        //alert(brandId);
-
-        //alert(brandName);
         jQuery.ajaxSettings.traditional = true;
-        //var list = [];
-        //list = gItemList;
-
-
-
-
+        
         console.log('list list', this.detailsList);
 
         var empObj = {
@@ -1826,10 +1530,10 @@
             strBranchName: $('#responsid2').val(),
             strCustomer: $('#idcustomer').val(),
             strLedgerName: $('#ID_Mpo').val(),
-            //strOrderNo: $('#ID_OrderNumber').val(),
             strOrderNo: 'SO0001' + $('#ID_OrderNumber').val(),
             strOrderDate: $('#OrDate').val(),
-            strLocation: $('#ddllocationid').val(),
+            //strLocation: $('#ddllocationid').val(),
+            strLocation: 'Main Location',
             dblTotalAmount: $('#txtTotalAmount').text(),
             dblCommitionVal: $('#txtCommAmount').text(),
             dblNetTotal: $('#txtnetAmount').text(),
@@ -1847,15 +1551,7 @@
             contentType: "application/json;charset=utf-8",
             dataType: "json",
             success: function (result) {
-
-                //alert(result);
                 if (result == "OK") {
-
-
-                    //var idd = result;
-                    //saveimage(idd);
-                    //$('#itemModal').modal('hide');
-             
 
                     var toastMixin = Swal.mixin({
                         toast: true,
@@ -1869,9 +1565,6 @@
 
 
                     });
-
-
-
                     toastMixin.fire({
                         animation: true,
                         title: 'Save Successfully',
@@ -1880,7 +1573,6 @@
                     clearFromData();
                     showGrid();
                 } else {
-                    //alert("resutl is ", result);
                 };
 
             }
@@ -1889,7 +1581,6 @@
 
     function clearFromData() {
         console.log('Clear','ok')
-        //$('#idcustomer').val('');
         $('#idcustomer').val();
         tempDataList = [];
         addItemList = [];
@@ -1905,23 +1596,14 @@
         var _dt = new Date();
 
         console.log(new Date(_dt).toLocaleString().split(',')[0]);
-
-        //var datev=  (new Date(date).toLocaleString().split(',')[0]);
-        //document.getElementById('OrDate').value = new Date(date).toLocaleString('en-US').split(',')[0];
         console.log([_dt.getDate(), _dt.getMonth(), _dt.getFullYear()]);
         document.getElementById('OrDate').value = [_dt.getDate(), _dt.getMonth() + 1, _dt.getFullYear()].join('/')
     }
     function UpdateData() {
-
-        //alert('lskdjfl');
         var list = [];
-        //list = gLocationList;
         console.log('list list', list);
         var empObj = {
-
             lngSlNo: lngSlNo,
-
-
             strBranchName: $('#responsid2').val(),
             strCustomer: $('#idcustomer').val(),
             strLedgerName: $('#ID_Mpo').val(),
@@ -1957,12 +1639,7 @@
                         showConfirmButton: false,
                         timer: 2000,
                         timerProgressBar: true,
-
-
                     });
-
-
-            
                         toastMixin.fire({
                             animation: true,
                             title: 'Update Successfully',

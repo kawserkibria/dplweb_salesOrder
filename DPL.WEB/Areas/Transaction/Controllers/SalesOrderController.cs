@@ -527,7 +527,10 @@ namespace DPL.WEB.Areas.Transaction.Controllers
             {
                 strSQL = strSQL + " AND INV_STOCKITEM.STOCKGROUP_NAME = '" + vstrRoot + "' ";
             }
-            strSQL = strSQL + " AND INV_TRAN.GODOWNS_NAME='" + vstrGodown + "' ";
+            if (vstrGodown != "")
+            {
+                strSQL = strSQL + " AND INV_TRAN.GODOWNS_NAME='" + vstrGodown + "' ";
+            }
             strSQL = strSQL + "AND INV_STOCKITEM.STOCKITEM_STATUS=0 ";
             strSQL = strSQL + "GROUP BY INV_STOCKITEM.STOCKITEM_NAME,INV_STOCKITEM.STOCKITEM_BASEUNITS  ORDER by INV_STOCKITEM.STOCKITEM_NAME ASc ";
 
@@ -1116,24 +1119,31 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                             }
                             if (intStatusCol == 3)
                             {
-                                //Commi.Cal
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL=1 ";
-                                strSQL = strSQL + "AND APPS_SI_RET <>1 ";
-                                strSQL = strSQL + "AND APP_STATUS IN(1,0)  ";
+
+                                //ZH Approved
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
+                                strSQL = strSQL + "AND APP_STATUS=2  ";
+                                //strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
+                                ////Commi.Cal
+                                //strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL=1 ";
+                                ////strSQL = strSQL + "AND APPS_SI_RET <>1 ";
+                                //strSQL = strSQL + "AND APP_STATUS IN(1,0)  ";
                             }
                             if (intStatusCol == 4)
                             {
                                 //New order
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL IN(0)  ";
-                                strSQL = strSQL + "AND APP_STATUS=1  ";
+                                strSQL = strSQL + "AND APP_STATUS=0  ";
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
                             }
                             if (intStatusCol == 5)
                             {
-                                //ZH Approved
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
-                                strSQL = strSQL + "AND APP_STATUS=2  ";
-                                //strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
+        
+
+                                //Commi.Cal
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL=1 ";
+                                //strSQL = strSQL + "AND APPS_SI_RET <>1 ";
+                                strSQL = strSQL + "AND APP_STATUS IN(1,0)  ";
                             }
                         }
 
@@ -1320,12 +1330,13 @@ namespace DPL.WEB.Areas.Transaction.Controllers
             double dbltotalAmount = 0, dblTotalItem = 0, dblTotaCommissition = 0;
 
             List<OrderDetails> oogrp = new List<OrderDetails>();
-            foreach (var s in objStockItem)
-            {
-                strOrdate = s.strDate;
-                strCustomer = s.strCustomer;
-            }
 
+                foreach (var s in objStockItem)
+                {
+                    strOrdate = s.strDate;
+                    strCustomer = s.strCustomer;
+                }
+          
             List<StockGroup> ooSample = StockGrouplsit(strComID);  //commision
             foreach (StockGroup oobj in ooSample)
             {
@@ -1655,7 +1666,7 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                     for (int i = 0; i < gItemList.detailsList.Count; i++)
                     {
 
-                        strSQL = "UPDATE ACC_COMPANY_VOUCHER SET APP_STATUS=1,APPS_COMM_CAL=1,ORDER_DATE= " + Utility.cvtSQLDateString(gItemList.detailsList[i].strTranDate) + " WHERE COMP_REF_NO='" + gItemList.detailsList[i].strVoucherNoMerz + "' ";
+                        strSQL = "UPDATE ACC_COMPANY_VOUCHER SET APP_STATUS=1,APPS_COMM_CAL=1,ONLINE=1,ORDER_DATE= " + Utility.cvtSQLDateString(gItemList.detailsList[i].strTranDate) + " WHERE COMP_REF_NO='" + gItemList.detailsList[i].strVoucherNoMerz + "' ";
                         cmdInsert.CommandText = strSQL;
                         cmdInsert.ExecuteNonQuery();
                         lngBillPosition += 1;
