@@ -692,10 +692,10 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                     }
                     else if (mintVType == 12)
                     {
-                        strSQL = "SELECT distinct t.GODOWNS_NAME, ACC_LEDGER_Z_D_A.LEDGER_NAME ,ACC_COMPANY_VOUCHER_BRANCH_VIEW.SALES_REP  , ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_SERIAL ,ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL,ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_REF_NO,ACC_COMPANY_VOUCHER_BRANCH_VIEW.REF_NO,ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_TYPE,ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_DATE,";
+                        strSQL = "SELECT distinct t.GODOWNS_NAME, ACC_LEDGER_Z_D_A.LEDGER_NAME ,ACC_COMPANY_VOUCHER_BRANCH_VIEW.SALES_REP,ACC_COMPANY_VOUCHER_BRANCH_VIEW.SALES_REP,l.LEDGER_NAME_MERZE Doctor ,ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_NARRATION  , ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_SERIAL ,ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL,ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_REF_NO,ACC_COMPANY_VOUCHER_BRANCH_VIEW.REF_NO,ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_TYPE,ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_DATE,";
                         strSQL = strSQL + "ACC_COMPANY_VOUCHER_BRANCH_VIEW.LEDGER_NAME , ACC_COMPANY_VOUCHER_BRANCH_VIEW.BRANCH_NAME, ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_AMOUNT, ";
                         strSQL = strSQL + "ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_NET_AMOUNT,ACC_COMPANY_VOUCHER_BRANCH_VIEW.LEDGER_CODE,ACC_COMPANY_VOUCHER_BRANCH_VIEW.LEDGER_NAME_MERZE,'' VOUCHER_REVERSE_LEDGER ";
-                        strSQL = strSQL + ",APP_STATUS,APPS_SI_RET,ACC_LEDGER_Z_D_A.DIVISION,ACC_LEDGER_Z_D_A.AREA,ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS From ACC_COMPANY_VOUCHER_BRANCH_VIEW,ACC_LEDGER_Z_D_A, ACC_BILL_TRAN t WHERE  ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_REF_NO=t.COMP_REF_NO and ACC_LEDGER_Z_D_A.LEDGER_NAME =ACC_COMPANY_VOUCHER_BRANCH_VIEW.LEDGER_NAME  ";
+                        strSQL = strSQL + ",APP_STATUS,APPS_SI_RET,ACC_LEDGER_Z_D_A.DIVISION,ACC_LEDGER_Z_D_A.AREA,ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS From ACC_COMPANY_VOUCHER_BRANCH_VIEW,ACC_LEDGER_Z_D_A, ACC_BILL_TRAN t,ACC_LEDGER L WHERE  ACC_COMPANY_VOUCHER_BRANCH_VIEW.SALES_REP=l.LEDGER_NAME and ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_REF_NO=t.COMP_REF_NO and ACC_LEDGER_Z_D_A.LEDGER_NAME =ACC_COMPANY_VOUCHER_BRANCH_VIEW.LEDGER_NAME  ";
                         strSQL = strSQL + " AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_TYPE = " + mintVType + " ";
                         strSQL = strSQL + " AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.SP_JOURNAL= " + intSPJ + " ";
                         strSQL = strSQL + " AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.SAMPLE_STATUS=0 ";
@@ -763,39 +763,77 @@ namespace DPL.WEB.Areas.Transaction.Controllers
 
                         if (intStatusCol != 0)
                         {
+
                             if (intStatusCol == 1)
+                            {
+                                //New Order list
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 0 ";
+                                strSQL = strSQL + "AND APP_STATUS=0  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
+                            }
+                            if (intStatusCol == 2)
+                            {
+                                //Area Head list
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
+                                strSQL = strSQL + "AND APP_STATUS=0  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.ONLINE=1  "; 
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0 ";
+                            }
+                            if (intStatusCol == 3)
+                            {
+                                //ZH List
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
+                                strSQL = strSQL + "AND APP_STATUS=1  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.ONLINE=1  "; 
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
+                            }
+                            if (intStatusCol == 4)
+                            {
+                                //Area Head
+                                strSQL = strSQL + "AND APPS_SI_RET IN(1,2) ";
+                            }
+                          
+                            if (intStatusCol == 5)
                             {
                                 //bill Done
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
                                 strSQL = strSQL + "AND APP_STATUS=4  ";
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 1 ";
                             }
-                            if (intStatusCol == 2)
-                            {
-                                //Order Return
-                                strSQL = strSQL + "AND APPS_SI_RET IN(1,2) ";
-                            }
-                            if (intStatusCol == 3)
-                            {
-                                //Commi.Cal
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL=1 ";
-                                strSQL = strSQL + "AND APPS_SI_RET <>1 ";
-                                strSQL = strSQL + "AND APP_STATUS IN(1,0)  ";
-                            }
-                            if (intStatusCol == 4)
-                            {
-                                //New order
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL IN(0)  ";
-                                strSQL = strSQL + "AND APP_STATUS=0  ";
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
-                            }
-                            if (intStatusCol == 5)
-                            {
-                                //ZH Approved
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
-                                strSQL = strSQL + "AND APP_STATUS=2  ";
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
-                            }
+                           
+                            //if (intStatusCol == 1)
+                            //{
+                            //    //bill Done
+                            //    strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
+                            //    strSQL = strSQL + "AND APP_STATUS=4  ";
+                            //    strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 1 ";
+                            //}
+                            //if (intStatusCol == 2)
+                            //{
+                            //    //Order Return
+                            //    strSQL = strSQL + "AND APPS_SI_RET IN(1,2) ";
+                            //}
+                            //if (intStatusCol == 3)
+                            //{
+                            //    //Commi.Cal
+                            //    strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL=1 ";
+                            //    strSQL = strSQL + "AND APPS_SI_RET <>1 ";
+                            //    strSQL = strSQL + "AND APP_STATUS IN(1,0)  ";
+                            //}
+                            //if (intStatusCol == 4)
+                            //{
+                            //    //New order
+                            //    strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL IN(0)  ";
+                            //    strSQL = strSQL + "AND APP_STATUS=0  ";
+                            //    strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
+                            //}
+                            //if (intStatusCol == 5)
+                            //{
+                            //    //ZH Approved
+                            //    strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
+                            //    strSQL = strSQL + "AND APP_STATUS=2  ";
+                            //    strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
+                            //}
                         }
 
 
@@ -890,11 +928,12 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                     {
                         oLedg.strReverseLegder = "";
                     }
-
+                    
                     oLedg.strMerzeName = dr["LEDGER_NAME_MERZE"].ToString();
                     oLedg.intAppStatus = Convert.ToInt16(dr["APP_STATUS"].ToString());
                     oLedg.intvoucherPos = Convert.ToInt16(dr["APPS_COMM_CAL"].ToString());
                     oLedg.intAppSIRet = Convert.ToInt16(dr["APPS_SI_RET"].ToString());
+                
                     if (dr["DIVISION"].ToString() != "")
                     {
                         oLedg.strDivisionName = dr["DIVISION"].ToString();
@@ -923,6 +962,14 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                     }
                     oLedg.strTC = dr["LEDGER_NAME"].ToString();
                     oLedg.intStatus = Convert.ToInt16(dr["COMP_VOUCHER_STATUS"].ToString());
+                    if (dr["COMP_VOUCHER_NARRATION"].ToString() != "")
+                    {
+                        oLedg.strNarration = dr["COMP_VOUCHER_NARRATION"].ToString();
+                    }
+                    else
+                    {
+                        oLedg.strNarration = "";
+                    }
                     oLedg.strPreserveSQL = strSQL;
 
                     ooAccLedger.Add(oLedg);
@@ -1103,50 +1150,49 @@ namespace DPL.WEB.Areas.Transaction.Controllers
 
                         strSQL = strSQL + "and ACC_LEDGER_Z_D_A.AREA='" + strUserName + "' ";
 
+
                         if (intStatusCol != 0)
                         {
+
                             if (intStatusCol == 1)
+                            {
+                                //New Order list
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 0 ";
+                                strSQL = strSQL + "AND APP_STATUS=0  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
+                            }
+                            if (intStatusCol == 2)
+                            {
+                                //Area Head list
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
+                                strSQL = strSQL + "AND APP_STATUS=0  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.ONLINE=1  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0 ";
+                            }
+                            if (intStatusCol == 3)
+                            {
+                                //ZH List
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
+                                strSQL = strSQL + "AND APP_STATUS=1  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.ONLINE=1  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
+                            }
+                            if (intStatusCol == 4)
+                            {
+                                //Area Head
+                                strSQL = strSQL + "AND APPS_SI_RET IN(1,2) ";
+                            }
+
+                            if (intStatusCol == 5)
                             {
                                 //bill Done
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
                                 strSQL = strSQL + "AND APP_STATUS=4  ";
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 1 ";
                             }
-                            if (intStatusCol == 2)
-                            {
-                                //Order Return
-                                strSQL = strSQL + "AND APPS_SI_RET IN(1,2) ";
-                            }
-                            if (intStatusCol == 3)
-                            {
 
-                                //ZH Approved
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
-                                strSQL = strSQL + "AND APP_STATUS=2  ";
-                                //strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
-                                ////Commi.Cal
-                                //strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL=1 ";
-                                ////strSQL = strSQL + "AND APPS_SI_RET <>1 ";
-                                //strSQL = strSQL + "AND APP_STATUS IN(1,0)  ";
-                            }
-                            if (intStatusCol == 4)
-                            {
-                                //New order
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL IN(0)  ";
-                                strSQL = strSQL + "AND APP_STATUS=0  ";
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
-                            }
-                            if (intStatusCol == 5)
-                            {
-        
-
-                                //Commi.Cal
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL=1 ";
-                                //strSQL = strSQL + "AND APPS_SI_RET <>1 ";
-                                strSQL = strSQL + "AND APP_STATUS IN(1,0)  ";
-                            }
+                      
                         }
-
 
                         strSQL = strSQL + " ORDER By ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_SERIAL DESC,ACC_COMPANY_VOUCHER_BRANCH_VIEW.REF_NO,ACC_COMPANY_VOUCHER_BRANCH_VIEW.LEDGER_CODE,ACC_COMPANY_VOUCHER_BRANCH_VIEW.LEDGER_NAME  ";
 
@@ -1616,6 +1662,14 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                     cmdDelete.Connection = gcnMain;
                     cmdDelete.Transaction = myTrans;
 
+                    strSQL = "DELETE FROM ACC_BILL_TRAN ";
+                    strSQL = strSQL + "WHERE COMP_REF_NO = '" + voucherNo + "' ";
+                    cmdDelete.CommandText = strSQL;
+                    cmdDelete.ExecuteNonQuery();
+                    strSQL = "DELETE FROM ACC_BILL_TRAN_PROCESS ";
+                    strSQL = strSQL + "WHERE COMP_REF_NO = '" + voucherNo + "' ";
+                    cmdDelete.CommandText = strSQL;
+                    cmdDelete.ExecuteNonQuery();
                     strSQL = "DELETE FROM ACC_COMPANY_VOUCHER ";
                     strSQL = strSQL + "WHERE COMP_REF_NO = '" + voucherNo + "' ";
                     cmdDelete.CommandText = strSQL;
@@ -1666,7 +1720,7 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                     for (int i = 0; i < gItemList.detailsList.Count; i++)
                     {
 
-                        strSQL = "UPDATE ACC_COMPANY_VOUCHER SET APP_STATUS=1,APPS_COMM_CAL=1,ONLINE=1,ORDER_DATE= " + Utility.cvtSQLDateString(gItemList.detailsList[i].strTranDate) + " WHERE COMP_REF_NO='" + gItemList.detailsList[i].strVoucherNoMerz + "' ";
+                        strSQL = "UPDATE ACC_COMPANY_VOUCHER SET APPS_COMM_CAL=1,ONLINE=1,ORDER_DATE= " + Utility.cvtSQLDateString(gItemList.detailsList[i].strTranDate) + " WHERE COMP_REF_NO='" + gItemList.detailsList[i].strVoucherNoMerz + "' ";
                         cmdInsert.CommandText = strSQL;
                         cmdInsert.ExecuteNonQuery();
                         lngBillPosition += 1;
@@ -1852,7 +1906,7 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                     //strSQL = strSQL + "APPS_CUSTOMER_MERZE= '" + strLedgerName + "',";
                     if (gItemList.strOrderDate != null)
                     {
-                        strSQL = strSQL + ",COMP_VOUCHER_DATE = " + Utility.cvtSQLDateString(gItemList.strOrderDate) + "";
+                        strSQL = strSQL + ",COMP_VOUCHER_DATE = " + Convert.ToDateTime(gItemList.strOrderDate).ToString("dd-MM-yyyy") + "";
                     }
                     if (strMonthID != "")
                     {
