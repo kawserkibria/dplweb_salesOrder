@@ -48,8 +48,7 @@
                 <div class="btnSearch">
                     <button title="New Order"
                             style="margin: 2px;"
-                            class="btn btn-success"
-                            >
+                            class="btn btn-success">
                         <i class="fa fa-search" aria-="true"></i>&nbsp;Search
                     </button>
                 </div>
@@ -119,6 +118,15 @@
                         <i class="fas fa-list" aria-="true"></i>&nbsp;Draft Order
                     </button>
                 </div>
+                <div class="btnZhApprovedList">
+                    <button title="Order List."
+                            style="margin: 2px;"
+                            class="btn btn-success "
+                            id="btnAHlist"
+                            onclick="rbtnidAHApprove();">
+                        <i class="fas fa-list" aria-="true"></i>&nbsp;AH List
+                    </button>
+                </div>
 
                 <div class="btnZhApprovedList">
                     <button title="Order List."
@@ -126,7 +134,7 @@
                             class="btn btn-success "
                             id="btnzhlist"
                             onclick="rbtnidZhApprove();">
-                        <i class="fas fa-list" aria-="true"></i>&nbsp;ZH Approve List
+                        <i class="fas fa-list" aria-="true"></i>&nbsp;ZH List
                     </button>
                 </div>
 
@@ -450,84 +458,11 @@
     <table id="datatable4" class="table-bordered" style="width:100%"></table>
 </div>
 <script>
-    function rbtnidDeliveryAddress()
-    {
-        var radioValue = $("input[name='rbtnaddress']:checked").val();
-
-        console.log(radioValue)
-        if (radioValue == "PartyAddress") {
-
-            $('#strNaration').val ('Delivery In Party Address');
-        }
-        else {
-
-            $('#strNaration').val ('Delivery In MPO Address');
-        }
-    }
-
-
-
-    function rbtnidNeworder() {
-        document.getElementById('btnnewlist').style.backgroundColor = 'purple';
-        document.getElementById('btnzhlist').style.backgroundColor = 'green';
-        document.getElementById('btnreturn').style.backgroundColor = 'green';
-        document.getElementById('idBillDone').style.backgroundColor = 'green';
-        rbtnStatus = 4;
-        console.log('rbtnidNeworder', rbtnStatus);
-        showGrid();
-    }
-    function rbtnidZhApprove() {
-        document.getElementById('btnnewlist').style.backgroundColor = 'green';
-        document.getElementById('btnzhlist').style.backgroundColor = 'purple';
-        document.getElementById('btnreturn').style.backgroundColor = 'green';
-        document.getElementById('idBillDone').style.backgroundColor = 'green';
-        rbtnStatus = 3;
-        checkboxColamstatus = false;
-        showGrid();
-
-    }
-    function rbtnidReturnOrder() {
-        document.getElementById('btnnewlist').style.backgroundColor = 'green';
-        document.getElementById('btnzhlist').style.backgroundColor = 'green';
-        document.getElementById('btnreturn').style.backgroundColor = 'purple';
-        document.getElementById('idBillDone').style.backgroundColor = 'green';
-        rbtnStatus = 2;
-        console.log('rbtnidNeworder', rbtnStatus);
-        showGrid();
-    }
-    function rbtnidbilldone() {
-        document.getElementById('btnnewlist').style.backgroundColor = 'green';
-        document.getElementById('btnzhlist').style.backgroundColor = 'green';
-        document.getElementById('btnreturn').style.backgroundColor = 'green';
-        document.getElementById('idBillDone').style.backgroundColor = 'purple';
-        rbtnStatus = 1;
-        console.log('rbtnidNeworder', rbtnStatus);
-        showGrid();
-    }
-
-
-
-    function cleardatda() {
-        document.getElementById('intQty').value = 0;
-        document.getElementById('ddlStockItemlist').value = "";
-    }
-    $('#btnView').click(function () {
-        var ddlVal = $('#exportOption').val();
-        alert(ddlVal)
-        var x = document.getElementById("bloodgId").value;
-        //var x = document.getElementById("bloodgId").value;
-        //alert(x)
-        window.open(
-
-    "/RptSO/RptNewOrder?strVoucherNo=SO#038067&exportOpt=" + ddlVal,
-    '_blank' // <- This is what makes it open in a new window.
-    );r
-        //url: "/LeaveApplication/TourleaveSave?eid=" + empid + "&leaveid=" + lid + "&destination=" + Destinat + "&purpose=" + Purposee,
-    });
+   
 
 
     jQuery.ajaxSettings.traditional = true;
-    var rbtnStatus = 4;
+    var rbtnStatus = 1;
     var strUserName = "MISK";
     var selectlocationItem = "";
     var selectStockGroup = "";
@@ -600,7 +535,108 @@
 
 
 
+    function rbtnidDeliveryAddress() {
+        var radioValue = $("input[name='rbtnaddress']:checked").val();
 
+        console.log(radioValue)
+        if (radioValue == "PartyAddress") {
+
+            $('#strNaration').val('Delivery In Party Address');
+        }
+        else {
+
+            $('#strNaration').val('Delivery In MPO Address');
+        }
+    }
+
+
+
+    function rbtnidNeworder() {
+        document.getElementById('btnnewlist').style.backgroundColor = 'purple';
+        document.getElementById('btnAHlist').style.backgroundColor = 'green';
+        document.getElementById('btnzhlist').style.backgroundColor = 'green';
+        document.getElementById('btnreturn').style.backgroundColor = 'green';
+        document.getElementById('idBillDone').style.backgroundColor = 'green';
+        rbtnStatus = 1;
+        checkboxColamstatus = true;
+        editColamStatus = true;
+        console.log('rbtnidNeworder', rbtnStatus);
+        showGrid();
+    }
+    function rbtnidAHApprove() {
+
+
+        document.getElementById('btnnewlist').style.backgroundColor = 'green';
+        document.getElementById('btnAHlist').style.backgroundColor = 'purple';
+        document.getElementById('btnzhlist').style.backgroundColor = 'green';
+        document.getElementById('btnreturn').style.backgroundColor = 'green';
+        document.getElementById('idBillDone').style.backgroundColor = 'green';
+        rbtnStatus = 2;
+        editColamStatus = false;
+        deleteColamStatus = false;
+        checkboxColamstatus = false;
+        showGrid();
+
+    }
+    function rbtnidZhApprove() {
+        document.getElementById('btnnewlist').style.backgroundColor = 'green';
+        document.getElementById('btnAHlist').style.backgroundColor = 'green';
+        document.getElementById('btnzhlist').style.backgroundColor = 'purple';
+        document.getElementById('btnreturn').style.backgroundColor = 'green';
+        document.getElementById('idBillDone').style.backgroundColor = 'green';
+        rbtnStatus = 3;
+        editColamStatus = false;
+        deleteColamStatus = false;
+        checkboxColamstatus = false;
+        showGrid();
+
+    }
+    function rbtnidReturnOrder() {
+        document.getElementById('btnnewlist').style.backgroundColor = 'green';
+        document.getElementById('btnAHlist').style.backgroundColor = 'green';
+        document.getElementById('btnzhlist').style.backgroundColor = 'green';
+        document.getElementById('btnreturn').style.backgroundColor = 'purple';
+        document.getElementById('idBillDone').style.backgroundColor = 'green';
+        rbtnStatus = 4;
+        editColamStatus = false;
+        deleteColamStatus = false;
+        checkboxColamstatus = false;
+        console.log('rbtnidNeworder', rbtnStatus);
+        showGrid();
+    }
+    function rbtnidbilldone() {
+        document.getElementById('btnnewlist').style.backgroundColor = 'green';
+        document.getElementById('btnAHlist').style.backgroundColor = 'green';
+        document.getElementById('btnzhlist').style.backgroundColor = 'green';
+        document.getElementById('btnreturn').style.backgroundColor = 'green';
+        document.getElementById('idBillDone').style.backgroundColor = 'purple';
+        rbtnStatus = 5;
+        editColamStatus = false;
+        deleteColamStatus = false;
+        checkboxColamstatus = false;
+        console.log('rbtnidNeworder', rbtnStatus);
+        showGrid();
+    }
+
+
+
+    function cleardatda() {
+        document.getElementById('intQty').value = 0;
+        document.getElementById('ddlStockItemlist').value = "";
+    }
+    $('#btnView').click(function () {
+        var ddlVal = $('#exportOption').val();
+        alert(ddlVal)
+        var x = document.getElementById("bloodgId").value;
+        //var x = document.getElementById("bloodgId").value;
+        //alert(x)
+        window.open(
+
+    "/RptSO/RptNewOrder?strVoucherNo=SO#038067&exportOpt=" + ddlVal,
+    '_blank' // <- This is what makes it open in a new window.
+    ); r
+        //url: "/LeaveApplication/TourleaveSave?eid=" + empid + "&leaveid=" + lid + "&destination=" + Destinat + "&purpose=" + Purposee,
+    });
 
     
 
@@ -657,6 +693,7 @@
 
 
     $(document).ready(function () {
+
         document.getElementById('btnnewlist').style.backgroundColor = 'purple';
         document.getElementById("Totalitem").innerHTML = 0;
         document.getElementById("qtyTotal").innerHTML = 0;
@@ -970,7 +1007,7 @@
                                     }
                                 },
                                  {
-                                     title: 'Print',
+                                     title: 'View',
                                      render: function (data, type, row) {
                                          return '<button class="btn btn-info fontsize  print-sloat-ak">   <i class="fa fa-print"></i></button>';
                                      }
@@ -1482,13 +1519,13 @@
                         { title: 'Per', data: 'dblPercent', "visible": false, },
                         { title: 'Group', data: 'strItemGroup' },
                         { title: 'Item', data: 'strItemName' },
-                        { title: 'Bonus Qty', data: 'intBonusQty' },
                         { title: 'Powre/Calss', data: 'strPowerClass', "visible": false, },
                         { title: 'Pack Size', data: 'strPackSize', "visible": false, },
                         { title: 'Qty', data: 'intItemQty', className: 'editable' },
+                        { title: 'Bonus Qty', data: 'intBonusQty' },
                         { title: 'Rate', data: 'dblItemRate', className: 'editable', "visible": false, },
                         { title: 'Per', data: 'strUnit', "visible": false,},
-                        { title: 'Sub.Total', data: 'dblTotalAmount' },
+                        { title: 'Sub Total', data: 'dblTotalAmount' },
                         { title: 'Commission', data: 'dblCommitionVal', "visible": false, },
                         { title: 'Total', data: 'dblItemNetVal', width: 100 },
                         {
