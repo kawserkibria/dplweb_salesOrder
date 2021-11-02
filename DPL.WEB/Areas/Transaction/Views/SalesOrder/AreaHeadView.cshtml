@@ -25,7 +25,7 @@
 
         </div>
         <div class="col-6">
-            <h5 class="modal-title  text-right" style="margin: 0 auto;" id="lblledgerNameMarzeName">@ViewBag.MNameMerz</h5>
+            <h5 hidden class="modal-title  text-right" style="margin: 0 auto;" id="lblledgerNameMarzeName">@ViewBag.MNameMerz</h5>
 
         </div>
     </div>
@@ -170,11 +170,11 @@
                 <div class="col-5" hidden>
                     <h5 class="modal-title  text-left" style="margin: 0 auto;" id="userlevel">@ViewBag.UserLevel</h5>
                 </div>
-                <div class="col-5">
+                <div class="col-5" >
                     <h5 class="modal-title  text-left" style="margin: 0 auto;" id="exampleModalLabel">Sales Order</h5>
 
                 </div>
-                <div class="col-6">
+                <div class="col-6" hidden>
                     <h5 class="modal-title  text-right" style="margin: 0 auto;" id="exampleModalLabel"> MPO Name : @ViewBag.MNameMerz</h5>
 
                 </div>
@@ -273,7 +273,7 @@
 
 
 
-                            <div class="row">
+                            <div class="row" hidden>
                                 <div class="col-sm-4" style="margin: 5px; ">
                                     <p style="text-align: right; font-size: 15px;">Location Name:</p>
                                 </div>
@@ -458,6 +458,7 @@
         </div>
     </div>
 </div>
+<br />
 <div class="table-responsive">
     <table id="datatable4" class="table-bordered" style="width:100%"></table>
 </div>
@@ -469,13 +470,25 @@
             style="margin: 2px; "
             class="btn btn-success "
             id="idAhApprove"
-            onclick="rbtnidbilldone();">
+            onclick="btniAhApprove();">
         <i class="fa fa-check" aria-="true"></i>&nbsp;Approve
     </button>
 </div>   
 
 <script>
+    function rbtnidDeliveryAddress() {
+        var radioValue = $("input[name='rbtnaddress']:checked").val();
 
+        console.log(radioValue)
+        if (radioValue == "PartyAddress") {
+
+            $('#strNaration').val('Delivery In Party Address');
+        }
+        else {
+
+            $('#strNaration').val('Delivery In MPO Address');
+        }
+    }
     $('#btnView').click(function () {
         var ddlVal = $('#exportOption').val();
         //alert(ddlVal)
@@ -908,244 +921,7 @@
         showGrid();
      }
 
-    //function showGrid() {
-    //    strUserName=   document.getElementById('lblledgerName').textContent
-
-    //    table = $('#datatable4').DataTable({
-    //        "bDestroy": true,
-    //        "select": true,
-
-    //        "ajax": {
-    //            "url": "/SalesOrder/mShowMasterDataArea?strUserName=" + strUserName + " &intStatusCol=" + rbtnStatus,
-    //            "type": "POST",
-    //            "datatype": "json",
-
-
-    //            "dataSrc": function (response) {
-    //                detailsList = response;
-    //                response.draw = response.draw;
-    //                response.recordsTotal = response.recordsTotal;
-    //                response.recordsFiltered = response.recordsFiltered;
-    //                console.log('request.responseText', response);
-
-    //                return response;
-    //            }
-
-    //        },
-
-    //        "order": [[1, 'asc']],
-    //        "columns": [
-    //              {
-    //                  title: 'SL',
-    //                  render: function (
-    //                      data,
-    //                      type,
-    //                      row,
-    //                      meta
-    //                  ) {
-    //                      return '<span>' + (meta.row + 1) + '</span>';
-    //                  },
-    //              },
-
-    //                {
-
-    //                    title: 'ID',
-    //                    data: 'lngSlNo',
-    //                    name: 'lngSlNo',
-    //                    "visible": false,
-
-    //                },
-    //                   {
-    //                       title: 'Location',
-    //                       data: 'strLocation',
-    //                       name: 'strLocation',
-    //                       "visible": false,
-    //                   },
-    //                    {
-    //                        title: 'Voucher No',
-    //                        data: 'strVoucherNo',
-    //                        name: 'strVoucherNo',
-    //                    },
-    //                {
-    //                    title: 'Voucher No',
-    //                    data: 'strVoucherNoMerz',
-    //                    name: 'strVoucherNoMerz',
-    //                    "visible": false,
-    //                },
-    //                   {
-    //                       title: 'Doctor Name',
-    //                       data: 'strDoctorName',
-    //                       name: 'strDoctorName',
-    //                       //"visible": false,
-    //                   },
-    //                {
-    //                    title: 'Date',
-    //                    data: 'strTranDate',
-    //                    name: 'strTranDate',
-    //                },
-    //                {
-    //                    title: 'Ledger Name',
-    //                    data: 'strMerzeName',
-    //                    name: 'strMerzeName',
-    //                    "visible": false,
-    //                },
-
-    //                {
-    //                    title: 'Branch Name',
-    //                    data: 'strBranchName',
-    //                    name: 'strBranchName',
-    //                },
-    //                {
-    //                    title: 'Division Name',
-    //                    data: 'strDivisionName',
-    //                    name: 'strDivisionName',
-    //                },
-    //                {
-    //                    title: 'Area Name',
-    //                    data: 'strArea',
-    //                    name: 'strArea',
-    //                },
-    //                {
-    //                    title: 'Amount',
-    //                    data: 'dblAmount',
-    //                    name: 'dblAmount',
-    //                },
-
-    //                   {
-    //                       title: 'Credit Limit',
-    //                       data: 'dblCreditAmount',
-    //                       name: 'dblCreditAmount',
-    //                       "visible": CreditLimitColamStatus,
-
-    //                   },
-
-
-    //                   {
-    //                       title: 'Check All' + '<input type="checkbox" id="chkAll" onclick="checkAll(this)">',
-    //                       data: '',
-    //                       "visible": checkboxColamstatus,
-    //                       render: function (data,
-    //                          type,
-    //                          row,
-    //                          meta) {
-
-    //                           return '<input type="checkbox" id="chkSingle' + (meta.row + 1) + '" value= ' + data + '  class="select-checkbox sales-sloat-select"  />';
-
-
-    //                       },
-    //                   },
-
-
-
-    //                          {
-    //                            title: 'Edit',
-    //                            "visible": editColamStatus,
-    //                              render: function (data, type, row) {
-    //                                  return '<button class="btn btn-info fontsize  sales-sloat-ak">   <i class="fa fa-pencil"></i></button>';
-    //                              }
-    //                          },
-    //                            {
-    //                                title: 'Delete',
-    //                                "visible": deleteColamStatus,
-    //                                render: function (data, type, row) {
-    //                                    return '<button class="btn btn-danger fontsize  delete-sloat-ak"> <i class="fa fa-trash"></i></button>';
-    //                                }
-    //                            },
-    //                             {
-    //                                 title: 'Print',
-    //                                 render: function (data, type, row) {
-    //                                     return '<button class="btn btn-info fontsize  print-sloat-ak">   <i class="fa fa-print"></i></button>';
-    //                                 }
-    //                             },
-
-    //        ],
-
-    //        "responsive": true,
-    //        "rowCallback": function (row, data) {
-
-
-
-
-
-    //            console.log('hello delete dataddddddddd', row, data);
-    //            var rowdata = data;
-    //            if (rbtnStatus == 4) {
-    //                if (rowdata.dblNetAmount < rowdata.dblCreditAmount) {
-    //                    console.log('hello check data 6000+', rowdata.dblCreditAmount);
-    //                    $(row).css({ "background-color": "#47F90A" })
-    //                }
-    //                else {
-    //                    $(row).css({ "background-color": "#FCFCFC" })
-    //                }
-    //            }
-    //            if (rbtnStatus == 3) {
-    //                if (rowdata.dblNetAmount < rowdata.dblCreditAmount) {
-    //                    console.log('hello check data 6000+', rowdata.dblCreditAmount);
-    //                    $(row).css({ "background-color": "#47F90A" })
-    //                }
-    //                else {
-    //                    $(row).css({ "background-color": "#FCFCFC" })
-    //                }
-    //            }
-    //            if (rbtnStatus == 2) {
-    //                if (rowdata.dblNetAmount < rowdata.dblCreditAmount) {
-    //                    console.log('hello check data 6000+', rowdata.dblCreditAmount);
-    //                    $(row).css({ "background-color": "#47F90A" })
-    //                }
-    //                else {
-    //                    $(row).css({ "background-color": "#FCFCFC" })
-    //                }
-    //            }
-    //            if (rbtnStatus == 1) {
-    //                if (rowdata.dblNetAmount < rowdata.dblCreditAmount) {
-    //                    console.log('hello check data 6000+', rowdata.dblCreditAmount);
-    //                    $(row).css({ "background-color": "#47F90A" })
-    //                }
-    //                else {
-    //                    $(row).css({ "background-color": "#FCFCFC" })
-    //                }
-    //            }
-    //            $(row).find(".sales-sloat-select").click(function () {
-    //                selectdata = data;
-
-    //                if (data.fcheck == 0) {
-    //                    data.fcheck = 1;
-    //                    addtoList(selectdata);
-
-    //                } else {
-    //                    data.fcheck = 0;
-    //                    delettoList(selectdata);
-
-    //                }
-    //                console.log('hello edit dddeeeee', data.fcheck);
-
-
-    //            });
-
-
-    //            $(row).find(".sales-sloat-ak").click(function () {
-    //                selectdata = data;
-    //                console.log('hello edit dddeeeee', selectdata);
-    //                edit(selectdata);
-
-    //            });
-    //            $(row).find(".delete-sloat-ak").click(function () {
-    //                selectdata = data;
-    //                console.log('hello Delete data', selectdata);
-    //                deleteItemsById(selectdata.strVoucherNoMerz)
-
-    //            });
-    //            $(row).find(".print-sloat-ak").click(function () {
-    //                selectdata = data;
-    //                orderprint(selectdata.strVoucherNoMerz, selectdata.strMerzeName)
-
-    //            });
-
-    //        }
-
-    //    });
-
-    //}
+    
     function showGrid() {
         strUserName = document.getElementById('lblledgerName').textContent
         //alert("ok");
@@ -1221,7 +997,7 @@
                         title: 'Voucher No',
                         data: 'strVoucherNoMerz',
                         name: 'strVoucherNoMerz',
-                        "visible": true,
+                        "visible": false,
                     },
 
 
@@ -1410,7 +1186,8 @@
 
                 finalList = detailsList;
                 //$(this).addClass('bg-danger');
-                //console.log(i, selectData);
+                console.log('check', checked);
+                console.log('list', finalList);
             }
             else {
                 //$(this).removeClass('bg-success');
@@ -1418,9 +1195,9 @@
             }
         });
     }
-
+    var detailsList2 = [];
     function App() {
-
+        detailsList2 = [];
         var empObj = {
 
 
@@ -1430,7 +1207,7 @@
         console.log("Order master and details list", empObj);
 
         $.ajax({
-            url: "/SalesOrder/mpoApprove",
+            url: "/SalesOrder/AHApprove",
             type: "POST",
             data: JSON.stringify(empObj),
             contentType: "application/json;charset=utf-8",
@@ -1447,6 +1224,36 @@
         });
 
     }
+    function btniAhApprove() {
+
+        var empObj = {
+
+
+            detailsList: finalList,
+
+        };
+        console.log("Order master and details list", empObj);
+
+        $.ajax({
+            url: "/SalesOrder/AHApprove",
+            type: "POST",
+            data: JSON.stringify(empObj),
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                if (result == "OK") {
+                } else {
+                    //alert("resutl is ", result);
+                };
+
+                showGrid();
+
+            }
+        });
+
+    }
+
+    
     var selectList = [];
 
     function orderprint(strVNo, strMerzeNamee) {
@@ -1874,7 +1681,8 @@
             strLedgerName: $('#responsid3').val(),
             strOrderNo: 'SO0001' + $('#ID_OrderNumber').val(),
             strOrderDate: $('#OrDate').val(),
-            strLocation: $('#ddllocationid').val(),
+            //strLocation: $('#ddllocationid').val(),
+            strLocation: 'Main Location',
             dblTotalAmount: $('#txtTotalAmount').text(),
             dblCommitionVal: $('#txtCommAmount').text(),
             dblNetTotal: $('#txtnetAmount').text(),
@@ -1950,7 +1758,8 @@
             strLedgerName: $('#responsid3').val(),
             strOrderNo: 'SO0001' + $('#ID_OrderNumber').val(),
             strOrderDate: $('#OrDate').val(),
-            strLocation: $('#ddllocationid').val(),
+            //strLocation: $('#ddllocationid').val(),
+            strLocation: 'Main Location',
             dblTotalAmount: $('#txtTotalAmount').text(),
             dblCommitionVal: $('#txtCommAmount').text(),
             dblNetTotal: $('#txtnetAmount').text(),

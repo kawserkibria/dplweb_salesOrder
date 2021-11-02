@@ -1694,7 +1694,61 @@ namespace DPL.WEB.Areas.Transaction.Controllers
             }
 
         }
+        public JsonResult AHApprove(OrderMaster gItemList)
+        {
+            string strSQL = "";
+            long lngBillPosition = 1, lngloop = 1;
+            string connectionString = WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            using (SqlConnection gcnMain = new SqlConnection(connectionString))
+            {
+                if (gcnMain.State == ConnectionState.Open)
+                {
+                    gcnMain.Close();
+                }
 
+                try
+                {
+                    gcnMain.Open();
+
+                    SqlCommand cmdInsert = new SqlCommand();
+                    SqlTransaction myTrans;
+                    myTrans = gcnMain.BeginTransaction();
+                    cmdInsert.Connection = gcnMain;
+                    cmdInsert.Transaction = myTrans;
+
+                    for (int i = 0; i < gItemList.detailsList.Count; i++)
+                    {
+
+                        strSQL = "UPDATE ACC_COMPANY_VOUCHER SET APP_STATUS=1,ORDER_DATE= " + Utility.cvtSQLDateString(gItemList.detailsList[i].strTranDate) + " WHERE COMP_REF_NO='" + gItemList.detailsList[i].strVoucherNoMerz + "' ";
+                        cmdInsert.CommandText = strSQL;
+                        cmdInsert.ExecuteNonQuery();
+                        lngBillPosition += 1;
+                        lngloop += 1;
+
+                    }
+
+
+                    cmdInsert.Transaction.Commit();
+
+
+
+
+                    gcnMain.Close();
+                    return Json("OK", JsonRequestBehavior.AllowGet);
+                }
+                catch (Exception ex)
+                {
+                    return Json(ex.ToString(), JsonRequestBehavior.AllowGet);
+                }
+                finally
+                {
+                    gcnMain.Close();
+
+
+                }
+
+            }
+        }
         public JsonResult mpoApprove(OrderMaster gItemList)
         {
             string strSQL = "";

@@ -26,7 +26,7 @@
 
         </div>
         <div class="col-6">
-            <h5 class="modal-title  text-right" style="margin: 0 auto;" id="lblledgerNameMarzeName"> MPO Name : @ViewBag.MNameMerz</h5>
+            <h5 hidden class="modal-title  text-right" style="margin: 0 auto;" id="lblledgerNameMarzeName"> MPO Name : @ViewBag.MNameMerz</h5>
 
         </div>
     </div>
@@ -39,11 +39,19 @@
                 <div class="btnAllRow">
                     <button title="New Order"
                             style="margin: 2px;"
-                            class="btn btn-success"
+                            class="btn btn-success "
                             onclick="btnNewOrder();"
                             data-toggle="modal" id="myBtn" data-target=".bd-example-modal-lg">
                         <i class="fa fa-plus-circle" aria-="true"></i>&nbsp;New Order
                     </button>
+                    @*<span><input type="button"
+                                  class="btn btn-danger" 
+                                 id="btncen" 
+                                 data-dismiss="modal"
+                                  onclick="clearFromData();"
+                                  value="Cancel" (click)="bsModalRef.hide()">
+                    </input></span>*@
+
                 </div>
                 <div class="btnSearch">
                     <button title="New Order"
@@ -447,13 +455,15 @@
 
                 <div class="modal-footer">
                     <span><input type="button" class="btn btn-primary" id="btnsaveOrder" onclick="saveOrUpdates();" value="Save"></input></span>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="clearFromData();" (click)="bsModalRef.hide()">Cancel</button>
+                    <span><input type="button" class="btn btn-danger" id="btncen" data-dismiss="modal" onclick="clearFromData();" value="Cancel" (click)="bsModalRef.hide()"></input></span>
+              
                 </div>
             </div>
 
         </div>
     </div>
 </div>
+<br />
 <div class="table-responsive">
     <table id="datatable4" class="table-bordered" style="width:100%"></table>
 </div>
