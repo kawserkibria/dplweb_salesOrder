@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Master\MasterAreaRegistration.cs" />
+    <Compile Include="Areas\Reports\Controllers\SalesReportController.cs" />
     <Compile Include="Areas\Reports\ReportsAreaRegistration.cs" />
     <Compile Include="Areas\Transaction\Controllers\SalesOrderController.cs" />
     <Compile Include="Areas\Transaction\TransactionAreaRegistration.cs" />
@@ -9797,8 +9798,8 @@
     <Folder Include="Areas\Master\Controllers\" />
     <Folder Include="Areas\Master\Models\" />
     <Folder Include="Areas\Master\Views\Shared\" />
-    <Folder Include="Areas\Reports\Controllers\" />
     <Folder Include="Areas\Reports\Models\" />
+    <Folder Include="Areas\Reports\Views\SalesReport\" />
     <Folder Include="Areas\Reports\Views\Shared\" />
     <Folder Include="Areas\Transaction\Models\" />
     <Folder Include="Areas\Transaction\Views\Shared\" />
