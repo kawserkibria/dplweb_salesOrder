@@ -520,9 +520,9 @@ E:\Work\DPL WEB Order\ak\DPL.WEB\bin\System.Web.WebPages.Razor.xml
 E:\Work\DPL WEB Order\ak\DPL.WEB\bin\Newtonsoft.Json.xml
 E:\Work\DPL WEB Order\ak\DPL.WEB\bin\Antlr3.Runtime.pdb
 E:\Work\DPL WEB Order\ak\DPL.WEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Work\DPL WEB Order\ak\DPL.WEB\obj\Debug\DPL.WEB.csprojResolveAssemblyReference.cache
 E:\Work\DPL WEB Order\ak\DPL.WEB\obj\Debug\DPL.WEB.dll
 E:\Work\DPL WEB Order\ak\DPL.WEB\obj\Debug\DPL.WEB.pdb
+<<<<<<< HEAD
 I:\c#\dplweb_salesOrder\DPL.WEB\bin\DPL.WEB.dll.config
 I:\c#\dplweb_salesOrder\DPL.WEB\bin\DPL.WEB.dll
 I:\c#\dplweb_salesOrder\DPL.WEB\bin\DPL.WEB.pdb
@@ -600,3 +600,6 @@ I:\c#\dplweb_salesOrder\DPL.WEB\obj\Debug\DPL.WEB.csproj.CoreCompileInputs.cache
 I:\c#\dplweb_salesOrder\DPL.WEB\obj\Debug\DPL.WEB.csproj.CopyComplete
 I:\c#\dplweb_salesOrder\DPL.WEB\obj\Debug\DPL.WEB.dll
 I:\c#\dplweb_salesOrder\DPL.WEB\obj\Debug\DPL.WEB.pdb
+=======
+E:\Work\DPL WEB Order\ak\DPL.WEB\obj\Debug\DPL.WEB.csprojResolveAssemblyReference.cache
+>>>>>>> 88401de45f2da5a68337391f5f846fa2835a57cf

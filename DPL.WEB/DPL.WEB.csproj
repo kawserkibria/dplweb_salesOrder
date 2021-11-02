@@ -9660,6 +9660,7 @@
     <Content Include="Areas\Transaction\Views\SalesOrder\MpoView.cshtml" />
     <Content Include="Areas\Transaction\Views\SalesOrder\View1.cshtml" />
     <Content Include="Areas\Transaction\Views\SalesOrder\AreaHeadView.cshtml" />
+    <None Include="Properties\PublishProfiles\SalesOrder.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
