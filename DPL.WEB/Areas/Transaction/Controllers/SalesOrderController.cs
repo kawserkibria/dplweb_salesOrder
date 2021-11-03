@@ -1147,8 +1147,15 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                         //strSQL = strSQL + " AND ACC_LEDGER_Z_D_A.DIVISION in( select LEDGER_GROUP_NAME from USER_PRIVILEGES_COLOR WHERE USER_LOGIN_NAME ='" + strUserName + "')";
 
                         //strSQL = strSQL + " AND ACC_LEDGER_Z_D_A.DIVISION in( select LEDGER_GROUP_NAME from USER_PRIVILEGES_COLOR WHERE USER_LOGIN_NAME ='" + strUserName + "')";
+                        if (Session["userLevel"].ToString() == "3")
+                        {
 
                         strSQL = strSQL + "and ACC_LEDGER_Z_D_A.AREA='" + strUserName + "' ";
+                        }
+                        else
+                        {
+                            strSQL = strSQL + "and ACC_LEDGER_Z_D_A.DIVISION='" + strUserName + "' ";
+                        }
 
 
                         if (intStatusCol != 0)
@@ -1159,6 +1166,7 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                                 //New Order list
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 0 ";
                                 strSQL = strSQL + "AND APP_STATUS=0  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.ONLINE=1  ";
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
                             }
                             if (intStatusCol == 2)
@@ -1188,6 +1196,7 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                                 //bill Done
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 1  ";
                                 strSQL = strSQL + "AND APP_STATUS=4  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.ONLINE=1  ";
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 1 ";
                             }
 
