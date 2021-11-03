@@ -12,6 +12,14 @@ namespace DPL.WEB.Areas.Reports.Controllers
         public ActionResult Index()
         {
             return View();
+
+
+
+
+
+
+
+
         }
     }
 }

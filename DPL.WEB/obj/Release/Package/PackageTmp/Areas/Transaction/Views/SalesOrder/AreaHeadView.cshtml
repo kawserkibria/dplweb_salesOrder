@@ -25,7 +25,7 @@
 
         </div>
         <div class="col-6">
-            <h5 class="modal-title  text-right" style="margin: 0 auto;" id="lblledgerNameMarzeName">@ViewBag.MNameMerz</h5>
+            <h5 hidden class="modal-title  text-right" style="margin: 0 auto;" id="lblledgerNameMarzeName">@ViewBag.MNameMerz</h5>
 
         </div>
     </div>
@@ -170,11 +170,11 @@
                 <div class="col-5" hidden>
                     <h5 class="modal-title  text-left" style="margin: 0 auto;" id="userlevel">@ViewBag.UserLevel</h5>
                 </div>
-                <div class="col-5">
+                <div class="col-5" >
                     <h5 class="modal-title  text-left" style="margin: 0 auto;" id="exampleModalLabel">Sales Order</h5>
 
                 </div>
-                <div class="col-6">
+                <div class="col-6" hidden>
                     <h5 class="modal-title  text-right" style="margin: 0 auto;" id="exampleModalLabel"> MPO Name : @ViewBag.MNameMerz</h5>
 
                 </div>
@@ -273,7 +273,7 @@
 
 
 
-                            <div class="row">
+                            <div class="row" hidden>
                                 <div class="col-sm-4" style="margin: 5px; ">
                                     <p style="text-align: right; font-size: 15px;">Location Name:</p>
                                 </div>
@@ -458,6 +458,7 @@
         </div>
     </div>
 </div>
+<br />
 <div class="table-responsive">
     <table id="datatable4" class="table-bordered" style="width:100%"></table>
 </div>
@@ -469,13 +470,25 @@
             style="margin: 2px; "
             class="btn btn-success "
             id="idAhApprove"
-            onclick="rbtnidbilldone();">
+            onclick="btniAhApprove();">
         <i class="fa fa-check" aria-="true"></i>&nbsp;Approve
     </button>
 </div>   
 
 <script>
+    function rbtnidDeliveryAddress() {
+        var radioValue = $("input[name='rbtnaddress']:checked").val();
 
+        console.log(radioValue)
+        if (radioValue == "PartyAddress") {
+
+            $('#strNaration').val('Delivery In Party Address');
+        }
+        else {
+
+            $('#strNaration').val('Delivery In MPO Address');
+        }
+    }
     $('#btnView').click(function () {
         var ddlVal = $('#exportOption').val();
         //alert(ddlVal)
@@ -1173,7 +1186,8 @@
 
                 finalList = detailsList;
                 //$(this).addClass('bg-danger');
-                //console.log(i, selectData);
+                console.log('check', checked);
+                console.log('list', finalList);
             }
             else {
                 //$(this).removeClass('bg-success');
@@ -1181,9 +1195,9 @@
             }
         });
     }
-
+    var detailsList2 = [];
     function App() {
-
+        detailsList2 = [];
         var empObj = {
 
 
@@ -1193,7 +1207,7 @@
         console.log("Order master and details list", empObj);
 
         $.ajax({
-            url: "/SalesOrder/mpoApprove",
+            url: "/SalesOrder/AHApprove",
             type: "POST",
             data: JSON.stringify(empObj),
             contentType: "application/json;charset=utf-8",
@@ -1210,6 +1224,36 @@
         });
 
     }
+    function btniAhApprove() {
+
+        var empObj = {
+
+
+            detailsList: finalList,
+
+        };
+        console.log("Order master and details list", empObj);
+
+        $.ajax({
+            url: "/SalesOrder/AHApprove",
+            type: "POST",
+            data: JSON.stringify(empObj),
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                if (result == "OK") {
+                } else {
+                    //alert("resutl is ", result);
+                };
+
+                showGrid();
+
+            }
+        });
+
+    }
+
+    
     var selectList = [];
 
     function orderprint(strVNo, strMerzeNamee) {
@@ -1637,7 +1681,8 @@
             strLedgerName: $('#responsid3').val(),
             strOrderNo: 'SO0001' + $('#ID_OrderNumber').val(),
             strOrderDate: $('#OrDate').val(),
-            strLocation: $('#ddllocationid').val(),
+            //strLocation: $('#ddllocationid').val(),
+            strLocation: 'Main Location',
             dblTotalAmount: $('#txtTotalAmount').text(),
             dblCommitionVal: $('#txtCommAmount').text(),
             dblNetTotal: $('#txtnetAmount').text(),
@@ -1713,7 +1758,8 @@
             strLedgerName: $('#responsid3').val(),
             strOrderNo: 'SO0001' + $('#ID_OrderNumber').val(),
             strOrderDate: $('#OrDate').val(),
-            strLocation: $('#ddllocationid').val(),
+            //strLocation: $('#ddllocationid').val(),
+            strLocation: 'Main Location',
             dblTotalAmount: $('#txtTotalAmount').text(),
             dblCommitionVal: $('#txtCommAmount').text(),
             dblNetTotal: $('#txtnetAmount').text(),
