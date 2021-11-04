@@ -28,6 +28,16 @@ namespace DPL.WEB.Areas.Transaction.Controllers
             return View();
         }
 
+        public ActionResult ReportIndex()
+        {
+            //return View("~/Reports/Views/SalesReport/View1.cshtml");
+            return PartialView(@"~/Areas/Reports/Views/SalesReport/View1.cshtml");
+
+        }
+
+
+
+
         public ActionResult LastOrderNO()
         {
 

@@ -1,0 +1,119 @@
+﻿
+<div class="form-horizontal">
+    
+
+
+    <div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            @*<li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#stockGroup" role="tab" aria-controls="home" aria-selected="true">Stock Group</a>
+                </li>*@
+            <li class="nav-item">
+                <a class="nav-link active" id="settings-tab" onclick="salesColStatment()" data-toggle="tab" href="#menu1" role="tab" aria-controls="Department" aria-selected="false">Sales/Coll. Performance</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="settings-tab" onclick="mMSheet()" data-toggle="tab" href="#menu2" role="tab" aria-controls="Brand" aria-selected="false">Market Monitoring Sheet</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  " id="packViewTab" onclick="finalStatment()" data-toggle="tab" href="#menu3" role="tab" aria-controls="profile" aria-selected="false">Final Statement</a>
+            </li>
+            
+        </ul>
+        <div class="tab-content">
+            <div id="menu1" class="tab-pane active">
+                <br />
+                <h1>aktarul</h1>
+                <div id="menu1">
+
+                </div>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <h3>Menu 2</h3>
+                <div id="menu2">
+                </div>
+            </div>
+            <div id="menu3" class="tab-pane fade">
+                <div id="menu3">
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<div class="modal-footer">
+
+</div>
+
+
+<script>
+
+
+    $(document).ready(function () {
+ 
+        salesColStatment();
+
+    });
+
+
+    function salesColStatment() {
+
+
+        $.ajax({
+            url: '/SalesReport/salesColStatment',
+            type: 'GET',
+
+            dataType: 'html',
+            contentType: 'application/json',
+            success: function (data) {
+                console.log(data);
+                $('#menu1').html(data);
+            },
+            error: function (ex) {
+                console.log(ex);
+            }
+        });
+
+    }
+    function mMSheet() {
+
+
+        $.ajax({
+            url: '/SalesReport/mMSheet',
+            type: 'GET',
+
+            dataType: 'html',
+            contentType: 'application/json',
+            success: function (data) {
+                $('#menu2').html(data);
+            },
+            error: function (ex) {
+            }
+        });
+
+    }
+    function finalStatment() {
+
+
+        $.ajax({
+            url: '/SalesReport/finalStatment',
+            type: 'GET',
+
+            dataType: 'html',
+            contentType: 'application/json',
+            success: function (data) {
+                $('#menu3').html(data);
+            },
+            error: function (ex) {
+            }
+        });
+
+    }
+
+
+
+</script>
