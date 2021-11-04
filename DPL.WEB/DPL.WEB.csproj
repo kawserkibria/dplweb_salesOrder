@@ -9662,7 +9662,11 @@
     <Content Include="Areas\Transaction\Views\SalesOrder\View1.cshtml" />
     <Content Include="Areas\Transaction\Views\SalesOrder\AreaHeadView.cshtml" />
     <Content Include="Areas\Reports\Views\SalesReport\Index.cshtml" />
-    <Content Include="Areas\Transaction\Views\SalesOrder\ZonalheadView.cshtml" />
+    <Content Include="Areas\Reports\Views\SalesReport\View1.cshtml" />
+    <Content Include="Areas\Reports\Views\SalesReport\PartialView.cshtml" />
+    <Content Include="Areas\Reports\Views\SalesReport\salesColStatmentView.cshtml" />
+    <Content Include="Areas\Reports\Views\SalesReport\mMSheetView.cshtml" />
+    <Content Include="Areas\Reports\Views\SalesReport\finalStatmentView.cshtml" />
     <None Include="Properties\PublishProfiles\SalesOrder.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />

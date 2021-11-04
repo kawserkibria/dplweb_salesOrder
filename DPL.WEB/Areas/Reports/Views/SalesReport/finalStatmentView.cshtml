@@ -1,0 +1,236 @@
+﻿<div class="centerContainer ">
+    <div class="item bordercolor" style="padding: 20px; background-color:azure">
+        @*<div class="row">
+                <div class="col-md-12">
+
+                    <label> Branch Name </label>
+                    <input type="text" id="branchName" name="branchName" />
+                </div>
+
+            </div>*@
+        &nbsp;
+        <div class="row">
+            <label class="control-label"> Branch Name</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" id="bName" name="bName">
+            </div>
+
+        </div>
+        &nbsp;
+        <div class="row bordercolor">
+            <div class="col-lg-2">
+                <div class="row">
+                    <input type="radio" id="idReturnOrder" style="height: 15px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="ReturnOrder" />
+                    <label style="font-size:15px;">All</label>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="row">
+                    <input type="radio" checked id="idReturnOrder" style="height: 15px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="ReturnOrder" />
+                    <label style="font-size:15px;">Active</label>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="row">
+                    <input type="radio" id="idReturnOrder" style="height: 15px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="ReturnOrder" />
+                    <label style="font-size:15px;">InActive</label>
+                </div>
+            </div>
+
+        </div>
+        <br />
+        <div class="row bordercolor">
+            <div class="col-lg-2">
+                <div class="row">
+                    <input type="radio" id="checkmark2" checked style="height: 15px; width: 35px; margin-top: 5px" class="checkmark2" name="rbtnname2" value="ReturnOrder2" />
+                    <label style="font-size:15px;">All</label>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="row">
+                    <input type="radio" id="checkmark2" style="height: 15px; width: 35px; margin-top: 5px" class="checkmark2" name="rbtnname2" value="ReturnOrder" />
+                    <label style="font-size:15px;">Mpo</label>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="row">
+                    <input type="radio" id="checkmark2" style="height: 15px; width: 35px; margin-top: 5px" class="checkmark2" name="rbtnname2" value="ReturnOrder" />
+                    <label style="font-size:15px;">AM/FM</label>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="row">
+                    <input type="radio" id="checkmark2" style="height: 15px; width: 35px; margin-top: 5px" class="checkmark2" name="rbtnname2" value="ReturnOrder" />
+                    <label style="font-size:15px;">DSM/RSM</label>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="row">
+                    <input type="radio" id="checkmark2" style="height: 15px; width: 35px; margin-top: 5px" class="checkmark2" name="rbtnname2" value="ReturnOrder" />
+                    <label style="font-size:15px;">ZONE</label>
+                </div>
+            </div>
+        </div>
+        &nbsp;
+        <div class="row bordercolor" style="padding-top:5px; padding-bottom:5px ">
+            <div class="col-md-5">
+                @*<input type="text" id="txtSearchBy" value="" class="form-control" />*@
+                @*<div class="input-group">
+                        <input type="text" class="form-control" id="txtSearchBy">
+                        <div class="input-group-append">
+                            <span class="input-group-text">$</span>
+                        </div>
+                    </div>*@
+                <div class="input-group">
+
+                    <input type="text" class="form-control" name="msg" id="txtSearchBy" placeholder="search">
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                </div>
+                <select id="ChooseLeft" multiple="multiple" class="form-control" style="height:220px;">
+                    <option value="1">Lucknow</option>
+                    <option value="2">Kanpur</option>
+                    <option value="3">Delhi</option>
+                    <option value="4">Gurgao</option>
+                    <option value="5">Noida</option>
+                    <option value="5">Agra</option>
+                    <option value="5">Banglore</option>
+                    <option value="5">Rajasthan</option>
+                    <option value="5">Pune</option>
+                </select>
+            </div>
+            <div class="col-md-2" style="padding-top:110px">
+                <input id="ShiftRight" type="button" value=">>" class="btn btn-sm btn-warning" />
+                <input id="ShiftLeft" type="button" value="<<" class="btn btn-sm btn-warning" />
+            </div>
+            <div class="col-md-5" style="margin-top:38px">
+                <select id="ChooseRight" multiple="multiple" class="form-control" style="height:220px;"></select>
+
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-4">
+                <fieldset class="border p-2">
+                    <legend class="w-auto">Order By</legend>
+
+                    <label class="checkbox-inline"><input type="checkbox" class="checkboxTypeGiftSearch" value="1"> &nbsp;  Sales Ach(%)</label>
+                    &nbsp;
+                    <label class="checkbox-inline"><input type="checkbox" class="checkboxTypePurchaseSearch" value="2">&nbsp; Collection Ach(%)</label>
+
+                </fieldset>
+            </div>
+            <div class="col-md-3" style="margin-top:50px">
+                <div>
+                    <label class="checkbox-inline"><input type="checkbox" class="checkboxTypeGiftSearch" value="1">&nbsp;  National Performance</label>
+                </div>
+
+            </div>
+            <div class="col-md-5">
+
+                <fieldset class="border p-2">
+                    <legend class="w-auto">Period Selection</legend>
+
+                    <div class="row" style="margin-left:4px">
+                        <label class="control-label col-md-3">From: </label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <input type="date" id="fromDate" name="fromDate">
+
+                            </div>
+                        </div>
+                    </div>
+                    &nbsp;
+                    <div class="row" style="margin-left:4px">
+                        <label class="control-label col-md-3">To: </label>
+
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <input type="date" id="toDate" name="toDate">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+            </div>
+        </div>
+        <div class="row" style="  justify-content: flex-end">
+            <div>
+                <button title="Commission Cal."
+                        style="margin: 2px; text-transform: capitalize;"
+                        class="btn btn-success"
+                        onclick="App();">
+                    <i class="fa fa-floppy-o"></i>&nbsp;Preview
+                </button>
+            </div>
+            <div>
+                <button title="Commission Cal."
+                        style="margin: 2px; text-transform: capitalize;"
+                        class="btn btn-danger"
+                        onclick="App();">
+                    <i class="fa fa-times"></i>&nbsp;cancel
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<script>
+    $(function () {
+        $("#ShiftRight,#ShiftLeft").click(function (event) {
+            var ID = $(event.target).attr("ID");
+            var ChooseFrom = ID == "ShiftRight" ? "#ChooseLeft" : "#ChooseRight";
+            var moveTo = ID == "ShiftRight" ? "#ChooseRight" : "#ChooseLeft";
+            var SelectData = $(ChooseFrom + " :selected").toArray();
+            $(moveTo).append(SelectData);
+            SelectData.remove;
+        });
+    });
+
+
+
+
+    //-----------------------------Filter starts
+    //declare
+    var keys = [];
+    var values = [];
+
+    var options = $('#ChooseLeft option');
+    //load all list key and value
+    $.each(options, function (index, item) {
+        keys.push(item.value);
+        values.push(item.innerHTML);
+    });
+
+    //event on key up
+    $('#txtSearchBy').keyup(function () {
+        var filter = $(this).val();
+        doListBoxFilter('#ChooseLeft', filter, keys, values);
+    });
+
+    //private helper method to search
+    function doListBoxFilter(listBoxSelector, filter, keys, values) {
+        var list = $(listBoxSelector);
+        var selectBase = '<option value="{0}">{1}</option>';
+
+
+        list.empty();
+        for (i = 0; i < values.length; ++i) {
+
+
+            var value = values[i];
+
+
+            if (value == "" || value.toLowerCase().indexOf(filter.toLowerCase()) >= 0) {
+                var temp = '<option value="' + keys[i] + '">' + value + '</option>';
+                list.append(temp);
+            }
+        }
+    }
+    //-----------------------------Filter end
+</script>
