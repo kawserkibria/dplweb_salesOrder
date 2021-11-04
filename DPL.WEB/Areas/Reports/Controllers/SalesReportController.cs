@@ -14,12 +14,6 @@ namespace DPL.WEB.Areas.Reports.Controllers
             return View();
 
 
-
-
-
-
-
-
         }
     }
 }

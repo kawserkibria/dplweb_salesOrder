@@ -1,5 +1,6 @@
 ﻿using DPL.WEB.App_Start;
 using DPL.WEB.Models;
+using Dutility;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -41,13 +42,13 @@ namespace DPL.WEB.Controllers
              p = login.password;
 
 
-             if (login.userLevel != 0)
-             {
-                 Obj = mGetUserPassword("0001", u);
+             //if (login.userLevel == 0)
+             //{
+                 Obj = mGetUserPassword("0001", u, Convert.ToInt16(login.userLevel));
                  string databaseUser = Obj.strUserID;
                  string databasePass = Obj.strUserPassword;
                   name = AuthUser(databaseUser, databasePass);
-             }
+             //}
 
             if (!(String.IsNullOrEmpty(name)))
             {
@@ -62,10 +63,21 @@ namespace DPL.WEB.Controllers
                 {
 
 
+                    //string UserID = login.username;
+                    //Session["USERID"] = login.username;
+                    //Session["userLevel"] = login.userLevel;
+                    //return RedirectToAction("Index", "Home");
                     string UserID = login.username;
                     Session["USERID"] = login.username;
                     Session["userLevel"] = login.userLevel;
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("AreaHeadView", "SalesOrder", new { Area = "Transaction" });
+                }
+                else if (login.userLevel == 1)
+                {
+                    string UserID = login.username;
+                    Session["USERID"] = login.username;
+                    Session["userLevel"] = login.userLevel;
+                    return RedirectToAction("AreaHeadView", "SalesOrder", new { Area = "Transaction" });
                 }
                 else if (login.userLevel == 2)
                 {
@@ -74,13 +86,7 @@ namespace DPL.WEB.Controllers
                     Session["userLevel"] = login.userLevel;
                     return RedirectToAction("MpoView", "SalesOrder", new { Area = "Transaction" });
                 }
-                else if (login.userLevel == 3)
-                {
-                    string UserID = login.username;
-                    Session["USERID"] = login.username;
-                    Session["userLevel"] = login.userLevel;
-                    return RedirectToAction("AreaHeadView", "SalesOrder", new { Area = "Transaction" });
-                }
+               
                 else
                 {
                     string UserID = login.username;
@@ -97,24 +103,6 @@ namespace DPL.WEB.Controllers
 
 
 
-        //if (login.userLevel == 0)
-        //{
-        //        string UserID = login.username;
-        //        Session["USERID"] = login.username;
-        //        Session["userLevel"] = login.userLevel;
-        //        return RedirectToAction("Index", "Home");
-        //}
-        //else if (login.userLevel == 2)
-        //{
-        //    string UserID = login.username;
-        //    Session["USERID"] = login.username;
-        //    Session["userLevel"] = login.userLevel;
-        //    return RedirectToAction("MpoView", "SalesOrder", new { Area = "Transaction" });
-        //}
-        //else
-        //{
-        //    return RedirectToAction("Index", "Home");
-        //}
 
         public string AuthUser(string username, string password)
         {
@@ -125,7 +113,7 @@ namespace DPL.WEB.Controllers
         }
 
 
-        public MPO  mGetUserPassword(string strDeComID, string strUserID)
+        public MPO  mGetUserPassword(string strDeComID, string strUserID,Int16 intUserlevel)
         {
             string strSQL = "";
 
@@ -143,14 +131,34 @@ namespace DPL.WEB.Controllers
                 }
                 gcnMain.Open();
                 cmd.Connection = gcnMain;
-                strSQL = "SELECT USER_ID,PASSWORD FROM USER_ONLILE_SECURITY WHERE STATUS=0 AND USER_ID ='" + strUserID + "' ";
+
+                if ( (intUserlevel == 1) || (intUserlevel == 0))
+                {
+                    strSQL = "SELECT USER_LOGIN_SERIAL,USER_LOGIN_NAME,USER_PASS,USER_LEBEL,USER_STATUS FROM USER_CONFIG ";
+                    strSQL = strSQL + "WHERE USER_LOGIN_NAME = '" + strUserID.Trim().Replace("'", "''") + "' ";
+                }
+                else
+                {
+                    strSQL = "SELECT USER_ID,PASSWORD FROM USER_ONLILE_SECURITY WHERE STATUS=0 AND USER_ID ='" + strUserID + "' ";
+
+                }
                 cmd.CommandText = strSQL;
                 drGetGroup = cmd.ExecuteReader();
                 if (drGetGroup.Read())
                 {
 
-                    Obj.strUserID = drGetGroup["USER_ID"].ToString();
-                    Obj.strUserPassword = drGetGroup["PASSWORD"].ToString();
+                    if ( (intUserlevel == 1) || (intUserlevel == 0))
+                    {
+                        Obj.strUserID = drGetGroup["USER_LOGIN_NAME"].ToString();
+                        Obj.strUserPassword = Utility.Decrypt(drGetGroup["USER_PASS"].ToString(), drGetGroup["USER_LOGIN_NAME"].ToString()).ToString();
+                    }
+                    else
+                    {
+                        Obj.strUserID = drGetGroup["USER_ID"].ToString();
+                        Obj.strUserPassword = drGetGroup["PASSWORD"].ToString();
+                    }
+
+                 
                 }
                 else
                 {

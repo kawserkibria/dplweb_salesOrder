@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="Models\AccBillwise.cs" />
     <Compile Include="Models\AccountsVoucher.cs" />
+    <Compile Include="Models\BranchConfig.cs" />
     <Compile Include="Models\BranchRespons.cs" />
     <Compile Include="Models\jsTree3Node.cs" />
     <Compile Include="Models\Location.cs" />
@@ -9660,6 +9661,8 @@
     <Content Include="Areas\Transaction\Views\SalesOrder\MpoView.cshtml" />
     <Content Include="Areas\Transaction\Views\SalesOrder\View1.cshtml" />
     <Content Include="Areas\Transaction\Views\SalesOrder\AreaHeadView.cshtml" />
+    <Content Include="Areas\Reports\Views\SalesReport\Index.cshtml" />
+    <Content Include="Areas\Transaction\Views\SalesOrder\ZonalheadView.cshtml" />
     <None Include="Properties\PublishProfiles\SalesOrder.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
@@ -9800,7 +9803,6 @@
     <Folder Include="Areas\Master\Models\" />
     <Folder Include="Areas\Master\Views\Shared\" />
     <Folder Include="Areas\Reports\Models\" />
-    <Folder Include="Areas\Reports\Views\SalesReport\" />
     <Folder Include="Areas\Reports\Views\Shared\" />
     <Folder Include="Areas\Transaction\Models\" />
     <Folder Include="Areas\Transaction\Views\Shared\" />

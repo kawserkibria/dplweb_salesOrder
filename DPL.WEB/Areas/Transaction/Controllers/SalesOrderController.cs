@@ -33,6 +33,8 @@ namespace DPL.WEB.Areas.Transaction.Controllers
 
             return Json(Utility.gstrLastNumber("0003", 12), JsonRequestBehavior.AllowGet);
         }
+
+       
        //[AuthorizationFilter]
         public ActionResult Logout()
         {
@@ -40,6 +42,23 @@ namespace DPL.WEB.Areas.Transaction.Controllers
             Session["userLevel"] = null;
             return RedirectToAction("LogIn", "LogIn");
         }
+        public ActionResult ZonalheadView()
+        {
+            if (Session["USERID"].ToString() != null)
+            {
+                mGetLedgerInfo(Session["USERID"].ToString());
+                ViewBag.MName = strLedgerName;
+                ViewBag.MNameMerz = strLedgerNameMearz;
+                ViewBag.BranchName = strBranchName;
+                ViewBag.RefNo = Utility.gstrLastNumber("0003", 12);
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+        }
+
 
         public ActionResult AreaHeadView()
         {
@@ -53,6 +72,16 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                     ViewBag.MNameMerz = "Area Head" + ":" + strLedgerName;
                     ViewBag.BranchName = strBranchName;
                     ViewBag.UserLevel = 3;
+                    ViewBag.RefNo = Utility.gstrLastNumber("0003", 12);
+                    return View("AreaHeadView");
+                }
+                else if (Session["userLevel"].ToString() == "1")
+                {
+                    mGetAreaLedgerInfo(Session["USERID"].ToString());
+                    ViewBag.MName = Session["USERID"].ToString();
+                    ViewBag.MNameMerz = "User" + ":" + Session["USERID"].ToString();
+                    ViewBag.BranchName = strBranchName;
+                    ViewBag.UserLevel = 1;
                     ViewBag.RefNo = Utility.gstrLastNumber("0003", 12);
                     return View("AreaHeadView");
                 }
@@ -97,22 +126,23 @@ namespace DPL.WEB.Areas.Transaction.Controllers
             BranchRespons response = new BranchRespons();
             string connectionString = WebConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
-            //strSQL = "select   L.AREA, ACC_BRANCH.BRANCH_NAME  ,l.LEDGER_NAME_MERZE,l.LEDGER_NAME from ACC_LEDGER_Z_D_A L  , ACC_BRANCH where  L.BRANCH_ID= ACC_BRANCH.BRANCH_ID and L.BRANCH_ID='0001' and l.LEDGER_STATUS=0  ";
-            //if (responseId != null)
-            //{
-            //    strSQL = strSQL + " and L.AREA ='AH-AM-Md. Jalal Uddin-Sunamganj' ";
-            //}
-            //strSQL = strSQL + "order by l.LEDGER_NAME_MERZE ";
-
-            strSQL = "select  LEDGER_NAME,B.BRANCH_NAME ";
-            strSQL = strSQL + " from USER_ONLILE_SECURITY U,ACC_BRANCH B  ";
-            if (responseId != null)
+            if (Session["userLevel"].ToString() == "1")
             {
-                strSQL = strSQL + "where  u.USER_ID='" + responseId + "'   ";
+                strSQL = "SELECT BRANCH_ID,BRANCH_NAME, USER_LOGIN_NAME as LEDGER_NAME FROM USER_PRIVILEGES_BRANCH_VIEW  ";
+                strSQL = strSQL + "WHERE USER_LOGIN_NAME ='" + responseId + "'  ";
+                strSQL = strSQL + "AND BRANCH_ACTIVE =0 ";
             }
-            strSQL = strSQL + "and BRANCH_ID= B.BRANCH_ID  and STATUS=0  ";
-            strSQL = strSQL + "and b.BRANCH_ID='0001' ";
-
+            else
+            {
+                strSQL = "select  LEDGER_NAME,B.BRANCH_NAME ";
+                strSQL = strSQL + " from USER_ONLILE_SECURITY U,ACC_BRANCH B  ";
+                if (responseId != null)
+                {
+                    strSQL = strSQL + "where  u.USER_ID='" + responseId + "'   ";
+                }
+                strSQL = strSQL + "and BRANCH_ID= B.BRANCH_ID  and STATUS=0  ";
+                strSQL = strSQL + "and b.BRANCH_ID='0001' ";
+            }
 
             using (SqlConnection gcnMain = new SqlConnection(connectionString))
             {
@@ -319,24 +349,33 @@ namespace DPL.WEB.Areas.Transaction.Controllers
             {
                 strBranchId = Utility.gstrGetBranchID("0003", strBranchName);
             }
-         
-            strSQL = " select l.LEDGER_NAME_MERZE,l.LEDGER_NAME  from ACC_LEDGER_Z_D_A L where l.LEDGER_STATUS=0 ";
-            if (userlevel == 3)
-            {
-                if (strDivision_Area_Head != "")
-                {
-                    strSQL = strSQL + " and AREA='" + strDivision_Area_Head + "'";
-                }
-            }
-            else
-            {
-                if (strDivision_Area_Head != "")
-                {
-                    strSQL = strSQL + " and DIVISION='" + strDivision_Area_Head + "'";
-                }
-            }
-            strSQL = strSQL + " and   L.BRANCH_ID='" + strBranchId + "' ";
+              if ((userlevel == 1) || (userlevel == 0))
+              {
+                  strSQL = "SELECT LEDGER_NAME_MERZE ,LEDGER_NAME,ACC_BRANCH.BRANCH_NAME  FROM ACC_LEDGER,ACC_BRANCH  ";
+                  strSQL = strSQL + "where  ACC_LEDGER.BRANCH_ID=  ACC_BRANCH.BRANCH_ID and  LEDGER_GROUP not in (204) and ACC_LEDGER.LEDGER_STATUS=0 ";
+                  strSQL = strSQL + "and LEDGER_NAME not in(select LEDGER_NAME from USER_PRIVILEGES_LEDGER WHERE USER_LOGIN_NAME='" + strDivision_Area_Head + "')  ";
+                  strSQL = strSQL + "order by LEDGER_NAME_MERZE ";
+              }
 
+              else
+              {
+                  strSQL = " select l.LEDGER_NAME_MERZE,l.LEDGER_NAME  from ACC_LEDGER_Z_D_A L where l.LEDGER_STATUS=0 ";
+                  if (userlevel == 3)
+                  {
+                      if (strDivision_Area_Head != "")
+                      {
+                          strSQL = strSQL + " and AREA='" + strDivision_Area_Head + "'";
+                      }
+                  }
+                  else
+                  {
+                      if (strDivision_Area_Head != "")
+                      {
+                          strSQL = strSQL + " and DIVISION='" + strDivision_Area_Head + "'";
+                      }
+                  }
+                  strSQL = strSQL + " and   L.BRANCH_ID='" + strBranchId + "' ";
+              }
 
 
             using (SqlConnection gcnMain = new SqlConnection(connectionString))
@@ -769,6 +808,7 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                                 //New Order list
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 0 ";
                                 strSQL = strSQL + "AND APP_STATUS=0  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.ONLINE=0  ";
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
                             }
                             if (intStatusCol == 2)
@@ -1166,7 +1206,7 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                                 //New Order list
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.APPS_COMM_CAL= 0 ";
                                 strSQL = strSQL + "AND APP_STATUS=0  ";
-                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.ONLINE=1  ";
+                                strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.ONLINE=0  ";
                                 strSQL = strSQL + "AND ACC_COMPANY_VOUCHER_BRANCH_VIEW.COMP_VOUCHER_STATUS= 0  ";
                             }
                             if (intStatusCol == 2)
@@ -1844,7 +1884,7 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                     strMonthID = Convert.ToDateTime(gItemList.strOrderDate).ToString("MMMyy");
 
 
-                    strSQL = Voucher.gInsertCompanyVoucher(gItemList.strOrderNo, mlngVType, Convert.ToDateTime(gItemList.strOrderDate).ToString("dd-MM-yyyy"), strMonthID, gItemList.strOrderDate, gItemList.strLedgerName,
+                    strSQL = Voucher.gInsertCompanyVoucher(gItemList.strOrderNo, mlngVType, gItemList.strOrderDate, strMonthID, gItemList.strOrderDate, gItemList.strLedgerName,
                                                            gItemList.dblNetTotal, gItemList.dblTotalAmount, 0, gItemList.dblCommitionVal, 0, gItemList.strNaration,
                                                            strBranchId, gItemList.lngIsMultiCurrency, Utility.Mid(gItemList.strOrderNo, 9, gItemList.strOrderNo.Length - 9),
                                                            gItemList.strCustomer, gItemList.strDelivery, "", gItemList.strSupport, gItemList.dteValidaty,
@@ -1969,7 +2009,7 @@ namespace DPL.WEB.Areas.Transaction.Controllers
                     //strSQL = strSQL + "APPS_CUSTOMER_MERZE= '" + strLedgerName + "',";
                     if (gItemList.strOrderDate != null)
                     {
-                        strSQL = strSQL + ",COMP_VOUCHER_DATE = " + Convert.ToDateTime(gItemList.strOrderDate).ToString("dd-MM-yyyy") + "";
+                        strSQL = strSQL + ",COMP_VOUCHER_DATE =" + Utility.cvtSQLDateString(gItemList.strOrderDate) + " ";
                     }
                     if (strMonthID != "")
                     {
