@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EX.Projection.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EX.Projection.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfProjectionSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectionSet" nillable="true" type="tns:ProjectionSet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjectionSet" nillable="true" type="tns:ArrayOfProjectionSet" />
+  <xs:complexType name="ProjectionSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dbl1" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl10" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl11" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl12" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl13" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl14" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl15" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl2" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl3" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl4" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl5" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl6" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl7" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl8" type="xs:double" />
+      <xs:element minOccurs="0" name="dbl9" type="xs:double" />
+      <xs:element minOccurs="0" name="dblToAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW1" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW10" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW11" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW12" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW13" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW14" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW15" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW2" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW3" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW4" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW5" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW6" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW7" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW8" type="xs:double" />
+      <xs:element minOccurs="0" name="dblW9" type="xs:double" />
+      <xs:element minOccurs="0" name="intCol" type="xs:int" />
+      <xs:element minOccurs="0" name="intRow" type="xs:int" />
+      <xs:element minOccurs="0" name="intSerial" type="xs:int" />
+      <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="strAMFM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strEndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMerzeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMpoName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strProjectionDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strProjectionKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strProjectionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strZone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectionSet" nillable="true" type="tns:ProjectionSet" />
+  <xs:complexType name="ArrayOfMprojection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Mprojection" nillable="true" type="tns:Mprojection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMprojection" nillable="true" type="tns:ArrayOfMprojection" />
+  <xs:complexType name="Mprojection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APR" type="xs:double" />
+      <xs:element minOccurs="0" name="AUG" type="xs:double" />
+      <xs:element minOccurs="0" name="DEC" type="xs:double" />
+      <xs:element minOccurs="0" name="FRB" type="xs:double" />
+      <xs:element minOccurs="0" name="JAN" type="xs:double" />
+      <xs:element minOccurs="0" name="JUL" type="xs:double" />
+      <xs:element minOccurs="0" name="JUN" type="xs:double" />
+      <xs:element minOccurs="0" name="MAR" type="xs:double" />
+      <xs:element minOccurs="0" name="MAY" type="xs:double" />
+      <xs:element minOccurs="0" name="NOV" type="xs:double" />
+      <xs:element minOccurs="0" name="OCT" type="xs:double" />
+      <xs:element minOccurs="0" name="SEP" type="xs:double" />
+      <xs:element minOccurs="0" name="dblBalance" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTotalPer" type="xs:double" />
+      <xs:element minOccurs="0" name="dblUp_toDate_amnt" type="xs:double" />
+      <xs:element minOccurs="0" name="intMode" type="xs:int" />
+      <xs:element minOccurs="0" name="intid" type="xs:int" />
+      <xs:element minOccurs="0" name="strArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGRName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerNameMerze" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strParticulars" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strZone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Mprojection" nillable="true" type="tns:Mprojection" />
+  <xs:complexType name="ArrayOfProjectonMonthConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectonMonthConfig" nillable="true" type="tns:ProjectonMonthConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjectonMonthConfig" nillable="true" type="tns:ArrayOfProjectonMonthConfig" />
+  <xs:complexType name="ProjectonMonthConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="intSerial" type="xs:int" />
+      <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="lngTotalArea" type="xs:long" />
+      <xs:element minOccurs="0" name="lngTotalLedger" type="xs:long" />
+      <xs:element minOccurs="0" name="strArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strFromDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGRName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strToDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strZone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectonMonthConfig" nillable="true" type="tns:ProjectonMonthConfig" />
+  <xs:complexType name="ArrayOfPCollectionCopmarison">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PCollectionCopmarison" nillable="true" type="tns:PCollectionCopmarison" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPCollectionCopmarison" nillable="true" type="tns:ArrayOfPCollectionCopmarison" />
+  <xs:complexType name="PCollectionCopmarison">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dblAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="strArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strEndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLastMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMonthName" type="xs:double" />
+      <xs:element minOccurs="0" name="strMonthNamee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strProjectionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strZone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strstrDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCollectionCopmarison" nillable="true" type="tns:PCollectionCopmarison" />
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2851c10e-c554-4cc3-b3b0-d88765ee4645" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:133/ACCMSNEW/Service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="4e91446d-698e-45d8-9c67-809c41fbd818" SourceId="1" SourceUrl="http://localhost:133/ACCMSNEW/Service.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="c8f0d293-ff2f-423b-b6f2-2a446a2dd7fa" SourceId="1" SourceUrl="http://localhost:133/ACCMSNEW/Service.svc?disco" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="b6dd4aad-e83a-4f4c-afba-04b26fe0dc3d" SourceId="1" SourceUrl="http://localhost:133/ACCMSNEW/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="243e1a47-458c-4604-aa9c-fbfaa3c9d3af" SourceId="1" SourceUrl="http://localhost:133/ACCMSNEW/Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="SWJAG.wsdl" MetadataType="Wsdl" ID="7b67998e-31e3-4729-a283-cc794ad8a09c" SourceId="1" SourceUrl="http://localhost:133/ACCMSNEW/Service.svc?wsdl" />
+    <MetadataFile FileName="Service3.xsd" MetadataType="Schema" ID="c94b33d8-a703-47bb-ba56-ab4a58b4ec85" SourceId="1" SourceUrl="http://localhost:133/ACCMSNEW/Service.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

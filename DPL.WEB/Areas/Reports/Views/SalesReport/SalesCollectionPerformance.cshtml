@@ -1,0 +1,416 @@
+﻿
+@{
+    ViewBag.Title = "SalesCollectionPerformance";
+    Layout = "~/Views/Shared/AreaHeadLayout.cshtml";
+}
+
+<div class="centerContainer ">
+    <div class="item bordercolor" style="padding: 20px; background-color:azure">
+        @*<div class="row">
+                <div class="col-md-12">
+
+                    <label> Branch Name </label>
+                    <input type="text" id="branchName" name="branchName" />
+                </div>
+
+            </div>*@
+        &nbsp;
+
+
+        <div class="col-6" hidden>
+            <h5 class="modal-title  text-right" style="margin: 0 auto;" id="lblledgerName">@ViewBag.MName</h5>
+
+        </div>
+        <div class="col-6" hidden>
+            <h5 class="modal-title  text-right" style="margin: 0 auto;" id="lblledgerNameMarzeName">@ViewBag.MNameMerz</h5>
+
+        </div>
+        <div class="row">
+            <label class="control-label"> Branch Name</label>
+            <div class="col-md-9">
+                <select id="idBranch"  class="form-control"></select>
+            </div>
+
+            <div class="col-md-9">
+               <button id="che" onclick="btnclick();">chaeck</button>
+            </div>
+        </div>
+        &nbsp;
+        <div class="row bordercolor">
+            <div class="col-lg-2">
+                <div class="row">
+                    <input type="radio" id="idAll" style="height: 15px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="2" />
+                    <label style="font-size:15px;">All</label>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="row">
+                    <input type="radio" checked id="idActive" style="height: 15px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="0" />
+                    <label style="font-size:15px;">Active</label>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="row">
+                    <input type="radio" id="idInActive" style="height: 15px; width: 35px; margin-top: 5px" class="checkmarkl" name="rbtnname" value="1" />
+                    <label style="font-size:15px;">InActive</label>
+                </div>
+            </div>
+
+        </div>
+        <br />
+
+        <div class="row bordercolor">
+          
+                <div class="col-lg-2">
+                    <div class="row">
+                        <input type="radio" id="rbtnallmpo" checked style="height: 15px; width: 35px; margin-top: 5px" onclick="rbtnclick();" class="checkmark2" name="rbtnname2" value="All" />
+                        <label style="font-size:15px;">All</label>
+                    </div>
+                </div>
+          
+      
+                <div class="col-lg-2">
+                    <div class="row">
+                        <input type="radio" id="rbtnmpo" style="height: 15px; width: 35px; margin-top: 5px" onclick="rbtnclick();" class="checkmark2" name="rbtnname2" value="MPO" />
+                        <label style="font-size:15px;">Mpo</label>
+                    </div>
+                </div>
+         
+        
+                <div class="col-lg-2">
+                    <div class="row">
+                        <input type="radio" id="rbtnallAM" style="height: 15px; width: 35px; margin-top: 5px" onclick="rbtnclick();" class="checkmark2" name="rbtnname2" value="AM" />
+                        <label style="font-size:15px;">AM/FM</label>
+                    </div>
+                </div>
+          
+                <div class="col-lg-2">
+                    <div class="row">
+                        <input type="radio" id="rbtnDsm" style="height: 15px; width: 35px; margin-top: 5px" onclick="rbtnclick();" class="checkmark2" name="rbtnname2" value="DSM" />
+                        <label style="font-size:15px;">DSM/RSM</label>
+                    </div>
+                </div>
+        
+                <div class="col-lg-2">
+                    <div class="row">
+                        <input type="radio" id="rbtnallZone" style="height: 15px; width: 35px; margin-top: 5px" onclick="rbtnclick();" class="checkmark2" name="rbtnname2" value="ZM" />
+                        <label style="font-size:15px;">ZONE</label>
+                    </div>
+                </div>
+         
+        </div>
+        &nbsp;
+        <div class="row bordercolor" style="padding-top:5px; padding-bottom:5px ">
+            <div class="col-md-5">
+                @*<input type="text" id="txtSearchBy" value="" class="form-control" />*@
+                @*<div class="input-group">
+                        <input type="text" class="form-control" id="txtSearchBy">
+                        <div class="input-group-append">
+                            <span class="input-group-text">$</span>
+                        </div>
+                    </div>*@
+                <div class="input-group">
+
+                    <input type="text" class="form-control" name="msg" id="txtSearchBy" placeholder="search">
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                </div>
+                <select id="ChooseLeft" multiple="multiple" class="form-control" style="height:220px;">
+                    @*<option value="1">001 Lucknow</option>
+                        <option value="2">002 Kanpur</option>
+                        <option value="3">003-Delhi india world</option>
+                        <option value="4">Gurgao</option>
+                        <option value="5">Noida</option>
+                        <option value="5">Agra</option>
+                        <option value="5">Banglore</option>
+                        <option value="5">Rajasthan</option>
+                        <option value="5">Pune</option>*@
+                </select>
+            </div>
+            <div class="col-md-2" style="padding-top:110px">
+                <input id="ShiftRight" type="button" value=">>" class="btn btn-sm btn-warning" />
+                <input id="ShiftLeft" type="button" value="<<" class="btn btn-sm btn-warning" />
+            </div>
+            <div class="col-md-5" style="margin-top:38px">
+                <select id="ChooseRight" multiple="multiple" class="form-control" style="height:220px;"></select>
+
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-4">
+                <fieldset class="border p-2">
+                    <legend class="w-auto">Order By</legend>
+
+                    <label class="checkbox-inline"><input type="checkbox" class="checkboxTypeGiftSearch" value="1"> &nbsp;  Sales Ach(%)</label>
+                    &nbsp;
+                    <label class="checkbox-inline"><input type="checkbox" class="checkboxTypePurchaseSearch" value="2">&nbsp; Collection Ach(%)</label>
+
+                </fieldset>
+            </div>
+            <div class="col-md-3" style="margin-top:50px">
+                <div>
+                    <label class="checkbox-inline"><input type="checkbox" class="checkboxTypeGiftSearch" value="1">&nbsp;  National Performance</label>
+                </div>
+
+            </div>
+            <div class="col-md-5">
+
+                <fieldset class="border p-2">
+                    <legend class="w-auto">Period Selection</legend>
+
+                    <div class="row" style="margin-left:4px">
+                        <label class="control-label col-md-3">From: </label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <input type="date" id="fromDate" name="fromDate">
+
+                            </div>
+                        </div>
+                    </div>
+                    &nbsp;
+                    <div class="row" style="margin-left:4px">
+                        <label class="control-label col-md-3">To: </label>
+
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <input type="date" id="toDate" name="toDate">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+            </div>
+        </div>
+        <div class="row" style="  justify-content: flex-end">
+            <div>
+                <button title="Commission Cal."
+                        style="margin: 2px; text-transform: capitalize;"
+                        class="btn btn-success"
+                        onclick="App();">
+                    <i class="fa fa-floppy-o"></i>&nbsp;Preview
+                </button>
+            </div>
+            <div>
+                <button title="Commission Cal."
+                        style="margin: 2px; text-transform: capitalize;"
+                        class="btn btn-danger"
+                        onclick="App();">
+                    <i class="fa fa-times"></i>&nbsp;cancel
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<script>
+    function mloadBranch() {
+        var ddlidBranchlist = $("#idBranch");
+        $.ajax({
+            url: '@Url.Action("mGetBranch")',
+            datatype: "json",
+
+            success: function (data) {
+                console.log(data);
+                ddlidBranchlist.html('');
+                $.each(data, function (id, option) {
+
+                    ddlidBranchlist.append($('<option value="' + option.Key + '">' + option.Value + '</option>'));
+                });
+                //$('#ddlidBranchlist').val(selectdata.Value);
+                //$('#ddlidBranchlist').trigger('change');
+            }
+        })
+
+    };
+
+    var intstatus = 0;
+
+    var templist = [];
+
+
+        $('input[type=radio][name=rbtnname]').change(function () {
+
+            if (this.value == '0') {
+                intstatus = 0;
+            }
+            else if (this.value == '1') {
+                intstatus = 1;
+            }
+
+            else {
+                intstatus = 2;
+            }
+            loadLedger(strposition, intstatus);
+        });
+
+        var strLedgerType = 0;
+
+        $('input[type=radio][name=rbtnname2]').click(function () {
+            strposition = 5;
+            if (this.value == "All") {
+                strLedgerType = 5;
+            }
+            else if (this.value == "MPO") {
+                strLedgerType = 4;
+            }
+            else if (this.value == "AM") {
+                strLedgerType = 3;
+            }
+            else if (this.value == "DSM") {
+                strLedgerType = 2;
+            }
+            else {
+                strLedgerType = 1;
+            }
+            
+            loadLedger(strLedgerType, intstatus);
+        });
+
+
+        function loadLedger(strposition,status) {
+
+            var Branchid = $('#idBranch').val()
+
+            var leftlist = $('#ChooseLeft');
+            var i = 0;
+
+            var strUserName = document.getElementById('lblledgerName').textContent
+            $.ajax({
+                url: '@Url.Action("mGetLedger")',
+                datatype: "json",
+                data: {
+                    strBranchId: Branchid,
+                    ledgerType: strLedgerType,
+                    intStatus: status,
+                    gstrUserName: strUserName
+                },
+                success: function (data) {
+                    console.log(data);
+                    templist = data;
+                    leftlist.html('');
+                    $.each(data, function (id, option) {
+                    
+                        leftlist.append($('<option value="' + option.intid + '">' + option.strGRName + '</option>'));
+                    });
+                    //$('#ddlidBranchlist').val(selectdata.Value);
+                    //$('#ddlidBranchlist').trigger('change');
+                }
+            })
+
+        }
+        function rbtnclick()
+        {
+            
+        }
+
+
+
+    $(function () {
+        $("#ShiftRight,#ShiftLeft").click(function (event) {
+            var ID = $(event.target).attr("ID");
+            var ChooseFrom = ID == "ShiftRight" ? "#ChooseLeft" : "#ChooseRight";
+            var moveTo = ID == "ShiftRight" ? "#ChooseRight" : "#ChooseLeft";
+            var SelectData = $(ChooseFrom + " :selected").toArray();
+            $(moveTo).append(SelectData);
+            SelectData.remove;
+        });
+    });
+
+    $(document).ready(function () {
+
+        mloadBranch();
+    });
+
+
+
+
+    //-----------------------------Filter starts
+    //declare
+    var keys = [];
+    var values = [];
+
+    var options = $('#ChooseLeft option');
+    //load all list key and value
+    $.each(options, function (index, item) {
+        keys.push(item.value);
+        values.push(item.innerHTML);
+    });
+
+    
+ 
+    function btnclick() {
+        var ddd = $('#che');
+     
+        var datalist = $('#ChooseLeft');
+        console.log('values', datalist);
+    }
+    
+
+    //event on key up
+    $('#txtSearchBy').keyup(function () {
+
+        var filter = $(this).val();
+        console.log('filter', filter);
+        console.log('keys', keys);
+        console.log('values', values);
+        doListBoxFilter('#ChooseLeft', filter, keys, values);
+        //Search_Gridview(filter);
+    });
+
+    //private helper method to search
+    
+    $(document).ready(function () {
+        function doListBoxFilter(listBoxSelector, filter, keys, values) {
+            var list = $(listBoxSelector);
+            console.log('dis', list);
+            var selectBase = '<option value="{0}">{1}</option>';
+
+
+            list.empty();
+            for (i = 0; i < values.length; ++i) {
+
+
+                var value = values[i];
+
+
+                if (value == "" || value.toLowerCase().indexOf(filter.toLowerCase()) >= 0) {
+                    var temp = '<option value="' + keys[i] + '">' + value + '</option>';
+                    list.append(temp);
+                }
+            }
+        }
+    }
+
+    //function Search_Gridview(strKey) {
+
+    //    //var strData = strKey.value.toLowerCase().split(" ");
+    //    var strData = strKey;
+    //    var tblData = document.getElementById('ChooseLeft');
+    //    console.log("Data", tblData)
+
+    //    var rowData;
+    //    for (var i = 1; i < tblData.length; i++) {
+    //        rowData = tblData[i].innerHTML;
+    //        var styleDisplay = 'none';
+    //        for (var j = 0; j < strData.length; j++) {
+    //            console.log("s data", rowData)
+    //            if (rowData.indexOf(strData[j]) >= 0)
+    //                styleDisplay = '';
+    //            else {
+    //                styleDisplay = 'none';
+    //                break;
+    //            }
+    //        }
+    //        tblData.rows[i].style.display = styleDisplay;
+    //    }
+    //}
+
+    //-----------------------------Filter end
+</script>
+

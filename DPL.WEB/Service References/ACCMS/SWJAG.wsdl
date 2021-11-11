@@ -1,0 +1,3745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SWJAG" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:133/ACCMSNEW/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:133/ACCMSNEW/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:133/ACCMSNEW/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" />
+      <xsd:import schemaLocation="http://localhost:133/ACCMSNEW/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISWJAG_mFillBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillBranch" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveLedger_InputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveLedger" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveLedger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLedgerAdditem_InputMessage">
+    <wsdl:part name="parameters" element="tns:mLedgerAdditem" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLedgerAdditem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mLedgerAdditemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerListNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerListNew" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerListNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerListNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayLedgerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayLedgerList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayLedgerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayLedgerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayVectorCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayVectorCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayVectorCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayVectorCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayBranchOpening_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayBranchOpening" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayBranchOpening_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayBranchOpeningResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayFixedAssest_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayFixedAssest" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayFixedAssest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayFixedAssestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayFixedAssestOpening_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayFixedAssestOpening" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayFixedAssestOpening_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayFixedAssestOpeningResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayAccountsTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayAccountsTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayAccountsTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayAccountsTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateLedger_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateLedger" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateLedger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteLedger_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLedger" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteLedger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedger_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedger" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertTempVector_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertTempVector" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertTempVector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertTempVectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_SaveVoucher_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVoucher" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_SaveVoucher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVoucherResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_UpdateVoucher_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVoucher" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_UpdateVoucher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVoucherResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayCompVoucherList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayCompVoucherList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayCompVoucherList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayCompVoucherListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayVoucherList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayVoucherList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayVoucherList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayVoucherListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayVectorList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayVectorList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayVectorList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayVectorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveBranchInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveBranchInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveBranchInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveBranchInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillGetBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillGetBranch" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillGetBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillGetBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateBranchInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateBranchInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateBranchInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateBranchInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteBranchInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteBranchInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteBranchInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteBranchInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveFixedAssets_InputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveFixedAssets" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveFixedAssets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveFixedAssetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mAssetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mAssetList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mAssetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mAssetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayAssetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayAssetList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayAssetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayAssetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayFixedBranchList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayFixedBranchList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayFixedBranchList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayFixedBranchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateFixedAssets_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateFixedAssets" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateFixedAssets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateFixedAssetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteFixedAssets_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteFixedAssets" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteFixedAssets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteFixedAssetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertAssetsAdjustment_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertAssetsAdjustment" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertAssetsAdjustment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertAssetsAdjustmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetFixedAssetsAdjustment_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetFixedAssetsAdjustment" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetFixedAssetsAdjustment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetFixedAssetsAdjustmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteAssetsAdjustment_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteAssetsAdjustment" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteAssetsAdjustment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteAssetsAdjustmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLoadBillWise_InputMessage">
+    <wsdl:part name="parameters" element="tns:mLoadBillWise" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLoadBillWise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mLoadBillWiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayBillWise_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayBillWise" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayBillWise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayBillWiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gFillPreRefNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:gFillPreRefNo" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gFillPreRefNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gFillPreRefNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayCommonInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayCommonInvoice" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayCommonInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayCommonInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplaycommonInvoiceOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaycommonInvoiceOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplaycommonInvoiceOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaycommonInvoiceOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplaycommonInvoiceAddless_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaycommonInvoiceAddless" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplaycommonInvoiceAddless_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaycommonInvoiceAddlessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplaycommonInvoiceBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaycommonInvoiceBill" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplaycommonInvoiceBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaycommonInvoiceBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplaycommonInvoiceVoucher_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaycommonInvoiceVoucher" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplaycommonInvoiceVoucher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaycommonInvoiceVoucherResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertUser" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetUserAccessData_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetUserAccessData" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetUserAccessData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetUserAccessDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateInsertUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateInsertUser" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateInsertUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateInsertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLaodVoucherTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:mLaodVoucherTypes" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLaodVoucherTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mLaodVoucherTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdteVoucherTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdteVoucherTypes" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdteVoucherTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdteVoucherTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayQuotationVoucherList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayQuotationVoucherList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayQuotationVoucherList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayQuotationVoucherListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayQuotationVoucherTranList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayQuotationVoucherTranList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplayQuotationVoucherTranList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayQuotationVoucherTranListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mOpentableQuo_InputMessage">
+    <wsdl:part name="parameters" element="tns:mOpentableQuo" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mOpentableQuo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mOpentableQuoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetSalesLedgerTree_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesLedgerTree" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetSalesLedgerTree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesLedgerTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetSalesLedgerTreefromCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesLedgerTreefromCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetSalesLedgerTreefromCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesLedgerTreefromCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerNew" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillTeritorry_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillTeritorry" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillTeritorry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillTeritorryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateTeritorry_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateTeritorry" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateTeritorry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateTeritorryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeletetTeritorry_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetTeritorry" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeletetTeritorry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetTeritorryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertTeritorry_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertTeritorry" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertTeritorry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertTeritorryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gFillPreSampleClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:gFillPreSampleClass" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gFillPreSampleClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gFillPreSampleClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillUsername" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillExpenseList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillExpenseList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillExpenseList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillExpenseListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertExpenseLedger_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertExpenseLedger" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertExpenseLedger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertExpenseLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayLedgerlistt_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayLedgerlistt" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayLedgerlistt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayLedgerlisttResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayLedgerConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayLedgerConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayLedgerConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayLedgerConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetVoucherAmont_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherAmont" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetVoucherAmont_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherAmontResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetVoucherTodaySalesAmont_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherTodaySalesAmont" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetVoucherTodaySalesAmont_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherTodaySalesAmontResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetVoucherDateRangeWiseSalesAmont_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherDateRangeWiseSalesAmont" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetVoucherDateRangeWiseSalesAmont_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherDateRangeWiseSalesAmontResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetVoucherDateRangeWiseRecevedAmont_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherDateRangeWiseRecevedAmont" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetVoucherDateRangeWiseRecevedAmont_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherDateRangeWiseRecevedAmontResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteLedgerConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLedgerConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteLedgerConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLedgerConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteGrace_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteGrace" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteGrace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteGraceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillDisGraceLimitSP_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisGraceLimitSP" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillDisGraceLimitSP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisGraceLimitSPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillGraceLimitSP_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillGraceLimitSP" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillGraceLimitSP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillGraceLimitSPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillGraceLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillGraceLimit" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillGraceLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillGraceLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertGrace_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertGrace" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertGrace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertGraceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillIntegretedMapping_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillIntegretedMapping" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillIntegretedMapping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillIntegretedMappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertIntegretedMapping_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertIntegretedMapping" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertIntegretedMapping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertIntegretedMappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerIntegretedMapping_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerIntegretedMapping" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerIntegretedMapping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerIntegretedMappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerListMpoPercenNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerListMpoPercenNew" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerListMpoPercenNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerListMpoPercenNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSsaveIncentiveConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mSsaveIncentiveConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSsaveIncentiveConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mSsaveIncentiveConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetCustomerLedgerClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLedgerClass" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetCustomerLedgerClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLedgerClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeletetIncentiveGenList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetIncentiveGenList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeletetIncentiveGenList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetIncentiveGenListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillIncentiveGenList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillIncentiveGenList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillIncentiveGenList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillIncentiveGenListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetCustomerLedgeNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLedgeNew" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetCustomerLedgeNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLedgeNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetIncentive_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetIncentive" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetIncentive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetIncentiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeletetIncentive_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetIncentive" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeletetIncentive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetIncentiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayIncentive_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayIncentive" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayIncentive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayIncentiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillIncentive_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillIncentive" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillIncentive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillIncentiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertIncentiveCalculation_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertIncentiveCalculation" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertIncentiveCalculation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertIncentiveCalculationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillBranchAllNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillBranchAllNew" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillBranchAllNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillBranchAllNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetCustomerLedger_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLedger" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetCustomerLedger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetCustomerLedgerNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLedgerNew" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetCustomerLedgerNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLedgerNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetPFLegder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPFLegder" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetPFLegder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPFLegderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetHLLegder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHLLegder" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetHLLegder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHLLegderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillPFLedger_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillPFLedger" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillPFLedger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillPFLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertPrivilegesNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertPrivilegesNew" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertPrivilegesNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertPrivilegesNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLedgerSecurity_InputMessage">
+    <wsdl:part name="parameters" element="tns:mLedgerSecurity" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLedgerSecurity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mLedgerSecurityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillSecurityGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillSecurityGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillSecurityGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillSecurityGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gLoadLegderPrivilegesRight_InputMessage">
+    <wsdl:part name="parameters" element="tns:gLoadLegderPrivilegesRight" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gLoadLegderPrivilegesRight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gLoadLegderPrivilegesRightResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveGraceMonthConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveGraceMonthConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveGraceMonthConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveGraceMonthConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateGraceMonthConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateGraceMonthConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateGraceMonthConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateGraceMonthConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayGraceMonthsetupList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayGraceMonthsetupList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayGraceMonthsetupList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayGraceMonthsetupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetGraceDateFromMonthID_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetGraceDateFromMonthID" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetGraceDateFromMonthID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetGraceDateFromMonthIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteGraceMonthList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteGraceMonthList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteGraceMonthList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteGraceMonthListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerSelectionProjection_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerSelectionProjection" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerSelectionProjection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerSelectionProjectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gFillPreRefNoNew2_InputMessage">
+    <wsdl:part name="parameters" element="tns:gFillPreRefNoNew2" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gFillPreRefNoNew2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gFillPreRefNoNew2Response" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gFillPreRefNoNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:gFillPreRefNoNew" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gFillPreRefNoNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gFillPreRefNoNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayDraftLedger_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayDraftLedger" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayDraftLedger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayDraftLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerSelection_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerSelection" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerSelection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerSelectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetHondaLoanGroupList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHondaLoanGroupList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetHondaLoanGroupList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHondaLoanGroupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillTransferList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillTransferList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillTransferList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillTransferListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteTransfer" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveLoanTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveLoanTransfer" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveLoanTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveLoanTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillHLLedger_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillHLLedger" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillHLLedger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillHLLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetInstallmentNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetInstallmentNo" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetInstallmentNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetInstallmentNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLoanList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLoanList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLoanList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLoanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayLoanList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayLoanList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayLoanList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayLoanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveLoanMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveLoanMaster" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveLoanMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveLoanMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillDisplayManualBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayManualBill" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillDisplayManualBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayManualBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteManualMpoCmm_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteManualMpoCmm" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteManualMpoCmm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteManualMpoCmmResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillDisplayBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayBill" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillDisplayBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillManualBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillManualBill" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillManualBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillManualBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertMpoManual_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertMpoManual" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertMpoManual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertMpoManualResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerListMpoPercen_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerListMpoPercen" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerListMpoPercen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerListMpoPercenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertMpoPercentage_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertMpoPercentage" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertMpoPercentage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertMpoPercentageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateBankReconcilation_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateBankReconcilation" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateBankReconcilation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateBankReconcilationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayBankReconcilation_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayBankReconcilation" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayBankReconcilation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayBankReconcilationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetBankLedger_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetBankLedger" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetBankLedger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetBankLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerStatus" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerListTARGET_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerListTARGET" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerListTARGET_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerListTARGETResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateOnLineApprove_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateOnLineApprove" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateOnLineApprove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateOnLineApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateOnLineSecurty_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateOnLineSecurty" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateOnLineSecurty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateOnLineSecurtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillOnlineSecurity_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillOnlineSecurity" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillOnlineSecurity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillOnlineSecurityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_UpdateReceiptVoucherCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReceiptVoucherCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_UpdateReceiptVoucherCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReceiptVoucherCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_SaveReceiptVoucherCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveReceiptVoucherCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_SaveReceiptVoucherCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveReceiptVoucherCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetChequeRefNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetChequeRefNo" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetChequeRefNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetChequeRefNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplaycommonInvoiceAddlessDateWise_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaycommonInvoiceAddlessDateWise" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DisplaycommonInvoiceAddlessDateWise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplaycommonInvoiceAddlessDateWiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveBudget_InputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveBudget" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveBudget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveBudgetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateBudget_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateBudget" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateBudget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateBudgetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLoadBudgetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mLoadBudgetList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLoadBudgetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mLoadBudgetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayBudgetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayBudgetList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayBudgetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayBudgetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeletBudgetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeletBudgetList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeletBudgetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeletBudgetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteUserControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteUserControl" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteUserControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteUserControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillGroupSales_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillGroupSales" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillGroupSales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillGroupSalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetGroupClosing_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetGroupClosing" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetGroupClosing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetGroupClosingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetDateFromMonthID_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetDateFromMonthID" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetDateFromMonthID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetDateFromMonthIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayFixedAssestAccOpening_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayFixedAssestAccOpening" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayFixedAssestAccOpening_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayFixedAssestAccOpeningResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gOpenComID_InputMessage">
+    <wsdl:part name="parameters" element="tns:gOpenComID" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_gOpenComID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gOpenComIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mChangePasswod_InputMessage">
+    <wsdl:part name="parameters" element="tns:mChangePasswod" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mChangePasswod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mChangePasswodResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFilVoucherPrintingShow_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFilVoucherPrintingShow" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFilVoucherPrintingShow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFilVoucherPrintingShowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveVoucherPrinting_InputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveVoucherPrinting" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveVoucherPrinting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveVoucherPrintingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetBackupPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetBackupPath" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetBackupPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetBackupPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetDsmRsm_level4_userPrivilegesRight_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDsmRsm_level4_userPrivilegesRight" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetDsmRsm_level4_userPrivilegesRight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDsmRsm_level4_userPrivilegesRightResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetDsmRsm_level4_userPrivileges_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDsmRsm_level4_userPrivileges" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetDsmRsm_level4_userPrivileges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDsmRsm_level4_userPrivilegesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillBranchUserPrivileges_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillBranchUserPrivileges" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillBranchUserPrivileges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillBranchUserPrivilegesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillBranchUserRight_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillBranchUserRight" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillBranchUserRight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillBranchUserRightResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayPrivilegesMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayPrivilegesMain" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayPrivilegesMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayPrivilegesMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayPrivilegesChild_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayPrivilegesChild" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayPrivilegesChild_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayPrivilegesChildResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertPrivileges_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertPrivileges" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertPrivileges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertPrivilegesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetDsmRsm_level4_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDsmRsm_level4" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetDsmRsm_level4_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDsmRsm_level4Response" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveFormConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveFormConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveFormConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveFormConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateFormConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateFormConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateFormConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateFormConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayFormList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayFormList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayFormList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayFormListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetAccountsTreeviewCR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsTreeviewCR" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetAccountsTreeviewCR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsTreeviewCRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayLedgerPercen_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayLedgerPercen" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayLedgerPercen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayLedgerPercenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveMonthConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveMonthConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mSaveMonthConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mSaveMonthConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateMonthConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateMonthConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateMonthConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateMonthConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayMonthsetupList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayMonthsetupList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayMonthsetupList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayMonthsetupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteMonthList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteMonthList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDeleteMonthList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteMonthListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetRefNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetRefNo" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetRefNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetRefNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayMonthTarget_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayMonthTarget" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayMonthTarget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayMonthTargetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetLedgerClosing_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetLedgerClosing" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetLedgerClosing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetLedgerClosingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetLedgerOpening_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetLedgerOpening" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mGetLedgerOpening_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetLedgerOpeningResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mfillBranchNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:mfillBranchNew" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mfillBranchNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mfillBranchNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLedgerAdditemMr_InputMessage">
+    <wsdl:part name="parameters" element="tns:mLedgerAdditemMr" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mLedgerAdditemMr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mLedgerAdditemMrResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillTeritorrySI_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillTeritorrySI" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillTeritorrySI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillTeritorrySIResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetAccountsTreeviewDR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsTreeviewDR" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetAccountsTreeviewDR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsTreeviewDRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerNameVector_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerNameVector" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillLedgerNameVector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillLedgerNameVectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetAccountsGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetAccountsGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_InsertGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_InsertGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetAccountsTreeview_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsTreeview" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetAccountsTreeview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountsTreeviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetGroupList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_GetGroupList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillCurrencyList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillCurrencyList" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillCurrencyList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillCurrencyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayOpening_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayOpening" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mDisplayOpening_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayOpeningResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertCostCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertCostCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertCostCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertCostCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateCostCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateCostCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateCostCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateCostCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillVectorCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillVectorCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillVectorCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillVectorCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteCostCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCostCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteCostCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCostCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertCostCenter_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertCostCenter" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mInsertCostCenter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertCostCenterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateCostCenter_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateCostCenter" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mUpdateCostCenter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateCostCenterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteCostCenter_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCostCenter" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_DeleteCostCenter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCostCenterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillCostCenter_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillCostCenter" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillCostCenter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillCostCenterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillVectorMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillVectorMaster" />
+  </wsdl:message>
+  <wsdl:message name="ISWJAG_mFillVectorMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillVectorMasterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISWJAG">
+    <wsdl:operation name="mFillBranch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillBranch" message="tns:ISWJAG_mFillBranch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillBranchResponse" message="tns:ISWJAG_mFillBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mSaveLedger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mSaveLedger" message="tns:ISWJAG_mSaveLedger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mSaveLedgerResponse" message="tns:ISWJAG_mSaveLedger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mLedgerAdditem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mLedgerAdditem" message="tns:ISWJAG_mLedgerAdditem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mLedgerAdditemResponse" message="tns:ISWJAG_mLedgerAdditem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerListNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerListNew" message="tns:ISWJAG_mFillLedgerListNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerListNewResponse" message="tns:ISWJAG_mFillLedgerListNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerList" message="tns:ISWJAG_mFillLedgerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerListResponse" message="tns:ISWJAG_mFillLedgerList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayLedgerList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayLedgerList" message="tns:ISWJAG_mDisplayLedgerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayLedgerListResponse" message="tns:ISWJAG_mDisplayLedgerList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayVectorCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayVectorCategory" message="tns:ISWJAG_mDisplayVectorCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayVectorCategoryResponse" message="tns:ISWJAG_mDisplayVectorCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayBranchOpening">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayBranchOpening" message="tns:ISWJAG_mDisplayBranchOpening_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayBranchOpeningResponse" message="tns:ISWJAG_mDisplayBranchOpening_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayFixedAssest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayFixedAssest" message="tns:ISWJAG_mDisplayFixedAssest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayFixedAssestResponse" message="tns:ISWJAG_mDisplayFixedAssest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayFixedAssestOpening">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayFixedAssestOpening" message="tns:ISWJAG_mDisplayFixedAssestOpening_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayFixedAssestOpeningResponse" message="tns:ISWJAG_mDisplayFixedAssestOpening_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAccountsTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplayAccountsTemplate" message="tns:ISWJAG_DisplayAccountsTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplayAccountsTemplateResponse" message="tns:ISWJAG_DisplayAccountsTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateLedger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateLedger" message="tns:ISWJAG_mUpdateLedger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateLedgerResponse" message="tns:ISWJAG_mUpdateLedger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLedger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DeleteLedger" message="tns:ISWJAG_DeleteLedger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DeleteLedgerResponse" message="tns:ISWJAG_DeleteLedger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedger" message="tns:ISWJAG_mFillLedger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerResponse" message="tns:ISWJAG_mFillLedger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertTempVector">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertTempVector" message="tns:ISWJAG_mInsertTempVector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertTempVectorResponse" message="tns:ISWJAG_mInsertTempVector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVoucher">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/SaveVoucher" message="tns:ISWJAG_SaveVoucher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/SaveVoucherResponse" message="tns:ISWJAG_SaveVoucher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVoucher">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/UpdateVoucher" message="tns:ISWJAG_UpdateVoucher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/UpdateVoucherResponse" message="tns:ISWJAG_UpdateVoucher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayCompVoucherList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplayCompVoucherList" message="tns:ISWJAG_DisplayCompVoucherList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplayCompVoucherListResponse" message="tns:ISWJAG_DisplayCompVoucherList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayVoucherList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplayVoucherList" message="tns:ISWJAG_DisplayVoucherList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplayVoucherListResponse" message="tns:ISWJAG_DisplayVoucherList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayVectorList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplayVectorList" message="tns:ISWJAG_DisplayVectorList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplayVectorListResponse" message="tns:ISWJAG_DisplayVectorList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mSaveBranchInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mSaveBranchInfo" message="tns:ISWJAG_mSaveBranchInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mSaveBranchInfoResponse" message="tns:ISWJAG_mSaveBranchInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillGetBranch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillGetBranch" message="tns:ISWJAG_mFillGetBranch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillGetBranchResponse" message="tns:ISWJAG_mFillGetBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateBranchInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateBranchInfo" message="tns:ISWJAG_mUpdateBranchInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateBranchInfoResponse" message="tns:ISWJAG_mUpdateBranchInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteBranchInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDeleteBranchInfo" message="tns:ISWJAG_mDeleteBranchInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDeleteBranchInfoResponse" message="tns:ISWJAG_mDeleteBranchInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mSaveFixedAssets">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mSaveFixedAssets" message="tns:ISWJAG_mSaveFixedAssets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mSaveFixedAssetsResponse" message="tns:ISWJAG_mSaveFixedAssets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mAssetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mAssetList" message="tns:ISWJAG_mAssetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mAssetListResponse" message="tns:ISWJAG_mAssetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayAssetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayAssetList" message="tns:ISWJAG_mDisplayAssetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayAssetListResponse" message="tns:ISWJAG_mDisplayAssetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayFixedBranchList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayFixedBranchList" message="tns:ISWJAG_mDisplayFixedBranchList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayFixedBranchListResponse" message="tns:ISWJAG_mDisplayFixedBranchList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateFixedAssets">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateFixedAssets" message="tns:ISWJAG_mUpdateFixedAssets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateFixedAssetsResponse" message="tns:ISWJAG_mUpdateFixedAssets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteFixedAssets">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDeleteFixedAssets" message="tns:ISWJAG_mDeleteFixedAssets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDeleteFixedAssetsResponse" message="tns:ISWJAG_mDeleteFixedAssets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertAssetsAdjustment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertAssetsAdjustment" message="tns:ISWJAG_mInsertAssetsAdjustment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertAssetsAdjustmentResponse" message="tns:ISWJAG_mInsertAssetsAdjustment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetFixedAssetsAdjustment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetFixedAssetsAdjustment" message="tns:ISWJAG_mGetFixedAssetsAdjustment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetFixedAssetsAdjustmentResponse" message="tns:ISWJAG_mGetFixedAssetsAdjustment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteAssetsAdjustment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDeleteAssetsAdjustment" message="tns:ISWJAG_mDeleteAssetsAdjustment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDeleteAssetsAdjustmentResponse" message="tns:ISWJAG_mDeleteAssetsAdjustment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mLoadBillWise">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mLoadBillWise" message="tns:ISWJAG_mLoadBillWise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mLoadBillWiseResponse" message="tns:ISWJAG_mLoadBillWise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayBillWise">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplayBillWise" message="tns:ISWJAG_DisplayBillWise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplayBillWiseResponse" message="tns:ISWJAG_DisplayBillWise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gFillPreRefNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/gFillPreRefNo" message="tns:ISWJAG_gFillPreRefNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/gFillPreRefNoResponse" message="tns:ISWJAG_gFillPreRefNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayCommonInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplayCommonInvoice" message="tns:ISWJAG_DisplayCommonInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplayCommonInvoiceResponse" message="tns:ISWJAG_DisplayCommonInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplaycommonInvoiceOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplaycommonInvoiceOrder" message="tns:ISWJAG_DisplaycommonInvoiceOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplaycommonInvoiceOrderResponse" message="tns:ISWJAG_DisplaycommonInvoiceOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplaycommonInvoiceAddless">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplaycommonInvoiceAddless" message="tns:ISWJAG_DisplaycommonInvoiceAddless_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplaycommonInvoiceAddlessResponse" message="tns:ISWJAG_DisplaycommonInvoiceAddless_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplaycommonInvoiceBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplaycommonInvoiceBill" message="tns:ISWJAG_DisplaycommonInvoiceBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplaycommonInvoiceBillResponse" message="tns:ISWJAG_DisplaycommonInvoiceBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplaycommonInvoiceVoucher">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplaycommonInvoiceVoucher" message="tns:ISWJAG_DisplaycommonInvoiceVoucher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplaycommonInvoiceVoucherResponse" message="tns:ISWJAG_DisplaycommonInvoiceVoucher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertUser" message="tns:ISWJAG_mInsertUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertUserResponse" message="tns:ISWJAG_mInsertUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetUserAccessData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetUserAccessData" message="tns:ISWJAG_mGetUserAccessData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetUserAccessDataResponse" message="tns:ISWJAG_mGetUserAccessData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateInsertUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateInsertUser" message="tns:ISWJAG_mUpdateInsertUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateInsertUserResponse" message="tns:ISWJAG_mUpdateInsertUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mLaodVoucherTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mLaodVoucherTypes" message="tns:ISWJAG_mLaodVoucherTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mLaodVoucherTypesResponse" message="tns:ISWJAG_mLaodVoucherTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdteVoucherTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdteVoucherTypes" message="tns:ISWJAG_mUpdteVoucherTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdteVoucherTypesResponse" message="tns:ISWJAG_mUpdteVoucherTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetConfig" message="tns:ISWJAG_mGetConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetConfigResponse" message="tns:ISWJAG_mGetConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayQuotationVoucherList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplayQuotationVoucherList" message="tns:ISWJAG_DisplayQuotationVoucherList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplayQuotationVoucherListResponse" message="tns:ISWJAG_DisplayQuotationVoucherList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayQuotationVoucherTranList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplayQuotationVoucherTranList" message="tns:ISWJAG_DisplayQuotationVoucherTranList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplayQuotationVoucherTranListResponse" message="tns:ISWJAG_DisplayQuotationVoucherTranList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mOpentableQuo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mOpentableQuo" message="tns:ISWJAG_mOpentableQuo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mOpentableQuoResponse" message="tns:ISWJAG_mOpentableQuo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesLedgerTree">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetSalesLedgerTree" message="tns:ISWJAG_GetSalesLedgerTree_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetSalesLedgerTreeResponse" message="tns:ISWJAG_GetSalesLedgerTree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesLedgerTreefromCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetSalesLedgerTreefromCustomer" message="tns:ISWJAG_GetSalesLedgerTreefromCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetSalesLedgerTreefromCustomerResponse" message="tns:ISWJAG_GetSalesLedgerTreefromCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerNew" message="tns:ISWJAG_mFillLedgerNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerNewResponse" message="tns:ISWJAG_mFillLedgerNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillTeritorry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillTeritorry" message="tns:ISWJAG_mFillTeritorry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillTeritorryResponse" message="tns:ISWJAG_mFillTeritorry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateTeritorry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateTeritorry" message="tns:ISWJAG_mUpdateTeritorry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateTeritorryResponse" message="tns:ISWJAG_mUpdateTeritorry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetTeritorry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DeletetTeritorry" message="tns:ISWJAG_DeletetTeritorry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DeletetTeritorryResponse" message="tns:ISWJAG_DeletetTeritorry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertTeritorry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertTeritorry" message="tns:ISWJAG_mInsertTeritorry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertTeritorryResponse" message="tns:ISWJAG_mInsertTeritorry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gFillPreSampleClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/gFillPreSampleClass" message="tns:ISWJAG_gFillPreSampleClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/gFillPreSampleClassResponse" message="tns:ISWJAG_gFillPreSampleClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillUsername" message="tns:ISWJAG_mFillUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillUsernameResponse" message="tns:ISWJAG_mFillUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillExpenseList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillExpenseList" message="tns:ISWJAG_mFillExpenseList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillExpenseListResponse" message="tns:ISWJAG_mFillExpenseList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertExpenseLedger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertExpenseLedger" message="tns:ISWJAG_mInsertExpenseLedger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertExpenseLedgerResponse" message="tns:ISWJAG_mInsertExpenseLedger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayLedgerlistt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayLedgerlistt" message="tns:ISWJAG_mDisplayLedgerlistt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayLedgerlisttResponse" message="tns:ISWJAG_mDisplayLedgerlistt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayLedgerConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayLedgerConfig" message="tns:ISWJAG_mDisplayLedgerConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayLedgerConfigResponse" message="tns:ISWJAG_mDisplayLedgerConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherAmont">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetVoucherAmont" message="tns:ISWJAG_mGetVoucherAmont_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetVoucherAmontResponse" message="tns:ISWJAG_mGetVoucherAmont_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherTodaySalesAmont">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetVoucherTodaySalesAmont" message="tns:ISWJAG_mGetVoucherTodaySalesAmont_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetVoucherTodaySalesAmontResponse" message="tns:ISWJAG_mGetVoucherTodaySalesAmont_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherDateRangeWiseSalesAmont">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetVoucherDateRangeWiseSalesAmont" message="tns:ISWJAG_mGetVoucherDateRangeWiseSalesAmont_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetVoucherDateRangeWiseSalesAmontResponse" message="tns:ISWJAG_mGetVoucherDateRangeWiseSalesAmont_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherDateRangeWiseRecevedAmont">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetVoucherDateRangeWiseRecevedAmont" message="tns:ISWJAG_mGetVoucherDateRangeWiseRecevedAmont_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetVoucherDateRangeWiseRecevedAmontResponse" message="tns:ISWJAG_mGetVoucherDateRangeWiseRecevedAmont_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLedgerConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DeleteLedgerConfig" message="tns:ISWJAG_DeleteLedgerConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DeleteLedgerConfigResponse" message="tns:ISWJAG_DeleteLedgerConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteGrace">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDeleteGrace" message="tns:ISWJAG_mDeleteGrace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDeleteGraceResponse" message="tns:ISWJAG_mDeleteGrace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisGraceLimitSP">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillDisGraceLimitSP" message="tns:ISWJAG_mFillDisGraceLimitSP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillDisGraceLimitSPResponse" message="tns:ISWJAG_mFillDisGraceLimitSP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillGraceLimitSP">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillGraceLimitSP" message="tns:ISWJAG_mFillGraceLimitSP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillGraceLimitSPResponse" message="tns:ISWJAG_mFillGraceLimitSP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillGraceLimit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillGraceLimit" message="tns:ISWJAG_mFillGraceLimit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillGraceLimitResponse" message="tns:ISWJAG_mFillGraceLimit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertGrace">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertGrace" message="tns:ISWJAG_mInsertGrace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertGraceResponse" message="tns:ISWJAG_mInsertGrace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillIntegretedMapping">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillIntegretedMapping" message="tns:ISWJAG_mFillIntegretedMapping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillIntegretedMappingResponse" message="tns:ISWJAG_mFillIntegretedMapping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertIntegretedMapping">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertIntegretedMapping" message="tns:ISWJAG_mInsertIntegretedMapping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertIntegretedMappingResponse" message="tns:ISWJAG_mInsertIntegretedMapping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerIntegretedMapping">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerIntegretedMapping" message="tns:ISWJAG_mFillLedgerIntegretedMapping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerIntegretedMappingResponse" message="tns:ISWJAG_mFillLedgerIntegretedMapping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerListMpoPercenNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerListMpoPercenNew" message="tns:ISWJAG_mFillLedgerListMpoPercenNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerListMpoPercenNewResponse" message="tns:ISWJAG_mFillLedgerListMpoPercenNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mSsaveIncentiveConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mSsaveIncentiveConfig" message="tns:ISWJAG_mSsaveIncentiveConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mSsaveIncentiveConfigResponse" message="tns:ISWJAG_mSsaveIncentiveConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLedgerClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetCustomerLedgerClass" message="tns:ISWJAG_GetCustomerLedgerClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetCustomerLedgerClassResponse" message="tns:ISWJAG_GetCustomerLedgerClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetIncentiveGenList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DeletetIncentiveGenList" message="tns:ISWJAG_DeletetIncentiveGenList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DeletetIncentiveGenListResponse" message="tns:ISWJAG_DeletetIncentiveGenList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillIncentiveGenList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillIncentiveGenList" message="tns:ISWJAG_mFillIncentiveGenList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillIncentiveGenListResponse" message="tns:ISWJAG_mFillIncentiveGenList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLedgeNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetCustomerLedgeNew" message="tns:ISWJAG_GetCustomerLedgeNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetCustomerLedgeNewResponse" message="tns:ISWJAG_GetCustomerLedgeNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetIncentive">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetIncentive" message="tns:ISWJAG_mGetIncentive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetIncentiveResponse" message="tns:ISWJAG_mGetIncentive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetIncentive">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DeletetIncentive" message="tns:ISWJAG_DeletetIncentive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DeletetIncentiveResponse" message="tns:ISWJAG_DeletetIncentive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayIncentive">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayIncentive" message="tns:ISWJAG_mDisplayIncentive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayIncentiveResponse" message="tns:ISWJAG_mDisplayIncentive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillIncentive">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillIncentive" message="tns:ISWJAG_mFillIncentive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillIncentiveResponse" message="tns:ISWJAG_mFillIncentive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertIncentiveCalculation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertIncentiveCalculation" message="tns:ISWJAG_mInsertIncentiveCalculation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertIncentiveCalculationResponse" message="tns:ISWJAG_mInsertIncentiveCalculation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillBranchAllNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillBranchAllNew" message="tns:ISWJAG_mFillBranchAllNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillBranchAllNewResponse" message="tns:ISWJAG_mFillBranchAllNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLedger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetCustomerLedger" message="tns:ISWJAG_GetCustomerLedger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetCustomerLedgerResponse" message="tns:ISWJAG_GetCustomerLedger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLedgerNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetCustomerLedgerNew" message="tns:ISWJAG_GetCustomerLedgerNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetCustomerLedgerNewResponse" message="tns:ISWJAG_GetCustomerLedgerNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPFLegder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetPFLegder" message="tns:ISWJAG_GetPFLegder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetPFLegderResponse" message="tns:ISWJAG_GetPFLegder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHLLegder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetHLLegder" message="tns:ISWJAG_GetHLLegder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetHLLegderResponse" message="tns:ISWJAG_GetHLLegder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillPFLedger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillPFLedger" message="tns:ISWJAG_mFillPFLedger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillPFLedgerResponse" message="tns:ISWJAG_mFillPFLedger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertPrivilegesNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertPrivilegesNew" message="tns:ISWJAG_mInsertPrivilegesNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertPrivilegesNewResponse" message="tns:ISWJAG_mInsertPrivilegesNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mLedgerSecurity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mLedgerSecurity" message="tns:ISWJAG_mLedgerSecurity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mLedgerSecurityResponse" message="tns:ISWJAG_mLedgerSecurity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillSecurityGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillSecurityGroup" message="tns:ISWJAG_mFillSecurityGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillSecurityGroupResponse" message="tns:ISWJAG_mFillSecurityGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gLoadLegderPrivilegesRight">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/gLoadLegderPrivilegesRight" message="tns:ISWJAG_gLoadLegderPrivilegesRight_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/gLoadLegderPrivilegesRightResponse" message="tns:ISWJAG_gLoadLegderPrivilegesRight_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mSaveGraceMonthConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mSaveGraceMonthConfig" message="tns:ISWJAG_mSaveGraceMonthConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mSaveGraceMonthConfigResponse" message="tns:ISWJAG_mSaveGraceMonthConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateGraceMonthConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateGraceMonthConfig" message="tns:ISWJAG_mUpdateGraceMonthConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateGraceMonthConfigResponse" message="tns:ISWJAG_mUpdateGraceMonthConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayGraceMonthsetupList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayGraceMonthsetupList" message="tns:ISWJAG_mDisplayGraceMonthsetupList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayGraceMonthsetupListResponse" message="tns:ISWJAG_mDisplayGraceMonthsetupList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetGraceDateFromMonthID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetGraceDateFromMonthID" message="tns:ISWJAG_mGetGraceDateFromMonthID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetGraceDateFromMonthIDResponse" message="tns:ISWJAG_mGetGraceDateFromMonthID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteGraceMonthList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDeleteGraceMonthList" message="tns:ISWJAG_mDeleteGraceMonthList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDeleteGraceMonthListResponse" message="tns:ISWJAG_mDeleteGraceMonthList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerSelectionProjection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerSelectionProjection" message="tns:ISWJAG_mFillLedgerSelectionProjection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerSelectionProjectionResponse" message="tns:ISWJAG_mFillLedgerSelectionProjection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gFillPreRefNoNew2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/gFillPreRefNoNew2" message="tns:ISWJAG_gFillPreRefNoNew2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/gFillPreRefNoNew2Response" message="tns:ISWJAG_gFillPreRefNoNew2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gFillPreRefNoNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/gFillPreRefNoNew" message="tns:ISWJAG_gFillPreRefNoNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/gFillPreRefNoNewResponse" message="tns:ISWJAG_gFillPreRefNoNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayDraftLedger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayDraftLedger" message="tns:ISWJAG_mDisplayDraftLedger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayDraftLedgerResponse" message="tns:ISWJAG_mDisplayDraftLedger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerSelection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerSelection" message="tns:ISWJAG_mFillLedgerSelection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerSelectionResponse" message="tns:ISWJAG_mFillLedgerSelection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHondaLoanGroupList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetHondaLoanGroupList" message="tns:ISWJAG_GetHondaLoanGroupList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetHondaLoanGroupListResponse" message="tns:ISWJAG_GetHondaLoanGroupList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillTransferList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillTransferList" message="tns:ISWJAG_mFillTransferList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillTransferListResponse" message="tns:ISWJAG_mFillTransferList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteTransfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDeleteTransfer" message="tns:ISWJAG_mDeleteTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDeleteTransferResponse" message="tns:ISWJAG_mDeleteTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mSaveLoanTransfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mSaveLoanTransfer" message="tns:ISWJAG_mSaveLoanTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mSaveLoanTransferResponse" message="tns:ISWJAG_mSaveLoanTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillHLLedger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillHLLedger" message="tns:ISWJAG_mFillHLLedger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillHLLedgerResponse" message="tns:ISWJAG_mFillHLLedger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetInstallmentNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetInstallmentNo" message="tns:ISWJAG_mGetInstallmentNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetInstallmentNoResponse" message="tns:ISWJAG_mGetInstallmentNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DeleteTemplate" message="tns:ISWJAG_DeleteTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DeleteTemplateResponse" message="tns:ISWJAG_DeleteTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLoanList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLoanList" message="tns:ISWJAG_mFillLoanList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLoanListResponse" message="tns:ISWJAG_mFillLoanList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayLoanList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayLoanList" message="tns:ISWJAG_mDisplayLoanList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayLoanListResponse" message="tns:ISWJAG_mDisplayLoanList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mSaveLoanMaster">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mSaveLoanMaster" message="tns:ISWJAG_mSaveLoanMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mSaveLoanMasterResponse" message="tns:ISWJAG_mSaveLoanMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayManualBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillDisplayManualBill" message="tns:ISWJAG_mFillDisplayManualBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillDisplayManualBillResponse" message="tns:ISWJAG_mFillDisplayManualBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManualMpoCmm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DeleteManualMpoCmm" message="tns:ISWJAG_DeleteManualMpoCmm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DeleteManualMpoCmmResponse" message="tns:ISWJAG_DeleteManualMpoCmm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillDisplayBill" message="tns:ISWJAG_mFillDisplayBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillDisplayBillResponse" message="tns:ISWJAG_mFillDisplayBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillManualBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillManualBill" message="tns:ISWJAG_mFillManualBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillManualBillResponse" message="tns:ISWJAG_mFillManualBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertMpoManual">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertMpoManual" message="tns:ISWJAG_mInsertMpoManual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertMpoManualResponse" message="tns:ISWJAG_mInsertMpoManual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerListMpoPercen">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerListMpoPercen" message="tns:ISWJAG_mFillLedgerListMpoPercen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerListMpoPercenResponse" message="tns:ISWJAG_mFillLedgerListMpoPercen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertMpoPercentage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertMpoPercentage" message="tns:ISWJAG_mInsertMpoPercentage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertMpoPercentageResponse" message="tns:ISWJAG_mInsertMpoPercentage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateBankReconcilation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateBankReconcilation" message="tns:ISWJAG_mUpdateBankReconcilation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateBankReconcilationResponse" message="tns:ISWJAG_mUpdateBankReconcilation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayBankReconcilation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayBankReconcilation" message="tns:ISWJAG_mDisplayBankReconcilation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayBankReconcilationResponse" message="tns:ISWJAG_mDisplayBankReconcilation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetBankLedger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetBankLedger" message="tns:ISWJAG_mGetBankLedger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetBankLedgerResponse" message="tns:ISWJAG_mGetBankLedger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerStatus" message="tns:ISWJAG_mFillLedgerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerStatusResponse" message="tns:ISWJAG_mFillLedgerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerListTARGET">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerListTARGET" message="tns:ISWJAG_mFillLedgerListTARGET_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerListTARGETResponse" message="tns:ISWJAG_mFillLedgerListTARGET_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateOnLineApprove">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateOnLineApprove" message="tns:ISWJAG_mUpdateOnLineApprove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateOnLineApproveResponse" message="tns:ISWJAG_mUpdateOnLineApprove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateOnLineSecurty">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateOnLineSecurty" message="tns:ISWJAG_mUpdateOnLineSecurty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateOnLineSecurtyResponse" message="tns:ISWJAG_mUpdateOnLineSecurty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillOnlineSecurity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillOnlineSecurity" message="tns:ISWJAG_mFillOnlineSecurity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillOnlineSecurityResponse" message="tns:ISWJAG_mFillOnlineSecurity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReceiptVoucherCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/UpdateReceiptVoucherCustomer" message="tns:ISWJAG_UpdateReceiptVoucherCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/UpdateReceiptVoucherCustomerResponse" message="tns:ISWJAG_UpdateReceiptVoucherCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveReceiptVoucherCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/SaveReceiptVoucherCustomer" message="tns:ISWJAG_SaveReceiptVoucherCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/SaveReceiptVoucherCustomerResponse" message="tns:ISWJAG_SaveReceiptVoucherCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetChequeRefNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetChequeRefNo" message="tns:ISWJAG_mGetChequeRefNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetChequeRefNoResponse" message="tns:ISWJAG_mGetChequeRefNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplaycommonInvoiceAddlessDateWise">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DisplaycommonInvoiceAddlessDateWise" message="tns:ISWJAG_DisplaycommonInvoiceAddlessDateWise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DisplaycommonInvoiceAddlessDateWiseResponse" message="tns:ISWJAG_DisplaycommonInvoiceAddlessDateWise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mSaveBudget">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mSaveBudget" message="tns:ISWJAG_mSaveBudget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mSaveBudgetResponse" message="tns:ISWJAG_mSaveBudget_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateBudget">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateBudget" message="tns:ISWJAG_mUpdateBudget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateBudgetResponse" message="tns:ISWJAG_mUpdateBudget_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mLoadBudgetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mLoadBudgetList" message="tns:ISWJAG_mLoadBudgetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mLoadBudgetListResponse" message="tns:ISWJAG_mLoadBudgetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayBudgetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayBudgetList" message="tns:ISWJAG_mDisplayBudgetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayBudgetListResponse" message="tns:ISWJAG_mDisplayBudgetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeletBudgetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDeletBudgetList" message="tns:ISWJAG_mDeletBudgetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDeletBudgetListResponse" message="tns:ISWJAG_mDeletBudgetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteUserControl">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDeleteUserControl" message="tns:ISWJAG_mDeleteUserControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDeleteUserControlResponse" message="tns:ISWJAG_mDeleteUserControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillGroupSales">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillGroupSales" message="tns:ISWJAG_mFillGroupSales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillGroupSalesResponse" message="tns:ISWJAG_mFillGroupSales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetGroupClosing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetGroupClosing" message="tns:ISWJAG_mGetGroupClosing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetGroupClosingResponse" message="tns:ISWJAG_mGetGroupClosing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetDateFromMonthID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetDateFromMonthID" message="tns:ISWJAG_mGetDateFromMonthID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetDateFromMonthIDResponse" message="tns:ISWJAG_mGetDateFromMonthID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayFixedAssestAccOpening">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayFixedAssestAccOpening" message="tns:ISWJAG_mDisplayFixedAssestAccOpening_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayFixedAssestAccOpeningResponse" message="tns:ISWJAG_mDisplayFixedAssestAccOpening_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gOpenComID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/gOpenComID" message="tns:ISWJAG_gOpenComID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/gOpenComIDResponse" message="tns:ISWJAG_gOpenComID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mChangePasswod">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mChangePasswod" message="tns:ISWJAG_mChangePasswod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mChangePasswodResponse" message="tns:ISWJAG_mChangePasswod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFilVoucherPrintingShow">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFilVoucherPrintingShow" message="tns:ISWJAG_mFilVoucherPrintingShow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFilVoucherPrintingShowResponse" message="tns:ISWJAG_mFilVoucherPrintingShow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mSaveVoucherPrinting">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mSaveVoucherPrinting" message="tns:ISWJAG_mSaveVoucherPrinting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mSaveVoucherPrintingResponse" message="tns:ISWJAG_mSaveVoucherPrinting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetBackupPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetBackupPath" message="tns:ISWJAG_mGetBackupPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetBackupPathResponse" message="tns:ISWJAG_mGetBackupPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDsmRsm_level4_userPrivilegesRight">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetDsmRsm_level4_userPrivilegesRight" message="tns:ISWJAG_GetDsmRsm_level4_userPrivilegesRight_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetDsmRsm_level4_userPrivilegesRightResponse" message="tns:ISWJAG_GetDsmRsm_level4_userPrivilegesRight_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDsmRsm_level4_userPrivileges">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetDsmRsm_level4_userPrivileges" message="tns:ISWJAG_GetDsmRsm_level4_userPrivileges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetDsmRsm_level4_userPrivilegesResponse" message="tns:ISWJAG_GetDsmRsm_level4_userPrivileges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillBranchUserPrivileges">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillBranchUserPrivileges" message="tns:ISWJAG_mFillBranchUserPrivileges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillBranchUserPrivilegesResponse" message="tns:ISWJAG_mFillBranchUserPrivileges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillBranchUserRight">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillBranchUserRight" message="tns:ISWJAG_mFillBranchUserRight_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillBranchUserRightResponse" message="tns:ISWJAG_mFillBranchUserRight_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayPrivilegesMain">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayPrivilegesMain" message="tns:ISWJAG_mDisplayPrivilegesMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayPrivilegesMainResponse" message="tns:ISWJAG_mDisplayPrivilegesMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayPrivilegesChild">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayPrivilegesChild" message="tns:ISWJAG_mDisplayPrivilegesChild_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayPrivilegesChildResponse" message="tns:ISWJAG_mDisplayPrivilegesChild_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertPrivileges">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertPrivileges" message="tns:ISWJAG_mInsertPrivileges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertPrivilegesResponse" message="tns:ISWJAG_mInsertPrivileges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDsmRsm_level4">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetDsmRsm_level4" message="tns:ISWJAG_GetDsmRsm_level4_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetDsmRsm_level4Response" message="tns:ISWJAG_GetDsmRsm_level4_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mSaveFormConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mSaveFormConfig" message="tns:ISWJAG_mSaveFormConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mSaveFormConfigResponse" message="tns:ISWJAG_mSaveFormConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateFormConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateFormConfig" message="tns:ISWJAG_mUpdateFormConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateFormConfigResponse" message="tns:ISWJAG_mUpdateFormConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayFormList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayFormList" message="tns:ISWJAG_mDisplayFormList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayFormListResponse" message="tns:ISWJAG_mDisplayFormList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsTreeviewCR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetAccountsTreeviewCR" message="tns:ISWJAG_GetAccountsTreeviewCR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetAccountsTreeviewCRResponse" message="tns:ISWJAG_GetAccountsTreeviewCR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayLedgerPercen">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayLedgerPercen" message="tns:ISWJAG_mDisplayLedgerPercen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayLedgerPercenResponse" message="tns:ISWJAG_mDisplayLedgerPercen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mSaveMonthConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mSaveMonthConfig" message="tns:ISWJAG_mSaveMonthConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mSaveMonthConfigResponse" message="tns:ISWJAG_mSaveMonthConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateMonthConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateMonthConfig" message="tns:ISWJAG_mUpdateMonthConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateMonthConfigResponse" message="tns:ISWJAG_mUpdateMonthConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayMonthsetupList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayMonthsetupList" message="tns:ISWJAG_mDisplayMonthsetupList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayMonthsetupListResponse" message="tns:ISWJAG_mDisplayMonthsetupList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteMonthList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDeleteMonthList" message="tns:ISWJAG_mDeleteMonthList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDeleteMonthListResponse" message="tns:ISWJAG_mDeleteMonthList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetRefNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetRefNo" message="tns:ISWJAG_mGetRefNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetRefNoResponse" message="tns:ISWJAG_mGetRefNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayMonthTarget">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayMonthTarget" message="tns:ISWJAG_mDisplayMonthTarget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayMonthTargetResponse" message="tns:ISWJAG_mDisplayMonthTarget_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetLedgerClosing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetLedgerClosing" message="tns:ISWJAG_mGetLedgerClosing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetLedgerClosingResponse" message="tns:ISWJAG_mGetLedgerClosing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetLedgerOpening">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mGetLedgerOpening" message="tns:ISWJAG_mGetLedgerOpening_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mGetLedgerOpeningResponse" message="tns:ISWJAG_mGetLedgerOpening_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mfillBranchNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mfillBranchNew" message="tns:ISWJAG_mfillBranchNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mfillBranchNewResponse" message="tns:ISWJAG_mfillBranchNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mLedgerAdditemMr">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mLedgerAdditemMr" message="tns:ISWJAG_mLedgerAdditemMr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mLedgerAdditemMrResponse" message="tns:ISWJAG_mLedgerAdditemMr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillTeritorrySI">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillTeritorrySI" message="tns:ISWJAG_mFillTeritorrySI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillTeritorrySIResponse" message="tns:ISWJAG_mFillTeritorrySI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsTreeviewDR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetAccountsTreeviewDR" message="tns:ISWJAG_GetAccountsTreeviewDR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetAccountsTreeviewDRResponse" message="tns:ISWJAG_GetAccountsTreeviewDR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerNameVector">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerNameVector" message="tns:ISWJAG_mFillLedgerNameVector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillLedgerNameVectorResponse" message="tns:ISWJAG_mFillLedgerNameVector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DoWork" message="tns:ISWJAG_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DoWorkResponse" message="tns:ISWJAG_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetAccountsGroup" message="tns:ISWJAG_GetAccountsGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetAccountsGroupResponse" message="tns:ISWJAG_GetAccountsGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/InsertGroup" message="tns:ISWJAG_InsertGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/InsertGroupResponse" message="tns:ISWJAG_InsertGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsTreeview">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetAccountsTreeview" message="tns:ISWJAG_GetAccountsTreeview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetAccountsTreeviewResponse" message="tns:ISWJAG_GetAccountsTreeview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/GetGroupList" message="tns:ISWJAG_GetGroupList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/GetGroupListResponse" message="tns:ISWJAG_GetGroupList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateGroup" message="tns:ISWJAG_mUpdateGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateGroupResponse" message="tns:ISWJAG_mUpdateGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DeleteGroup" message="tns:ISWJAG_DeleteGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DeleteGroupResponse" message="tns:ISWJAG_DeleteGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillCurrencyList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillCurrencyList" message="tns:ISWJAG_mFillCurrencyList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillCurrencyListResponse" message="tns:ISWJAG_mFillCurrencyList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillGroup" message="tns:ISWJAG_mFillGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillGroupResponse" message="tns:ISWJAG_mFillGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayOpening">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mDisplayOpening" message="tns:ISWJAG_mDisplayOpening_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mDisplayOpeningResponse" message="tns:ISWJAG_mDisplayOpening_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertCostCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertCostCategory" message="tns:ISWJAG_mInsertCostCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertCostCategoryResponse" message="tns:ISWJAG_mInsertCostCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateCostCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateCostCategory" message="tns:ISWJAG_mUpdateCostCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateCostCategoryResponse" message="tns:ISWJAG_mUpdateCostCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillVectorCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillVectorCategory" message="tns:ISWJAG_mFillVectorCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillVectorCategoryResponse" message="tns:ISWJAG_mFillVectorCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCostCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DeleteCostCategory" message="tns:ISWJAG_DeleteCostCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DeleteCostCategoryResponse" message="tns:ISWJAG_DeleteCostCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertCostCenter">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mInsertCostCenter" message="tns:ISWJAG_mInsertCostCenter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mInsertCostCenterResponse" message="tns:ISWJAG_mInsertCostCenter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateCostCenter">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mUpdateCostCenter" message="tns:ISWJAG_mUpdateCostCenter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mUpdateCostCenterResponse" message="tns:ISWJAG_mUpdateCostCenter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCostCenter">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/DeleteCostCenter" message="tns:ISWJAG_DeleteCostCenter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/DeleteCostCenterResponse" message="tns:ISWJAG_DeleteCostCenter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillCostCenter">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillCostCenter" message="tns:ISWJAG_mFillCostCenter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillCostCenterResponse" message="tns:ISWJAG_mFillCostCenter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillVectorMaster">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWJAG/mFillVectorMaster" message="tns:ISWJAG_mFillVectorMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWJAG/mFillVectorMasterResponse" message="tns:ISWJAG_mFillVectorMaster_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISWJAG" type="tns:ISWJAG">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mFillBranch">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mSaveLedger">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mSaveLedger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mLedgerAdditem">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mLedgerAdditem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerListNew">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedgerListNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedgerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayLedgerList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayLedgerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayVectorCategory">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayVectorCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayBranchOpening">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayBranchOpening" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayFixedAssest">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayFixedAssest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayFixedAssestOpening">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayFixedAssestOpening" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAccountsTemplate">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplayAccountsTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateLedger">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateLedger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLedger">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DeleteLedger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedger">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertTempVector">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertTempVector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVoucher">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/SaveVoucher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVoucher">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/UpdateVoucher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayCompVoucherList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplayCompVoucherList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayVoucherList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplayVoucherList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayVectorList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplayVectorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mSaveBranchInfo">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mSaveBranchInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillGetBranch">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillGetBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateBranchInfo">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateBranchInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteBranchInfo">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDeleteBranchInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mSaveFixedAssets">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mSaveFixedAssets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mAssetList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mAssetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayAssetList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayAssetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayFixedBranchList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayFixedBranchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateFixedAssets">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateFixedAssets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteFixedAssets">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDeleteFixedAssets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertAssetsAdjustment">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertAssetsAdjustment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetFixedAssetsAdjustment">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetFixedAssetsAdjustment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteAssetsAdjustment">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDeleteAssetsAdjustment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mLoadBillWise">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mLoadBillWise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayBillWise">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplayBillWise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gFillPreRefNo">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/gFillPreRefNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayCommonInvoice">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplayCommonInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplaycommonInvoiceOrder">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplaycommonInvoiceOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplaycommonInvoiceAddless">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplaycommonInvoiceAddless" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplaycommonInvoiceBill">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplaycommonInvoiceBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplaycommonInvoiceVoucher">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplaycommonInvoiceVoucher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertUser">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetUserAccessData">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetUserAccessData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateInsertUser">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateInsertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mLaodVoucherTypes">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mLaodVoucherTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdteVoucherTypes">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdteVoucherTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayQuotationVoucherList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplayQuotationVoucherList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayQuotationVoucherTranList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplayQuotationVoucherTranList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mOpentableQuo">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mOpentableQuo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesLedgerTree">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetSalesLedgerTree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesLedgerTreefromCustomer">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetSalesLedgerTreefromCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerNew">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedgerNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillTeritorry">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillTeritorry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateTeritorry">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateTeritorry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetTeritorry">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DeletetTeritorry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertTeritorry">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertTeritorry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gFillPreSampleClass">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/gFillPreSampleClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillUsername">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillExpenseList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillExpenseList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertExpenseLedger">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertExpenseLedger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayLedgerlistt">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayLedgerlistt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayLedgerConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayLedgerConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherAmont">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetVoucherAmont" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherTodaySalesAmont">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetVoucherTodaySalesAmont" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherDateRangeWiseSalesAmont">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetVoucherDateRangeWiseSalesAmont" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherDateRangeWiseRecevedAmont">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetVoucherDateRangeWiseRecevedAmont" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLedgerConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DeleteLedgerConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteGrace">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDeleteGrace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisGraceLimitSP">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillDisGraceLimitSP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillGraceLimitSP">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillGraceLimitSP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillGraceLimit">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillGraceLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertGrace">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertGrace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillIntegretedMapping">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillIntegretedMapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertIntegretedMapping">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertIntegretedMapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerIntegretedMapping">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedgerIntegretedMapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerListMpoPercenNew">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedgerListMpoPercenNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mSsaveIncentiveConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mSsaveIncentiveConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLedgerClass">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetCustomerLedgerClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetIncentiveGenList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DeletetIncentiveGenList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillIncentiveGenList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillIncentiveGenList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLedgeNew">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetCustomerLedgeNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetIncentive">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetIncentive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetIncentive">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DeletetIncentive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayIncentive">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayIncentive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillIncentive">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillIncentive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertIncentiveCalculation">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertIncentiveCalculation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillBranchAllNew">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillBranchAllNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLedger">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetCustomerLedger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLedgerNew">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetCustomerLedgerNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPFLegder">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetPFLegder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHLLegder">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetHLLegder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillPFLedger">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillPFLedger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertPrivilegesNew">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertPrivilegesNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mLedgerSecurity">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mLedgerSecurity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillSecurityGroup">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillSecurityGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gLoadLegderPrivilegesRight">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/gLoadLegderPrivilegesRight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mSaveGraceMonthConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mSaveGraceMonthConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateGraceMonthConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateGraceMonthConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayGraceMonthsetupList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayGraceMonthsetupList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetGraceDateFromMonthID">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetGraceDateFromMonthID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteGraceMonthList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDeleteGraceMonthList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerSelectionProjection">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedgerSelectionProjection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gFillPreRefNoNew2">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/gFillPreRefNoNew2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gFillPreRefNoNew">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/gFillPreRefNoNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayDraftLedger">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayDraftLedger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerSelection">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedgerSelection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHondaLoanGroupList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetHondaLoanGroupList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillTransferList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillTransferList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteTransfer">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDeleteTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mSaveLoanTransfer">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mSaveLoanTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillHLLedger">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillHLLedger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetInstallmentNo">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetInstallmentNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DeleteTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLoanList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLoanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayLoanList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayLoanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mSaveLoanMaster">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mSaveLoanMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayManualBill">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillDisplayManualBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteManualMpoCmm">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DeleteManualMpoCmm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayBill">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillDisplayBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillManualBill">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillManualBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertMpoManual">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertMpoManual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerListMpoPercen">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedgerListMpoPercen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertMpoPercentage">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertMpoPercentage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateBankReconcilation">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateBankReconcilation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayBankReconcilation">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayBankReconcilation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetBankLedger">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetBankLedger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerStatus">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedgerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerListTARGET">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedgerListTARGET" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateOnLineApprove">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateOnLineApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateOnLineSecurty">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateOnLineSecurty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillOnlineSecurity">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillOnlineSecurity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReceiptVoucherCustomer">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/UpdateReceiptVoucherCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReceiptVoucherCustomer">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/SaveReceiptVoucherCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetChequeRefNo">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetChequeRefNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplaycommonInvoiceAddlessDateWise">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DisplaycommonInvoiceAddlessDateWise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mSaveBudget">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mSaveBudget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateBudget">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateBudget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mLoadBudgetList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mLoadBudgetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayBudgetList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayBudgetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeletBudgetList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDeletBudgetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteUserControl">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDeleteUserControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillGroupSales">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillGroupSales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetGroupClosing">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetGroupClosing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetDateFromMonthID">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetDateFromMonthID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayFixedAssestAccOpening">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayFixedAssestAccOpening" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gOpenComID">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/gOpenComID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mChangePasswod">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mChangePasswod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFilVoucherPrintingShow">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFilVoucherPrintingShow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mSaveVoucherPrinting">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mSaveVoucherPrinting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetBackupPath">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetBackupPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDsmRsm_level4_userPrivilegesRight">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetDsmRsm_level4_userPrivilegesRight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDsmRsm_level4_userPrivileges">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetDsmRsm_level4_userPrivileges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillBranchUserPrivileges">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillBranchUserPrivileges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillBranchUserRight">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillBranchUserRight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayPrivilegesMain">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayPrivilegesMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayPrivilegesChild">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayPrivilegesChild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertPrivileges">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertPrivileges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDsmRsm_level4">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetDsmRsm_level4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mSaveFormConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mSaveFormConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateFormConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateFormConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayFormList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayFormList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsTreeviewCR">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetAccountsTreeviewCR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayLedgerPercen">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayLedgerPercen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mSaveMonthConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mSaveMonthConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateMonthConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateMonthConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayMonthsetupList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayMonthsetupList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteMonthList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDeleteMonthList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetRefNo">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetRefNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayMonthTarget">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayMonthTarget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetLedgerClosing">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetLedgerClosing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetLedgerOpening">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mGetLedgerOpening" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mfillBranchNew">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mfillBranchNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mLedgerAdditemMr">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mLedgerAdditemMr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillTeritorrySI">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillTeritorrySI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsTreeviewDR">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetAccountsTreeviewDR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillLedgerNameVector">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillLedgerNameVector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsGroup">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetAccountsGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertGroup">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/InsertGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountsTreeview">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetAccountsTreeview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/GetGroupList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateGroup">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DeleteGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillCurrencyList">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillCurrencyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillGroup">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayOpening">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mDisplayOpening" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertCostCategory">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertCostCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateCostCategory">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateCostCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillVectorCategory">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillVectorCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCostCategory">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DeleteCostCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertCostCenter">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mInsertCostCenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateCostCenter">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mUpdateCostCenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCostCenter">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/DeleteCostCenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillCostCenter">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillCostCenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillVectorMaster">
+      <soap:operation soapAction="http://tempuri.org/ISWJAG/mFillVectorMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SWJAG">
+    <wsdl:port name="BasicHttpBinding_ISWJAG" binding="tns:BasicHttpBinding_ISWJAG">
+      <soap:address location="http://localhost:133/ACCMSNEW/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

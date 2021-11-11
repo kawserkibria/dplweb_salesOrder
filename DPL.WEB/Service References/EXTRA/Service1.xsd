@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:94/EXTRA/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EX.Projection.Model" />
+  <xs:element name="mFillDisplayWeeklyProjectionchild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProjection" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayWeeklyProjectionchildResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillDisplayWeeklyProjectionchildResult" nillable="true" type="q1:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayMonthlyProjectionchild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProjection" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayMonthlyProjectionchildResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillDisplayMonthlyProjectionchildResult" nillable="true" type="q2:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetDivisionFromZone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strZone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intHalt" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetDivisionFromZoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mGetDivisionFromZoneResult" nillable="true" type="q3:ArrayOfMprojection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeletePerformanve">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strcomId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeletePerformanveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeletePerformanveResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mrptFillDisplayMonthlyProjection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intmode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mrptFillDisplayMonthlyProjectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mrptFillDisplayMonthlyProjectionResult" nillable="true" type="q4:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillWeeklyProjectionReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intmode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillWeeklyProjectionReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillWeeklyProjectionReportResult" nillable="true" type="q5:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillMonthlyProjectionValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProjectionName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillMonthlyProjectionValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillMonthlyProjectionValueResult" nillable="true" type="q6:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayLedgerNameWeeklyReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Intmode" type="xs:int" />
+        <xs:element minOccurs="0" name="vstrUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strZone" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayLedgerNameWeeklyReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillDisplayLedgerNameWeeklyReportResult" nillable="true" type="q7:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillWeeklyProjectionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VstruserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillWeeklyProjectionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillWeeklyProjectionListResult" nillable="true" type="q8:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteWeeklyProjection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteWeeklyProjectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeleteWeeklyProjectionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayWeeklyProjection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMPO" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayWeeklyProjectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillDisplayWeeklyProjectionResult" nillable="true" type="q9:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayLedgerNameWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayLedgerNameWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillDisplayLedgerNameWeeklyResult" nillable="true" type="q10:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertWeeklyProjectionSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strHeadName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="dblWrittenAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="intDel" type="xs:int" />
+        <xs:element minOccurs="0" name="intCols" type="xs:int" />
+        <xs:element minOccurs="0" name="intRow" type="xs:int" />
+        <xs:element minOccurs="0" name="strCommProjectionName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertWeeklyProjectionSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertWeeklyProjectionSetResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getZoneFromDivsion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getZoneFromDivsionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="getZoneFromDivsionResult" nillable="true" type="q11:ArrayOfProjectonMonthConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertMpoPerformance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intmode" type="xs:int" />
+        <xs:element minOccurs="0" name="intSelection" type="xs:int" />
+        <xs:element minOccurs="0" name="intbaseTarget" type="xs:int" />
+        <xs:element minOccurs="0" name="strSelectionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertMpoPerformanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertMpoPerformanceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mQueryPerformance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intMode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mQueryPerformanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mQueryPerformanceResult" nillable="true" type="q12:ArrayOfMprojection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetLedgerGroupLoad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intMode" type="xs:int" />
+        <xs:element minOccurs="0" name="struserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intstatus" type="xs:int" />
+        <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetLedgerGroupLoadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mGetLedgerGroupLoadResult" nillable="true" type="q13:ArrayOfMprojection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertMonthConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthFromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthToDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertMonthConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertMonthConfigResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillMonthConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intStaus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillMonthConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillMonthConfigResult" nillable="true" type="q14:ArrayOfProjectonMonthConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletetMonthConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intSerialkey" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletetMonthConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletetMonthConfigResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateMonthConfigpublic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strToDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+        <xs:element minOccurs="0" name="intSerialKey" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateMonthConfigpublicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateMonthConfigpublicResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertProjectionSetup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DgGrid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertProjectionSetupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertProjectionSetupResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillPojictionConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillPojictionConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillPojictionConfigResult" nillable="true" type="q15:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletetProjectionSetUp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProjectionkey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletetProjectionSetUpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletetProjectionSetUpResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateProjectionSetup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DgGrid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProjectionKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateProjectionSetupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateProjectionSetupResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillMonthlyProjection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProjectionMonth" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillMonthlyProjectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillMonthlyProjectionResult" nillable="true" type="q16:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillMonthlyProjectionLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerGroup" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intmode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillMonthlyProjectionLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillMonthlyProjectionLedgerResult" nillable="true" type="q17:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertMonthlyProjection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strHeadName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="intDel" type="xs:int" />
+        <xs:element minOccurs="0" name="intCols" type="xs:int" />
+        <xs:element minOccurs="0" name="intRow" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertMonthlyProjectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertMonthlyProjectionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillMonthlyProjectionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VstruserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillMonthlyProjectionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillMonthlyProjectionListResult" nillable="true" type="q18:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayMonthlyProjection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strprojectionKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayMonthlyProjectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillDisplayMonthlyProjectionResult" nillable="true" type="q19:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayLedgerName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayLedgerNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mFillDisplayLedgerNameResult" nillable="true" type="q20:ArrayOfProjectionSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteMonthlyProjection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteMonthlyProjectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeleteMonthlyProjectionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gCheckProjectionActive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gCheckProjectionActiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gCheckProjectionActiveResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetMontlyLadgerProjection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strThisMonth" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strledger" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetMontlyLadgerProjectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mGetMontlyLadgerProjectionResult" nillable="true" type="q21:ArrayOfPCollectionCopmarison" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetMontlyLadger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strThisMonth" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strledger" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetMontlyLadgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mGetMontlyLadgerResult" nillable="true" type="q22:ArrayOfPCollectionCopmarison" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetCollectionComparision">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strThisMonth" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLastMont" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IntMode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetCollectionComparisionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mGetCollectionComparisionResult" nillable="true" type="q23:ArrayOfPCollectionCopmarison" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetProjectionStarEndDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strThisMonth" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLastMont" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProIndividual" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetProjectionStarEndDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mGetProjectionStarEndDateResult" nillable="true" type="q24:ArrayOfPCollectionCopmarison" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetCollectionComparisionReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProjectionName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFromMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strEndMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intmode" type="xs:int" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProjectionNamee" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetCollectionComparisionReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mGetCollectionComparisionReportResult" nillable="true" type="q25:ArrayOfPCollectionCopmarison" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetProjectionReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProjectionName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFromMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strEndMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intmode" type="xs:int" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strProjectionNamee" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetProjectionReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/EX.Projection.Model" minOccurs="0" name="mGetProjectionReportResult" nillable="true" type="q26:ArrayOfPCollectionCopmarison" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

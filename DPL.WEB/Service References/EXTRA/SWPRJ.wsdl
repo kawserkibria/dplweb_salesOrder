@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SWPRJ" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:94/EXTRA/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:94/EXTRA/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:94/EXTRA/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EX.Projection.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISWPRJ_mFillDisplayWeeklyProjectionchild_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayWeeklyProjectionchild" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayWeeklyProjectionchild_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayWeeklyProjectionchildResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayMonthlyProjectionchild_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayMonthlyProjectionchild" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayMonthlyProjectionchild_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayMonthlyProjectionchildResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetDivisionFromZone_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetDivisionFromZone" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetDivisionFromZone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetDivisionFromZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mDeletePerformanve_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeletePerformanve" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mDeletePerformanve_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeletePerformanveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mrptFillDisplayMonthlyProjection_InputMessage">
+    <wsdl:part name="parameters" element="tns:mrptFillDisplayMonthlyProjection" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mrptFillDisplayMonthlyProjection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mrptFillDisplayMonthlyProjectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillWeeklyProjectionReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillWeeklyProjectionReport" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillWeeklyProjectionReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillWeeklyProjectionReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillMonthlyProjectionValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillMonthlyProjectionValue" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillMonthlyProjectionValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillMonthlyProjectionValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayLedgerNameWeeklyReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayLedgerNameWeeklyReport" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayLedgerNameWeeklyReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayLedgerNameWeeklyReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillWeeklyProjectionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillWeeklyProjectionList" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillWeeklyProjectionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillWeeklyProjectionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mDeleteWeeklyProjection_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteWeeklyProjection" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mDeleteWeeklyProjection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteWeeklyProjectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayWeeklyProjection_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayWeeklyProjection" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayWeeklyProjection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayWeeklyProjectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayLedgerNameWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayLedgerNameWeekly" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayLedgerNameWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayLedgerNameWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mInsertWeeklyProjectionSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertWeeklyProjectionSet" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mInsertWeeklyProjectionSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertWeeklyProjectionSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_getZoneFromDivsion_InputMessage">
+    <wsdl:part name="parameters" element="tns:getZoneFromDivsion" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_getZoneFromDivsion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getZoneFromDivsionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mInsertMpoPerformance_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertMpoPerformance" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mInsertMpoPerformance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertMpoPerformanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mQueryPerformance_InputMessage">
+    <wsdl:part name="parameters" element="tns:mQueryPerformance" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mQueryPerformance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mQueryPerformanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetLedgerGroupLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetLedgerGroupLoad" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetLedgerGroupLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetLedgerGroupLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mInsertMonthConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertMonthConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mInsertMonthConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertMonthConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillMonthConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillMonthConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillMonthConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillMonthConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_DeletetMonthConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetMonthConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_DeletetMonthConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetMonthConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mUpdateMonthConfigpublic_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateMonthConfigpublic" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mUpdateMonthConfigpublic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateMonthConfigpublicResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mInsertProjectionSetup_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertProjectionSetup" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mInsertProjectionSetup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertProjectionSetupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillPojictionConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillPojictionConfig" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillPojictionConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillPojictionConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_DeletetProjectionSetUp_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetProjectionSetUp" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_DeletetProjectionSetUp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletetProjectionSetUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mUpdateProjectionSetup_InputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateProjectionSetup" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mUpdateProjectionSetup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mUpdateProjectionSetupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillMonthlyProjection_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillMonthlyProjection" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillMonthlyProjection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillMonthlyProjectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillMonthlyProjectionLedger_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillMonthlyProjectionLedger" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillMonthlyProjectionLedger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillMonthlyProjectionLedgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mInsertMonthlyProjection_InputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertMonthlyProjection" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mInsertMonthlyProjection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mInsertMonthlyProjectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillMonthlyProjectionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillMonthlyProjectionList" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillMonthlyProjectionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillMonthlyProjectionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayMonthlyProjection_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayMonthlyProjection" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayMonthlyProjection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayMonthlyProjectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayLedgerName_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayLedgerName" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mFillDisplayLedgerName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisplayLedgerNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mDeleteMonthlyProjection_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteMonthlyProjection" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mDeleteMonthlyProjection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDeleteMonthlyProjectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_gCheckProjectionActive_InputMessage">
+    <wsdl:part name="parameters" element="tns:gCheckProjectionActive" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_gCheckProjectionActive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gCheckProjectionActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetMontlyLadgerProjection_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetMontlyLadgerProjection" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetMontlyLadgerProjection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetMontlyLadgerProjectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetMontlyLadger_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetMontlyLadger" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetMontlyLadger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetMontlyLadgerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetCollectionComparision_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetCollectionComparision" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetCollectionComparision_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetCollectionComparisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetProjectionStarEndDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetProjectionStarEndDate" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetProjectionStarEndDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetProjectionStarEndDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetCollectionComparisionReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetCollectionComparisionReport" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetCollectionComparisionReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetCollectionComparisionReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetProjectionReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetProjectionReport" />
+  </wsdl:message>
+  <wsdl:message name="ISWPRJ_mGetProjectionReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetProjectionReportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISWPRJ">
+    <wsdl:operation name="mFillDisplayWeeklyProjectionchild">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayWeeklyProjectionchild" message="tns:ISWPRJ_mFillDisplayWeeklyProjectionchild_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayWeeklyProjectionchildResponse" message="tns:ISWPRJ_mFillDisplayWeeklyProjectionchild_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayMonthlyProjectionchild">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayMonthlyProjectionchild" message="tns:ISWPRJ_mFillDisplayMonthlyProjectionchild_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayMonthlyProjectionchildResponse" message="tns:ISWPRJ_mFillDisplayMonthlyProjectionchild_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetDivisionFromZone">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mGetDivisionFromZone" message="tns:ISWPRJ_mGetDivisionFromZone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mGetDivisionFromZoneResponse" message="tns:ISWPRJ_mGetDivisionFromZone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeletePerformanve">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mDeletePerformanve" message="tns:ISWPRJ_mDeletePerformanve_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mDeletePerformanveResponse" message="tns:ISWPRJ_mDeletePerformanve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mrptFillDisplayMonthlyProjection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mrptFillDisplayMonthlyProjection" message="tns:ISWPRJ_mrptFillDisplayMonthlyProjection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mrptFillDisplayMonthlyProjectionResponse" message="tns:ISWPRJ_mrptFillDisplayMonthlyProjection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillWeeklyProjectionReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillWeeklyProjectionReport" message="tns:ISWPRJ_mFillWeeklyProjectionReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillWeeklyProjectionReportResponse" message="tns:ISWPRJ_mFillWeeklyProjectionReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillMonthlyProjectionValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillMonthlyProjectionValue" message="tns:ISWPRJ_mFillMonthlyProjectionValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillMonthlyProjectionValueResponse" message="tns:ISWPRJ_mFillMonthlyProjectionValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayLedgerNameWeeklyReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayLedgerNameWeeklyReport" message="tns:ISWPRJ_mFillDisplayLedgerNameWeeklyReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayLedgerNameWeeklyReportResponse" message="tns:ISWPRJ_mFillDisplayLedgerNameWeeklyReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillWeeklyProjectionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillWeeklyProjectionList" message="tns:ISWPRJ_mFillWeeklyProjectionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillWeeklyProjectionListResponse" message="tns:ISWPRJ_mFillWeeklyProjectionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteWeeklyProjection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mDeleteWeeklyProjection" message="tns:ISWPRJ_mDeleteWeeklyProjection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mDeleteWeeklyProjectionResponse" message="tns:ISWPRJ_mDeleteWeeklyProjection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayWeeklyProjection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayWeeklyProjection" message="tns:ISWPRJ_mFillDisplayWeeklyProjection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayWeeklyProjectionResponse" message="tns:ISWPRJ_mFillDisplayWeeklyProjection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayLedgerNameWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayLedgerNameWeekly" message="tns:ISWPRJ_mFillDisplayLedgerNameWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayLedgerNameWeeklyResponse" message="tns:ISWPRJ_mFillDisplayLedgerNameWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertWeeklyProjectionSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mInsertWeeklyProjectionSet" message="tns:ISWPRJ_mInsertWeeklyProjectionSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mInsertWeeklyProjectionSetResponse" message="tns:ISWPRJ_mInsertWeeklyProjectionSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getZoneFromDivsion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/getZoneFromDivsion" message="tns:ISWPRJ_getZoneFromDivsion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/getZoneFromDivsionResponse" message="tns:ISWPRJ_getZoneFromDivsion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertMpoPerformance">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mInsertMpoPerformance" message="tns:ISWPRJ_mInsertMpoPerformance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mInsertMpoPerformanceResponse" message="tns:ISWPRJ_mInsertMpoPerformance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mQueryPerformance">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mQueryPerformance" message="tns:ISWPRJ_mQueryPerformance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mQueryPerformanceResponse" message="tns:ISWPRJ_mQueryPerformance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetLedgerGroupLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mGetLedgerGroupLoad" message="tns:ISWPRJ_mGetLedgerGroupLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mGetLedgerGroupLoadResponse" message="tns:ISWPRJ_mGetLedgerGroupLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertMonthConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mInsertMonthConfig" message="tns:ISWPRJ_mInsertMonthConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mInsertMonthConfigResponse" message="tns:ISWPRJ_mInsertMonthConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillMonthConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillMonthConfig" message="tns:ISWPRJ_mFillMonthConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillMonthConfigResponse" message="tns:ISWPRJ_mFillMonthConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetMonthConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/DeletetMonthConfig" message="tns:ISWPRJ_DeletetMonthConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/DeletetMonthConfigResponse" message="tns:ISWPRJ_DeletetMonthConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateMonthConfigpublic">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mUpdateMonthConfigpublic" message="tns:ISWPRJ_mUpdateMonthConfigpublic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mUpdateMonthConfigpublicResponse" message="tns:ISWPRJ_mUpdateMonthConfigpublic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertProjectionSetup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mInsertProjectionSetup" message="tns:ISWPRJ_mInsertProjectionSetup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mInsertProjectionSetupResponse" message="tns:ISWPRJ_mInsertProjectionSetup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillPojictionConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillPojictionConfig" message="tns:ISWPRJ_mFillPojictionConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillPojictionConfigResponse" message="tns:ISWPRJ_mFillPojictionConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetProjectionSetUp">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/DeletetProjectionSetUp" message="tns:ISWPRJ_DeletetProjectionSetUp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/DeletetProjectionSetUpResponse" message="tns:ISWPRJ_DeletetProjectionSetUp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateProjectionSetup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mUpdateProjectionSetup" message="tns:ISWPRJ_mUpdateProjectionSetup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mUpdateProjectionSetupResponse" message="tns:ISWPRJ_mUpdateProjectionSetup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillMonthlyProjection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillMonthlyProjection" message="tns:ISWPRJ_mFillMonthlyProjection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillMonthlyProjectionResponse" message="tns:ISWPRJ_mFillMonthlyProjection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillMonthlyProjectionLedger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillMonthlyProjectionLedger" message="tns:ISWPRJ_mFillMonthlyProjectionLedger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillMonthlyProjectionLedgerResponse" message="tns:ISWPRJ_mFillMonthlyProjectionLedger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mInsertMonthlyProjection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mInsertMonthlyProjection" message="tns:ISWPRJ_mInsertMonthlyProjection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mInsertMonthlyProjectionResponse" message="tns:ISWPRJ_mInsertMonthlyProjection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillMonthlyProjectionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillMonthlyProjectionList" message="tns:ISWPRJ_mFillMonthlyProjectionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillMonthlyProjectionListResponse" message="tns:ISWPRJ_mFillMonthlyProjectionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayMonthlyProjection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayMonthlyProjection" message="tns:ISWPRJ_mFillDisplayMonthlyProjection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayMonthlyProjectionResponse" message="tns:ISWPRJ_mFillDisplayMonthlyProjection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayLedgerName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayLedgerName" message="tns:ISWPRJ_mFillDisplayLedgerName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mFillDisplayLedgerNameResponse" message="tns:ISWPRJ_mFillDisplayLedgerName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteMonthlyProjection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mDeleteMonthlyProjection" message="tns:ISWPRJ_mDeleteMonthlyProjection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mDeleteMonthlyProjectionResponse" message="tns:ISWPRJ_mDeleteMonthlyProjection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gCheckProjectionActive">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/gCheckProjectionActive" message="tns:ISWPRJ_gCheckProjectionActive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/gCheckProjectionActiveResponse" message="tns:ISWPRJ_gCheckProjectionActive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetMontlyLadgerProjection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mGetMontlyLadgerProjection" message="tns:ISWPRJ_mGetMontlyLadgerProjection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mGetMontlyLadgerProjectionResponse" message="tns:ISWPRJ_mGetMontlyLadgerProjection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetMontlyLadger">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mGetMontlyLadger" message="tns:ISWPRJ_mGetMontlyLadger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mGetMontlyLadgerResponse" message="tns:ISWPRJ_mGetMontlyLadger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetCollectionComparision">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mGetCollectionComparision" message="tns:ISWPRJ_mGetCollectionComparision_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mGetCollectionComparisionResponse" message="tns:ISWPRJ_mGetCollectionComparision_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetProjectionStarEndDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mGetProjectionStarEndDate" message="tns:ISWPRJ_mGetProjectionStarEndDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mGetProjectionStarEndDateResponse" message="tns:ISWPRJ_mGetProjectionStarEndDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetCollectionComparisionReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mGetCollectionComparisionReport" message="tns:ISWPRJ_mGetCollectionComparisionReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mGetCollectionComparisionReportResponse" message="tns:ISWPRJ_mGetCollectionComparisionReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetProjectionReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISWPRJ/mGetProjectionReport" message="tns:ISWPRJ_mGetProjectionReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISWPRJ/mGetProjectionReportResponse" message="tns:ISWPRJ_mGetProjectionReport_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISWPRJ" type="tns:ISWPRJ">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mFillDisplayWeeklyProjectionchild">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillDisplayWeeklyProjectionchild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayMonthlyProjectionchild">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillDisplayMonthlyProjectionchild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetDivisionFromZone">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mGetDivisionFromZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeletePerformanve">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mDeletePerformanve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mrptFillDisplayMonthlyProjection">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mrptFillDisplayMonthlyProjection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillWeeklyProjectionReport">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillWeeklyProjectionReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillMonthlyProjectionValue">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillMonthlyProjectionValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayLedgerNameWeeklyReport">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillDisplayLedgerNameWeeklyReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillWeeklyProjectionList">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillWeeklyProjectionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteWeeklyProjection">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mDeleteWeeklyProjection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayWeeklyProjection">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillDisplayWeeklyProjection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayLedgerNameWeekly">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillDisplayLedgerNameWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertWeeklyProjectionSet">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mInsertWeeklyProjectionSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getZoneFromDivsion">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/getZoneFromDivsion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertMpoPerformance">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mInsertMpoPerformance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mQueryPerformance">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mQueryPerformance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetLedgerGroupLoad">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mGetLedgerGroupLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertMonthConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mInsertMonthConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillMonthConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillMonthConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetMonthConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/DeletetMonthConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateMonthConfigpublic">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mUpdateMonthConfigpublic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertProjectionSetup">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mInsertProjectionSetup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillPojictionConfig">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillPojictionConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetProjectionSetUp">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/DeletetProjectionSetUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mUpdateProjectionSetup">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mUpdateProjectionSetup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillMonthlyProjection">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillMonthlyProjection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillMonthlyProjectionLedger">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillMonthlyProjectionLedger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mInsertMonthlyProjection">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mInsertMonthlyProjection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillMonthlyProjectionList">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillMonthlyProjectionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayMonthlyProjection">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillDisplayMonthlyProjection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisplayLedgerName">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mFillDisplayLedgerName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDeleteMonthlyProjection">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mDeleteMonthlyProjection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gCheckProjectionActive">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/gCheckProjectionActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetMontlyLadgerProjection">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mGetMontlyLadgerProjection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetMontlyLadger">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mGetMontlyLadger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetCollectionComparision">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mGetCollectionComparision" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetProjectionStarEndDate">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mGetProjectionStarEndDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetCollectionComparisionReport">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mGetCollectionComparisionReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetProjectionReport">
+      <soap:operation soapAction="http://tempuri.org/ISWPRJ/mGetProjectionReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SWPRJ">
+    <wsdl:port name="BasicHttpBinding_ISWPRJ" binding="tns:BasicHttpBinding_ISWPRJ">
+      <soap:address location="http://localhost:94/EXTRA/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

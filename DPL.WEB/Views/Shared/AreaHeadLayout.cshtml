@@ -61,6 +61,21 @@
             button:hover {
                 background: orange;
             }
+
+        .bordercolor {
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .centerContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item {
+            width: 50em;
+        }
     </style>
     @* ---End Sweetalert--*@
     @*<style>
@@ -215,7 +230,11 @@
                                                 <i class="far fa-circle-thin nav-icon"></i>
                                                 <p class="ilF">Sales Order</p>
                                             </a>
-
+                                            <a href="@Url.Action("SalesCollectionPerformance", "SalesReport", new { Area = "Reports" })" class="nav-link">
+                                                @*<a href="~/Transaction/SalesOrder/SalesOrderList" class="nav-link">*@
+                                                <i class="far fa-circle-thin nav-icon"></i>
+                                                <p class="ilF">Report</p>
+                                            </a>
 
                                         </li>
                                     </ul>
@@ -350,12 +369,13 @@
 
     <!-- Core theme JS-->
     <script src="~/Scripts/scripts.js"></script>
-    @* ---Sweetalert--*@
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script src="~/Scripts/jsTree3/jstree.min.js"></script>
     @* ---Sweetalert tost--*@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
     @* ---end Sweetalert--*@
+    @* ---Sweetalert--*@
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>*@
 
 

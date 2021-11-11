@@ -22,7 +22,7 @@ namespace DPL.WEB.Models
 
     public class OrderMaster
     {
-
+        public string strUserLavel { get; set; }
         public string strLocation { get; set; }
         public string strGodownName { get; set; }
          public string strOtherTerms { get; set; }

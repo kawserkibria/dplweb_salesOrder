@@ -78,10 +78,22 @@
                 </div>
             </div>
         </div>
+    
     </section>
+
+ 
+
 </div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+                var msg = '@ViewBag.checkfals'
 
-<script>
+            if (msg == "ok") {
+                alert("No")
+            }
+        });
+          </script>
 
-
-</script>
+    }
+      

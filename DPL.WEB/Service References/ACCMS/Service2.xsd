@@ -1,0 +1,3428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:133/ACCMSNEW/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" />
+  <xs:import schemaLocation="http://localhost:133/ACCMSNEW/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="mFillBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vblngAccessControl" type="xs:boolean" />
+        <xs:element minOccurs="0" name="vstrUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillBranchResult" nillable="true" type="q1:ArrayOfBranchConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vsstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrParent" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrEMail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrFax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAddress1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAddress2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrcity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPostal" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPhone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrComments" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrCurrency" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strInvEffectStock" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strInactive" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCostCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDrcr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblopnBalance" type="xs:double" />
+        <xs:element minOccurs="0" name="strcostcenterGrid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchGrid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblFixedPurhaseAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="strEffectoveForm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngReducingBal" type="xs:long" />
+        <xs:element minOccurs="0" name="dblAssetsLife" type="xs:double" />
+        <xs:element minOccurs="0" name="dblDepRate" type="xs:double" />
+        <xs:element minOccurs="0" name="dblAccDep" type="xs:double" />
+        <xs:element minOccurs="0" name="dblWrittendownvalue" type="xs:double" />
+        <xs:element minOccurs="0" name="dblSalvageValue" type="xs:double" />
+        <xs:element minOccurs="0" name="lngAssetPercent" type="xs:double" />
+        <xs:element minOccurs="0" name="strAssetsGrid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strAssetsGridAccu" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPFAmount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPaySumm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intBranch" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mSaveLedgerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLedgerAdditem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrRoot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intstatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLedgerAdditemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mLedgerAdditemResult" nillable="true" type="q2:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerListNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mintLedgerGroup" type="xs:int" />
+        <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+        <xs:element minOccurs="0" name="strMySQL" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intlaodType" type="xs:int" />
+        <xs:element minOccurs="0" name="strType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerListNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLedgerListNewResult" nillable="true" type="q3:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mintLedgerGroup" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLedgerListResult" nillable="true" type="q4:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayLedgerList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngLedgerSerial" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayLedgerListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayLedgerListResult" nillable="true" type="q5:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayVectorCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOldLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayVectorCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayVectorCategoryResult" nillable="true" type="q6:ArrayOfVectorCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayBranchOpening">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOldLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayBranchOpeningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayBranchOpeningResult" nillable="true" type="q7:ArrayOfBranchConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayFixedAssest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOldLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayFixedAssestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayFixedAssestResult" nillable="true" type="q8:ArrayOfFixedAssets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayFixedAssestOpening">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOldLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayFixedAssestOpeningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayFixedAssestOpeningResult" nillable="true" type="q9:ArrayOfFixedAssets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayAccountsTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrSalesSerial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayAccountsTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplayAccountsTemplateResult" nillable="true" type="q10:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOldLedger" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngLedgerSerial" type="xs:long" />
+        <xs:element minOccurs="0" name="vsstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrParent" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrEMail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrFax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAddress1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAddress2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrcity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPostal" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPhone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrComments" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrCurrency" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strInvEffectStock" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strInactive" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCostCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDrcr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblopnBalance" type="xs:double" />
+        <xs:element minOccurs="0" name="strcostcenterGrid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchGrid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblFixedPurhaseAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="strEffectoveForm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngReducingBal" type="xs:long" />
+        <xs:element minOccurs="0" name="dblAssetsLife" type="xs:double" />
+        <xs:element minOccurs="0" name="dblDepRate" type="xs:double" />
+        <xs:element minOccurs="0" name="dblAccDep" type="xs:double" />
+        <xs:element minOccurs="0" name="dblWrittendownvalue" type="xs:double" />
+        <xs:element minOccurs="0" name="dblSalvageValue" type="xs:double" />
+        <xs:element minOccurs="0" name="lngAssetPercent" type="xs:double" />
+        <xs:element minOccurs="0" name="strAssetsGrid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strAssetsGridAccu" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPFAmount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPaySumm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intBranch" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateLedgerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngledgerSerial" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteLedgerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vIntGroup" type="xs:int" />
+        <xs:element minOccurs="0" name="vstrPrefix" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPrefix1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstruserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLedgerResult" nillable="true" type="q11:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertTempVector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strstring" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertTempVectorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertTempVectorResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveVoucher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strVoucherGrid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDrcr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrRefNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngVoucherType" type="xs:long" />
+        <xs:element minOccurs="0" name="vdteDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vdteDueDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrReverseLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intvoucherPosition" type="xs:int" />
+        <xs:element minOccurs="0" name="lngCashFlow" type="xs:long" />
+        <xs:element minOccurs="0" name="vstrVoyageNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vdblAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblNetAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblAddAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblLessAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblDebitAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblCreditAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="dblFCCurrencyDebit" type="xs:double" />
+        <xs:element minOccurs="0" name="dblFCCurrencyCredit" type="xs:double" />
+        <xs:element minOccurs="0" name="mstrFCsymbol" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mdblCurrRate" type="xs:double" />
+        <xs:element minOccurs="0" name="vlngAgstType" type="xs:long" />
+        <xs:element minOccurs="0" name="vstrSingleNarration" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrNarrations" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DgCostCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DGBillWise" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blngNumMethod" type="xs:boolean" />
+        <xs:element minOccurs="0" name="vlngIsMultiCurrency" type="xs:long" />
+        <xs:element minOccurs="0" name="vstrChecuqNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrChequedate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDrawnon" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAgnstRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrSalesRep" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDelivery" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPayment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrSupport" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrValidaty" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrOtherTerms" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SpJounal" type="xs:int" />
+        <xs:element minOccurs="0" name="strDginvEffect" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strGrdTemPlate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strGrdTemPlateJV" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intLoanTransfer" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveVoucherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveVoucherResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateVoucher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strVoucherGrid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDrcr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrRefNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngVoucherType" type="xs:long" />
+        <xs:element minOccurs="0" name="vdteDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vdteDueDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrReverseLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intvoucherPosition" type="xs:int" />
+        <xs:element minOccurs="0" name="lngCashFlow" type="xs:long" />
+        <xs:element minOccurs="0" name="vstrVoyageNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vdblAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblNetAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblAddAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblLessAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblDebitAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblCreditAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="dblFCCurrencyDebit" type="xs:double" />
+        <xs:element minOccurs="0" name="dblFCCurrencyCredit" type="xs:double" />
+        <xs:element minOccurs="0" name="mstrFCsymbol" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mdblCurrRate" type="xs:double" />
+        <xs:element minOccurs="0" name="vlngAgstType" type="xs:long" />
+        <xs:element minOccurs="0" name="vstrSingleNarration" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrNarrations" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DgCostCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DGBillWise" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngIsMultiCurrency" type="xs:long" />
+        <xs:element minOccurs="0" name="vstrChecuqNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrChequedate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDrawnon" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAgnstRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrSalesRep" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDelivery" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPayment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrSupport" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrValidaty" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrOtherTerms" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDginvEffect" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strGrdTemPlate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strGrdTemPlateJV" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intLoanTransfer" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateVoucherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateVoucherResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayCompVoucherList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrVoucherRefNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngVoucherAs" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayCompVoucherListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplayCompVoucherListResult" nillable="true" type="q12:ArrayOfAccountsVoucher" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayVoucherList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrVoucherRefNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngVoucherAs" type="xs:long" />
+        <xs:element minOccurs="0" name="intSP" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayVoucherListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplayVoucherListResult" nillable="true" type="q13:ArrayOfAccountsVoucher" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayVectorList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrVoucherRefNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayVectorListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplayVectorListResult" nillable="true" type="q14:ArrayOfVectorCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveBranchInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAddress1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAddress2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrCountry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPhone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrFax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrComment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDefaultBranch" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstInactive" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrGodown" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveBranchInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mSaveBranchInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillGetBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillGetBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillGetBranchResult" nillable="true" type="q15:ArrayOfBranchConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateBranchInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAddress1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAddress2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrCountry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPhone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrFax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrComment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDefaultBranch" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstInactive" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrGodown" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateBranchInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateBranchInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteBranchInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteBranchInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeleteBranchInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveFixedAssets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vsstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblFixedPurhaseAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="strEffectoveForm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngReducingBal" type="xs:long" />
+        <xs:element minOccurs="0" name="dblAssetsLife" type="xs:double" />
+        <xs:element minOccurs="0" name="dblDepRate" type="xs:double" />
+        <xs:element minOccurs="0" name="dblAccDep" type="xs:double" />
+        <xs:element minOccurs="0" name="dblWrittendownvalue" type="xs:double" />
+        <xs:element minOccurs="0" name="dblSalvageValue" type="xs:double" />
+        <xs:element minOccurs="0" name="lngAssetPercent" type="xs:double" />
+        <xs:element minOccurs="0" name="strAssetsGrid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDGAccBra" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intbtype" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveFixedAssetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mSaveFixedAssetsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mAssetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mAssetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mAssetListResult" nillable="true" type="q16:ArrayOfFixedAssets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayAssetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngAssetSerial" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayAssetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayAssetListResult" nillable="true" type="q17:ArrayOfFixedAssets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayFixedBranchList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mstrLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayFixedBranchListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayFixedBranchListResult" nillable="true" type="q18:ArrayOfFixedAssets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateFixedAssets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngAssetSerial" type="xs:long" />
+        <xs:element minOccurs="0" name="mstrOldLedger" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vsstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblFixedPurhaseAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="strEffectoveForm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngReducingBal" type="xs:long" />
+        <xs:element minOccurs="0" name="dblAssetsLife" type="xs:double" />
+        <xs:element minOccurs="0" name="dblDepRate" type="xs:double" />
+        <xs:element minOccurs="0" name="dblAccDep" type="xs:double" />
+        <xs:element minOccurs="0" name="dblWrittendownvalue" type="xs:double" />
+        <xs:element minOccurs="0" name="dblSalvageValue" type="xs:double" />
+        <xs:element minOccurs="0" name="lngAssetPercent" type="xs:double" />
+        <xs:element minOccurs="0" name="strAssetsGrid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDGAccBra" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intbtype" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateFixedAssetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateFixedAssetsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteFixedAssets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngAssetSerial" type="xs:long" />
+        <xs:element minOccurs="0" name="mstrOldLedger" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteFixedAssetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeleteFixedAssetsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertAssetsAdjustment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mstrPrimaryKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblAmount" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertAssetsAdjustmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertAssetsAdjustmentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetFixedAssetsAdjustment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetFixedAssetsAdjustmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetFixedAssetsAdjustmentResult" nillable="true" type="q19:ArrayOfFixedAssets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteAssetsAdjustment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mstrPrimaryKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteAssetsAdjustmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeleteAssetsAdjustmentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLoadBillWise">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOldLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLoadBillWiseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mLoadBillWiseResult" nillable="true" type="q20:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayBillWise">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrVoucherRefNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayBillWiseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplayBillWiseResult" nillable="true" type="q21:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gFillPreRefNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPartyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngVType" type="xs:long" />
+        <xs:element minOccurs="0" name="vstrDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrGodown" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strvstrRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intstatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gFillPreRefNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="gFillPreRefNoResult" nillable="true" type="q22:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayCommonInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrVoucherRefNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayCommonInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplayCommonInvoiceResult" nillable="true" type="q23:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaycommonInvoiceOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBillKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngVType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaycommonInvoiceOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplaycommonInvoiceOrderResult" nillable="true" type="q24:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaycommonInvoiceAddless">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrSalesSerial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaycommonInvoiceAddlessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplaycommonInvoiceAddlessResult" nillable="true" type="q25:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaycommonInvoiceBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrSalesSerial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaycommonInvoiceBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplaycommonInvoiceBillResult" nillable="true" type="q26:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaycommonInvoiceVoucher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrSalesSerial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaycommonInvoiceVoucherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplaycommonInvoiceVoucherResult" nillable="true" type="q27:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLogInName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrFullName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDepatrtment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDesignation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrUserLevel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAccessLevel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrComments" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vImage" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertUserResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetUserAccessData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLogInName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetUserAccessDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetUserAccessDataResult" nillable="true" type="q28:ArrayOfUserAccess" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateInsertUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrmstrPk" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLogInName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrFullName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDepatrtment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDesignation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrUserLevel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrAccessLevel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrComments" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vImage" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateInsertUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateInsertUserResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLaodVoucherTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngmoduletype" type="xs:long" />
+        <xs:element minOccurs="0" name="lngVtypeValue" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLaodVoucherTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mLaodVoucherTypesResult" nillable="true" type="q29:ArrayOfVoucherTypes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdteVoucherTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngMtype" type="xs:long" />
+        <xs:element minOccurs="0" name="mIntVoucherType" type="xs:long" />
+        <xs:element minOccurs="0" name="lngNumericWidth" type="xs:long" />
+        <xs:element minOccurs="0" name="vstrPrefix" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNoMethod" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrSuffix" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blngCheckVoucher" type="xs:boolean" />
+        <xs:element minOccurs="0" name="vstrVoucherName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngStartNo" type="xs:long" />
+        <xs:element minOccurs="0" name="strPrintYesOrNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intEffectBkash" type="xs:int" />
+        <xs:element minOccurs="0" name="intsample" type="xs:int" />
+        <xs:element minOccurs="0" name="vstrDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdteVoucherTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdteVoucherTypesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vintVoucherType" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetConfigResult" nillable="true" type="q30:ArrayOfVoucherTypes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayQuotationVoucherList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrSalesSerial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngVoucherAs" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayQuotationVoucherListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplayQuotationVoucherListResult" nillable="true" type="q31:ArrayOfAccountsVoucher" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayQuotationVoucherTranList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrSalesSerial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngVoucherAs" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplayQuotationVoucherTranListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplayQuotationVoucherTranListResult" nillable="true" type="q32:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mOpentableQuo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intVtype" type="xs:int" />
+        <xs:element minOccurs="0" name="strFDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strRefNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mOpentableQuoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mOpentableQuoResult" nillable="true" type="q33:ArrayOfAccountsVoucher" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesLedgerTree">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesLedgerTreeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetSalesLedgerTreeResult" nillable="true" type="q34:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesLedgerTreefromCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesLedgerTreefromCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetSalesLedgerTreefromCustomerResult" nillable="true" type="q35:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngGroup" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLedgerNewResult" nillable="true" type="q36:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillTeritorry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillTeritorryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillTeritorryResult" nillable="true" type="q37:ArrayOfTeritorry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateTeritorry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateTeritorryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateTeritorryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletetTeritorry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTeritorryCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletetTeritorryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletetTeritorryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertTeritorry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertTeritorryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertTeritorryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gFillPreSampleClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gFillPreSampleClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="gFillPreSampleClassResult" nillable="true" type="q38:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillUsername">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillUsernameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillUsernameResult" nillable="true" type="q39:ArrayOfUserAccess" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillExpenseList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillExpenseListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillExpenseListResult" nillable="true" type="q40:ArrayOfUserAccess" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertExpenseLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strConfiglKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strledgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strEffectiveDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngVoucherType" type="xs:long" />
+        <xs:element minOccurs="0" name="strGrid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertExpenseLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertExpenseLedgerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayLedgerlistt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mintLedgerGroup" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayLedgerlisttResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayLedgerlisttResult" nillable="true" type="q41:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayLedgerConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="masterKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayLedgerConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayLedgerConfigResult" nillable="true" type="q42:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetVoucherAmont">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCurrentYear" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetVoucherAmontResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetVoucherAmontResult" nillable="true" type="q43:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetVoucherTodaySalesAmont">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetVoucherTodaySalesAmontResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetVoucherTodaySalesAmontResult" nillable="true" type="q44:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetVoucherDateRangeWiseSalesAmont">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetVoucherDateRangeWiseSalesAmontResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetVoucherDateRangeWiseSalesAmontResult" nillable="true" type="q45:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetVoucherDateRangeWiseRecevedAmont">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetVoucherDateRangeWiseRecevedAmontResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetVoucherDateRangeWiseRecevedAmontResult" nillable="true" type="q46:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLedgerConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mstrConfiglkey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLedgerConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteLedgerConfigResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteGrace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteGraceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeleteGraceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisGraceLimitSP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SstrZone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisGraceLimitSPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillDisGraceLimitSPResult" nillable="true" type="q47:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillGraceLimitSP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intAppststus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillGraceLimitSPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillGraceLimitSPResult" nillable="true" type="q48:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillGraceLimit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intAppststus" type="xs:int" />
+        <xs:element minOccurs="0" name="vstrFindby" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrFdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrTDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillGraceLimitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillGraceLimitResult" nillable="true" type="q49:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertGrace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strGracePeriod" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCollDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strGraceMonthid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblGraceLimit" type="xs:double" />
+        <xs:element minOccurs="0" name="dblGraceAmnt" type="xs:double" />
+        <xs:element minOccurs="0" name="strRemarks" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertGraceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertGraceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillIntegretedMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillIntegretedMappingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillIntegretedMappingResult" nillable="true" type="q50:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertIntegretedMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intModeSampleClass" type="xs:int" />
+        <xs:element minOccurs="0" name="intModeSalesSample" type="xs:int" />
+        <xs:element minOccurs="0" name="intModeRandD" type="xs:int" />
+        <xs:element minOccurs="0" name="intModeStationary" type="xs:int" />
+        <xs:element minOccurs="0" name="strSampleClassDr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strSampleClassCr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strSalesSampleDr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strSalesSampleCr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strRandDDr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strRandDCr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strStatinaryDCr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strstring" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertIntegretedMappingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertIntegretedMappingResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerIntegretedMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LedgerPtype" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerIntegretedMappingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="mFillLedgerIntegretedMappingResult" nillable="true" type="q51:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerListMpoPercenNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMPOName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerListMpoPercenNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLedgerListMpoPercenNewResult" nillable="true" type="q52:ArrayOfAccountsVoucher" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSsaveIncentiveConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDG" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intMode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSsaveIncentiveConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mSsaveIncentiveConfigResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLedgerClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLedgerClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetCustomerLedgerClassResult" nillable="true" type="q53:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletetIncentiveGenList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletetIncentiveGenListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletetIncentiveGenListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillIncentiveGenList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillIncentiveGenListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillIncentiveGenListResult" nillable="true" type="q54:ArrayOfIncentiveCal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLedgeNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLedgeNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetCustomerLedgeNewResult" nillable="true" type="q55:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetIncentive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intyear" type="xs:int" />
+        <xs:element minOccurs="0" name="strincMode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intIncType" type="xs:int" />
+        <xs:element minOccurs="0" name="vstrDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intMonth" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetIncentiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetIncentiveResult" nillable="true" type="q56:ArrayOfIncentiveCal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletetIncentive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intyear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletetIncentiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletetIncentiveResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayIncentive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intyear" type="xs:int" />
+        <xs:element minOccurs="0" name="strincMode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayIncentiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayIncentiveResult" nillable="true" type="q57:ArrayOfIncentiveCal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillIncentive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intyear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillIncentiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillIncentiveResult" nillable="true" type="q58:ArrayOfIncentiveCal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertIncentiveCalculation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intYear" type="xs:int" />
+        <xs:element minOccurs="0" name="strDGMonth" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDGYear" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDGyearExtra" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intmode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertIncentiveCalculationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertIncentiveCalculationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillBranchAllNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vblngAccessControl" type="xs:boolean" />
+        <xs:element minOccurs="0" name="vstrUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillBranchAllNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="mFillBranchAllNewResult" nillable="true" type="q59:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetCustomerLedgerResult" nillable="true" type="q60:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLedgerNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLedgerNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetCustomerLedgerNewResult" nillable="true" type="q61:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPFLegder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strComId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPFLegderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPFLegderResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHLLegder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strComId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHLLegderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetHLLegderResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillPFLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngGroup" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillPFLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillPFLedgerResult" nillable="true" type="q62:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertPrivilegesNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intPriModule" type="xs:int" />
+        <xs:element minOccurs="0" name="lngAccess" type="xs:int" />
+        <xs:element minOccurs="0" name="strstring" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intmode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertPrivilegesNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertPrivilegesNewResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLedgerSecurity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrRoot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLedgerSecurityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mLedgerSecurityResult" nillable="true" type="q63:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillSecurityGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillSecurityGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="mFillSecurityGroupResult" nillable="true" type="q64:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gLoadLegderPrivilegesRight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gLoadLegderPrivilegesRightResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="gLoadLegderPrivilegesRightResult" nillable="true" type="q65:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveGraceMonthConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrfromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrtodate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrGfromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrGtodate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveGraceMonthConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mSaveGraceMonthConfigResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateGraceMonthConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stroldMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrfromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrtodate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrGfromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrGtodate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateGraceMonthConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateGraceMonthConfigResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayGraceMonthsetupList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayGraceMonthsetupListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayGraceMonthsetupListResult" nillable="true" type="q66:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetGraceDateFromMonthID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetGraceDateFromMonthIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetGraceDateFromMonthIDResult" nillable="true" type="q67:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteGraceMonthList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteGraceMonthListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeleteGraceMonthListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerSelectionProjection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngGroup" type="xs:long" />
+        <xs:element minOccurs="0" name="strMode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="struserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerSelectionProjectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLedgerSelectionProjectionResult" nillable="true" type="q68:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gFillPreRefNoNew2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPartyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngVType" type="xs:long" />
+        <xs:element minOccurs="0" name="vstrDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrGodown" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strvstrRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intstatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gFillPreRefNoNew2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="gFillPreRefNoNew2Result" nillable="true" type="q69:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gFillPreRefNoNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrPartyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngVType" type="xs:long" />
+        <xs:element minOccurs="0" name="vstrDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrGodown" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strvstrRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intstatus" type="xs:int" />
+        <xs:element minOccurs="0" name="strTDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gFillPreRefNoNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="gFillPreRefNoNewResult" nillable="true" type="q70:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayDraftLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayDraftLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayDraftLedgerResult" nillable="true" type="q71:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerSelection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngGroup" type="xs:long" />
+        <xs:element minOccurs="0" name="strMode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerSelectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLedgerSelectionResult" nillable="true" type="q72:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHondaLoanGroupList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngGroupAs" type="xs:long" />
+        <xs:element minOccurs="0" name="vblngAccessControl" type="xs:boolean" />
+        <xs:element minOccurs="0" name="vstrUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intMode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHondaLoanGroupListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetHondaLoanGroupListResult" nillable="true" type="q73:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillTransferList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillTransferListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillTransferListResult" nillable="true" type="q74:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFromTransfer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeleteTransferResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveLoanTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFromTransfer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strToTransfer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNarration" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveLoanTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mSaveLoanTransferResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillHLLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngGroup" type="xs:long" />
+        <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillHLLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillHLLedgerResult" nillable="true" type="q75:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetInstallmentNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLegdername" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strInstallment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetInstallmentNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetInstallmentNoResult" nillable="true" type="q76:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mstrConfiglkey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTemplateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLoanList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLoanListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLoanListResult" nillable="true" type="q77:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayLoanList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTemplateName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayLoanListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayLoanListResult" nillable="true" type="q78:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveLoanMaster">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOldTemplateName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTemplateName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblTotalAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="lngNoOfInstall" type="xs:long" />
+        <xs:element minOccurs="0" name="strInstallmentName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblMonthly" type="xs:double" />
+        <xs:element minOccurs="0" name="intDel" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveLoanMasterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mSaveLoanMasterResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayManualBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strmonth" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMpo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedger" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayManualBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mFillDisplayManualBillResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteManualMpoCmm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mstrConfiglkey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteManualMpoCmmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteManualMpoCmmResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillDisplayBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillDisplayBillResult" nillable="true" type="q79:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillManualBill">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vdteFromdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vdteTodate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillManualBillResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillManualBillResult" nillable="true" type="q80:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertMpoManual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strHeadName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="intDel" type="xs:int" />
+        <xs:element minOccurs="0" name="intCols" type="xs:int" />
+        <xs:element minOccurs="0" name="intRow" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertMpoManualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertMpoManualResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerListMpoPercen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMPOName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerListMpoPercenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLedgerListMpoPercenResult" nillable="true" type="q81:ArrayOfAccountsVoucher" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertMpoPercentage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMPOName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblPercentage" type="xs:double" />
+        <xs:element minOccurs="0" name="dblAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="strEffectiveDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intDel" type="xs:int" />
+        <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertMpoPercentageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertMpoPercentageResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateBankReconcilation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strRefKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBankDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBankPer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dblBankAmount" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateBankReconcilationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateBankReconcilationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayBankReconcilation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strfDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayBankReconcilationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayBankReconcilationResult" nillable="true" type="q82:ArrayOfAccountsVoucher" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetBankLedger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetBankLedgerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetBankLedgerResult" nillable="true" type="q83:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngGroup" type="xs:long" />
+        <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLedgerStatusResult" nillable="true" type="q84:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerListTARGET">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerListTARGETResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLedgerListTARGETResult" nillable="true" type="q85:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateOnLineApprove">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strRefNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intstatus" type="xs:int" />
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateOnLineApproveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateOnLineApproveResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateOnLineSecurty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngslNo" type="xs:long" />
+        <xs:element minOccurs="0" name="strUserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intaccesslevel" type="xs:int" />
+        <xs:element minOccurs="0" name="securityCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateOnLineSecurtyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateOnLineSecurtyResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillOnlineSecurity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillOnlineSecurityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillOnlineSecurityResult" nillable="true" type="q86:ArrayOfUserAccess" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateReceiptVoucherCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDrcr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrRefNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngVoucherType" type="xs:long" />
+        <xs:element minOccurs="0" name="vdteDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vdteDueDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrReverseLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intvoucherPosition" type="xs:int" />
+        <xs:element minOccurs="0" name="vdblNetAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="strChecqNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strChekdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDawnon" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vdblDebitAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblCreditAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vstrNarratirons" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DgCostCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blngNumMethod" type="xs:boolean" />
+        <xs:element minOccurs="0" name="intSP" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateReceiptVoucherCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateReceiptVoucherCustomerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveReceiptVoucherCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrDrcr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrRefNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vlngVoucherType" type="xs:long" />
+        <xs:element minOccurs="0" name="vdteDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vdteDueDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrReverseLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intvoucherPosition" type="xs:int" />
+        <xs:element minOccurs="0" name="vdblNetAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="strChecqNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strChekdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDawnon" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vdblDebitAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vdblCreditAmount" type="xs:double" />
+        <xs:element minOccurs="0" name="vstrNarratirons" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBranchID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DgCostCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blngNumMethod" type="xs:boolean" />
+        <xs:element minOccurs="0" name="intSP" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveReceiptVoucherCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveReceiptVoucherCustomerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetChequeRefNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mintVType" type="xs:int" />
+        <xs:element minOccurs="0" name="mdteVFromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mdteVToDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intSP" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetChequeRefNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetChequeRefNoResult" nillable="true" type="q87:ArrayOfAccountsVoucher" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaycommonInvoiceAddlessDateWise">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strfDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strtDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intvtype" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisplaycommonInvoiceAddlessDateWiseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="DisplaycommonInvoiceAddlessDateWiseResult" nillable="true" type="q88:ArrayOfAccBillwise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveBudget">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDG" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveBudgetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mSaveBudgetResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateBudget">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOldKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strDG" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateBudgetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateBudgetResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLoadBudgetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLoadBudgetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mLoadBudgetListResult" nillable="true" type="q89:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayBudgetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrBudget" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayBudgetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayBudgetListResult" nillable="true" type="q90:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeletBudgetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOldKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeletBudgetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeletBudgetListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteUserControl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngslNo" type="xs:long" />
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteUserControlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeleteUserControlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillGroupSales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngLedgerAs" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillGroupSalesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillGroupSalesResult" nillable="true" type="q91:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetGroupClosing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrGroupName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetGroupClosingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mGetGroupClosingResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetDateFromMonthID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetDateFromMonthIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetDateFromMonthIDResult" nillable="true" type="q92:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayFixedAssestAccOpening">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strOldLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayFixedAssestAccOpeningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayFixedAssestAccOpeningResult" nillable="true" type="q93:ArrayOfFixedAssets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gOpenComID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gOpenComIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gOpenComIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mChangePasswod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNewPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mChangePasswodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mChangePasswodResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFilVoucherPrintingShow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intVoucherTypeValue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFilVoucherPrintingShowResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFilVoucherPrintingShowResult" nillable="true" type="q94:ArrayOfAccVoucherHeader" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveVoucherPrinting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrVoucherHeader1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrVoucherHeader2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrVoucherHeader3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrVoucherHeader4" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrVoucherHeader5" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intVoucherTypeValue" type="xs:int" />
+        <xs:element minOccurs="0" name="intVoucherMinimize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveVoucherPrintingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mSaveVoucherPrintingResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetBackupPath">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetBackupPathResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetBackupPathResult" nillable="true" type="q95:ArrayOfBackupPath" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDsmRsm_level4_userPrivilegesRight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDsmRsm_level4_userPrivilegesRightResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetDsmRsm_level4_userPrivilegesRightResult" nillable="true" type="q96:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDsmRsm_level4_userPrivileges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDsmRsm_level4_userPrivilegesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetDsmRsm_level4_userPrivilegesResult" nillable="true" type="q97:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillBranchUserPrivileges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillBranchUserPrivilegesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillBranchUserPrivilegesResult" nillable="true" type="q98:ArrayOfBranchConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillBranchUserRight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillBranchUserRightResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillBranchUserRightResult" nillable="true" type="q99:ArrayOfBranchConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayPrivilegesMain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLogInKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intPriModule" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayPrivilegesMainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayPrivilegesMainResult" nillable="true" type="q100:ArrayOfUserAccess" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayPrivilegesChild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLogInKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayPrivilegesChildResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayPrivilegesChildResult" nillable="true" type="q101:ArrayOfUserAccess" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertPrivileges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intPriModule" type="xs:int" />
+        <xs:element minOccurs="0" name="lngAccess" type="xs:int" />
+        <xs:element minOccurs="0" name="strstring" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strString1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strSelection" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertPrivilegesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertPrivilegesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDsmRsm_level4">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDsmRsm_level4Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetDsmRsm_level4Result" nillable="true" type="q102:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveFormConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strformKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNormalName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intModuletype" type="xs:int" />
+        <xs:element minOccurs="0" name="intModeType" type="xs:int" />
+        <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveFormConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mSaveFormConfigResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateFormConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lngslNo" type="xs:long" />
+        <xs:element minOccurs="0" name="strformKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNormalName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intModuletype" type="xs:int" />
+        <xs:element minOccurs="0" name="intModeType" type="xs:int" />
+        <xs:element minOccurs="0" name="intStatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateFormConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateFormConfigResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayFormList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intModule" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayFormListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayFormListResult" nillable="true" type="q103:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountsTreeviewCR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountsTreeviewCRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetAccountsTreeviewCRResult" nillable="true" type="q104:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayLedgerPercen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayLedgerPercenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayLedgerPercenResult" nillable="true" type="q105:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveMonthConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrfromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrtodate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mSaveMonthConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mSaveMonthConfigResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateMonthConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stroldMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrfromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrtodate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateMonthConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateMonthConfigResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayMonthsetupList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFinancialFdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFinancialTDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayMonthsetupListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayMonthsetupListResult" nillable="true" type="q106:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteMonthList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDeleteMonthListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDeleteMonthListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetRefNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mintVType" type="xs:int" />
+        <xs:element minOccurs="0" name="mdteVFromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mdteVToDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intSP" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetRefNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mGetRefNoResult" nillable="true" type="q107:ArrayOfAccountsVoucher" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayMonthTarget">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFromDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strToDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPartyname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayMonthTargetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mDisplayMonthTargetResult" nillable="true" type="q108:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetLedgerClosing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetLedgerClosingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mGetLedgerClosingResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetLedgerOpening">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strFdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strTDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrLedgerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mGetLedgerOpeningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mGetLedgerOpeningResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mfillBranchNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vblngAccessControl" type="xs:boolean" />
+        <xs:element minOccurs="0" name="vstrUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mfillBranchNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="mfillBranchNewResult" nillable="true" type="q109:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLedgerAdditemMr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrRoot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intstatus" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mLedgerAdditemMrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mLedgerAdditemMrResult" nillable="true" type="q110:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillTeritorrySI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillTeritorrySIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillTeritorrySIResult" nillable="true" type="q111:ArrayOfTeritorry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountsTreeviewDR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountsTreeviewDRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetAccountsTreeviewDRResult" nillable="true" type="q112:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerNameVector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillLedgerNameVectorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillLedgerNameVectorResult" nillable="true" type="q113:ArrayOfVectorCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWork">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWorkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountsGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountsGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAccountsGroupResult" nillable="true" type="q114:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strGroupName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUnder" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCashflowType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strAccountType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMobileNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strConatctNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intPosition" type="xs:int" />
+        <xs:element minOccurs="0" name="intDuplicate" type="xs:int" />
+        <xs:element minOccurs="0" name="strRegMobile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertGroupResult" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountsTreeview">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountsTreeviewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetAccountsTreeviewResult" nillable="true" type="q115:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngGroupAs" type="xs:long" />
+        <xs:element minOccurs="0" name="vblngAccessControl" type="xs:boolean" />
+        <xs:element minOccurs="0" name="vstrUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="GetGroupListResult" nillable="true" type="q116:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngGroupSerial" type="xs:long" />
+        <xs:element minOccurs="0" name="strGroupName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strUnder" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCashflowType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strAccountType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMobileNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strConatctNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intPosition" type="xs:int" />
+        <xs:element minOccurs="0" name="intDuplicate" type="xs:int" />
+        <xs:element minOccurs="0" name="strRegMobile" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateGroupResult" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngGroupSerial" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteGroupResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillCurrencyList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillCurrencyListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillCurrencyListResult" nillable="true" type="q117:ArrayOfAccountsLedger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mlngLedgerAs" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillGroupResult" nillable="true" type="q118:ArrayOfAccountdGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayOpening">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mDisplayOpeningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mDisplayOpeningResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertCostCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCostCategory" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertCostCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertCostCategoryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateCostCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stroldCostCategory" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strNewCostCategory" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateCostCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateCostCategoryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillVectorCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillVectorCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillVectorCategoryResult" nillable="true" type="q119:ArrayOfVectorCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCostCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCostCategory" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCostCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCostCategoryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertCostCenter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCostCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCostCategory" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mInsertCostCenterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mInsertCostCenterResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateCostCenter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stroldCostCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCostCenter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strCostCategory" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mUpdateCostCenterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUpdateCostCenterResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCostCenter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stroldCostCenter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCostCenterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCostCenterResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillCostCenter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillCostCenterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillCostCenterResult" nillable="true" type="q120:ArrayOfVectorCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillVectorMaster">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="strDeComID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vstrVectorCategory" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mFillVectorMasterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/JA.Accounts.Model" minOccurs="0" name="mFillVectorMasterResult" nillable="true" type="q121:ArrayOfVectorCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

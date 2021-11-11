@@ -38,7 +38,7 @@
 
                 <div class="btnAllRow">
                     <button title="New Order"
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success "
                             onclick="btnNewOrder();"
                             data-toggle="modal" id="myBtn" data-target=".bd-example-modal-lg">
@@ -55,14 +55,14 @@
                 </div>
                 <div class="btnSearch">
                     <button title="New Order"
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success">
                         <i class="fa fa-search" aria-="true"></i>&nbsp;Search
                     </button>
                 </div>
                 <div class="btnRefresh">
                     <button title="Refresh"
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success"
                             onclick="clikRefresh();">
                         <i class="fa fa-refresh" aria-="true"></i>&nbsp;Refresh
@@ -71,7 +71,7 @@
 
                 <div class="btnZhApprovedList" hidden>
                     <button title="Commission Cal."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success"
                             onclick="ZhApprove();">
                         <i class="fa fa-calculator" aria-="true"></i>&nbsp;Zh Approved List
@@ -79,7 +79,7 @@
                 </div>
                 <div class="btnAllRow" hidden>
                     <button title="Commission Cal."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success"
                             onclick="commtionCal();">
                         <i class="fa fa-calculator" aria-="true"></i>&nbsp;Commission Cal.
@@ -89,7 +89,7 @@
 
                 <div class="btnApprove">
                     <button title="Commission Cal."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success"
                             onclick="App();">
                         <i class="fa fa-paper-plane" aria-="true"></i>&nbsp;Submit
@@ -119,7 +119,7 @@
 
                 <div class="btnZhApprovedList">
                     <button title="Order List."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success "
                             id="btnnewlist"
                             onclick="rbtnidNeworder();">
@@ -128,7 +128,7 @@
                 </div>
                 <div class="btnZhApprovedList">
                     <button title="Order List."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success "
                             id="btnAHlist"
                             onclick="rbtnidAHApprove();">
@@ -138,7 +138,7 @@
 
                 <div class="btnZhApprovedList">
                     <button title="Order List."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success "
                             id="btnzhlist"
                             onclick="rbtnidZhApprove();">
@@ -148,7 +148,7 @@
 
                 <div class="rbtnidReturnOrder">
                     <button title="Order List."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success "
                             id="btnreturn"
                             onclick="rbtnidReturnOrder();">
@@ -569,6 +569,7 @@
         document.getElementById('idBillDone').style.backgroundColor = 'green';
         rbtnStatus = 1;
         checkboxColamstatus = true;
+        deleteColamStatus = true;
         editColamStatus = true;
         console.log('rbtnidNeworder', rbtnStatus);
         showGrid();
@@ -729,6 +730,9 @@
         mloadLocation();
         mloadItemGroup();
         showGrid();
+
+
+    
     });
 
 
@@ -1146,22 +1150,34 @@
             detailsList: finalList,
 
         };
-        console.log("Order master and details list", empObj);
+        swal({
+            title: "Do You Want to Send?",
+            text: "",
+            icon: "warning",
+            buttons: [
+                'No',
+                'Yes'
+            ],
+            dangerMode: true,
+        }).then(function (isConfirm) {
+            if (isConfirm) {
 
-        $.ajax({
-            url: "/SalesOrder/mpoApprove",
-            type: "POST",
-            data: JSON.stringify(empObj),
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-                if (result == "OK") {
-                } else {
-                    //alert("resutl is ", result);
-                };
+                $.ajax({
+                    url: "/SalesOrder/mpoApprove",
+                    type: "POST",
+                    data: JSON.stringify(empObj),
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result == "OK") {
+                        } else {
+                            //alert("resutl is ", result);
+                        };
 
-                showGrid();
+                        showGrid();
 
+                    }
+                });
             }
         });
 
@@ -1173,7 +1189,7 @@
         console.log('voucher No', strVNo)
         console.log('voucher led', strMerzeNamee)
         window.open(
-    "/RptSO/RptNewOrder?strVoucherNO=" + encodeURIComponent(strVNo) + " &vstrLedgerName=" + strMerzeNamee+"&exportOpt=" + ddlVal,
+    "/SalesReport/RptListView?strVoucherNO=" + encodeURIComponent(strVNo) + " &vstrLedgerName=" + strMerzeNamee+"&exportOpt=" + ddlVal,
     '_blank' // <- This is what makes it open in a new window.
     );
 
@@ -1339,23 +1355,34 @@
     }
 
     function deleteItemsById(id) {
-        alert(id)
-        $.ajax({
-            url: '/SalesOrder/deleteItemById?voucherNo=' + encodeURIComponent(id),
-            type: "POST",
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-                if (result == "OK") {
+        swal({
+            title: "Do You Want to Delete?",
+            text: "",
+            icon: "warning",
+            buttons: [
+                'No',
+                'Yes'
+            ],
+            dangerMode: true,
+        }).then(function (isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    url: '/SalesOrder/deleteItemById?voucherNo=' + encodeURIComponent(id),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result == "OK") {
+                            swal("Delete!", "Delete success.", "success");
+                            cleardatda();
+                            showGrid();
+                        };
 
-                    cleardatda();
-                    showGrid();
-                };
-
+                    }
+                });
             }
+
         });
-
-
     }
 
 
@@ -1372,8 +1399,8 @@
 
         var selectedItem = $('#ddlStockItemlist').val();
         var addStaus = "";
-        $.each(addItemList, function (key, itemddd) {
-            console.log('new list add item', gItemList);
+        $.each(tempDataList, function (key, itemddd) {
+            //console.log('new list add item', gItemList);
         
             var aa = $('#ddlStockItemlist').val();
         
@@ -1398,10 +1425,11 @@
             swal("Adding Failed!", "You Alrady Add This Item.", "warning");
         }
         else {
+           
 
             itemRate('0003', $('#ddlStockGrouplist').val(), $('#ddlStockItemlist').val(), order_date, $('#intQty').val(), $('#ID_Branch').val());
 
-
+            
         }
 
 
@@ -1436,7 +1464,7 @@
 
                 var result = false;
 
-                    addItemList.push({
+                tempDataList.push({
                         strItemGroup: $('#ddlStockGrouplist').val(),
                         strItemName: $('#ddlStockItemlist').val(),
                         strPowerClass: this.strPowerClassGet,
@@ -1451,13 +1479,17 @@
                         strDate: $('#OrDate').val()
                     });
 
+                console.log('tempDataList', tempDataList.length)
+                console.log('aktarul', tempDataList.length);
+
                 $.ajax({
                     type: "POST",
                     url: "/SalesOrder/CommossionCalculet",
-                    data: JSON.stringify(addItemList),
+                    data: JSON.stringify(tempDataList),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (data) {
+                        console.log('data', data);
                            gItemList.push(data);
                            tempDataList = data;
                            showItemview();
@@ -1491,7 +1523,9 @@
     }
 
     function showItemview() {
-        console.log(tempDataList);
+
+
+        //console.log(tempDataList);
         intItemQty = 0;
         totalAmount = 0;
         totalcommision = 0;
@@ -1511,6 +1545,7 @@
                 return response;
             },
             "select": true,
+            pageLength: 5,
             columns: [
 
                 {
@@ -1583,7 +1618,7 @@
     }
     function saveData() {
         jQuery.ajaxSettings.traditional = true;
-        
+
         console.log('list list', this.detailsList);
 
         var empObj = {
@@ -1606,39 +1641,62 @@
         };
         console.log("Order master and details list", empObj);
 
-        $.ajax({
-            url: "/SalesOrder/msaveSalesOrder",
-            type: "POST",
-            data: JSON.stringify(empObj),
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-                if (result == "OK") {
-
-                    var toastMixin = Swal.mixin({
-                        toast: true,
-                        icon: 'success',
-                        title: 'General Title',
-                        animation: false,
-                        position: 'center',
-                        showConfirmButton: false,
-                        timer: 2000,
-                        timerProgressBar: true,
 
 
-                    });
-                    toastMixin.fire({
-                        animation: true,
-                        title: 'Save Successfully',
+        //alert(a)
+        swal({
+            title: "Do You Want to Save?",
+            text: "",
+            icon: "warning",
+            buttons: [
+                'No',
+                'Yes'
+            ],
+            dangerMode: true,
+        }).then(function (isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    url: "/SalesOrder/msaveSalesOrder",
+                    type: "POST",
+                    data: JSON.stringify(empObj),
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result == "OK") {
 
-                    });
-                    clearFromData();
-                    showGrid();
-                } else {
-                };
+                            var toastMixin = Swal.mixin({
+                                toast: true,
+                                icon: 'success',
+                                title: 'General Title',
+                                animation: false,
+                                position: 'center',
+                                showConfirmButton: false,
+                                timer: 2000,
+                                timerProgressBar: true,
 
+
+                            });
+                            toastMixin.fire({
+                                animation: true,
+                                title: 'Save Successfully',
+
+                            });
+                            clearFromData();
+                            showGrid();
+                        } else {
+                        };
+
+                    }
+                });
+
+            } else {
+                //alert("Cancel...")
             }
         });
+
+
+
+
     }
 
     function clearFromData() {
@@ -1681,44 +1739,57 @@
             detailsList: this.detailsList,
 
         };
-        $.ajax({
-            url: "/SalesOrder/mUpdateSalesOrder",
-            type: "POST",
-            data: JSON.stringify(empObj),
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: function (result) {
 
-                if (result == "Updated") {
-                    console.log('Update')
+        swal({
+            title: "Do You Want to Update?",
+            text: "",
+            icon: "warning",
+            buttons: [
+                'No',
+                'Yes'
+            ],
+            dangerMode: true,
+        }).then(function (isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    url: "/SalesOrder/mUpdateSalesOrder",
+                    type: "POST",
+                    data: JSON.stringify(empObj),
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
 
-                    var toastMixin = Swal.mixin({
-                        toast: true,
-                        icon: 'success',
-                        title: 'General Title',
-                        animation: false,
-                        //position: 'top-right',
-                        position: 'center',
-                        showConfirmButton: false,
-                        timer: 2000,
-                        timerProgressBar: true,
-                    });
-                        toastMixin.fire({
-                            animation: true,
-                            title: 'Update Successfully',
+                        if (result == "Updated") {
+                            console.log('Update')
 
-                        });
-             
-                        clearFromData();
+                            var toastMixin = Swal.mixin({
+                                toast: true,
+                                icon: 'success',
+                                title: 'General Title',
+                                animation: false,
+                                //position: 'top-right',
+                                position: 'center',
+                                showConfirmButton: false,
+                                timer: 2000,
+                                timerProgressBar: true,
+                            });
+                            toastMixin.fire({
+                                animation: true,
+                                title: 'Update Successfully',
+                              
 
-                } else {
-                    cleardatda();
-                    //alert("resutl sssssis ", result);
-                };
+                            });
+                            showGrid();
+                            clearFromData();
+
+                        } else {
+                            cleardatda();
+                            //alert("resutl sssssis ", result);
+                        };
+                    }
+                });
             }
         });
-
-
     }
 
     function calculateData() {

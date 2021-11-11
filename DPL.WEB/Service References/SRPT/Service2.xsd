@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/JA.ReportsSP.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JA.ReportsSP.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfRProductSales">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RProductSales" nillable="true" type="tns:RProductSales" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRProductSales" nillable="true" type="tns:ArrayOfRProductSales" />
+  <xs:complexType name="RProductSales">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DblBillAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="DblBillP" type="xs:double" />
+      <xs:element minOccurs="0" name="DblBillQty" type="xs:double" />
+      <xs:element minOccurs="0" name="DblBillQtyBonus" type="xs:double" />
+      <xs:element minOccurs="0" name="DblBillRate" type="xs:double" />
+      <xs:element minOccurs="0" name="DblBonusP" type="xs:double" />
+      <xs:element minOccurs="0" name="DblGCommPer" type="xs:double" />
+      <xs:element minOccurs="0" name="DblGCommPer1" type="xs:double" />
+      <xs:element minOccurs="0" name="DblShortQty" type="xs:double" />
+      <xs:element minOccurs="0" name="DblShortValue" type="xs:double" />
+      <xs:element minOccurs="0" name="DblVNetAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty1" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty10" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty11" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty12" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty2" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty3" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty4" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty5" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty6" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty7" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty8" type="xs:double" />
+      <xs:element minOccurs="0" name="SalQty9" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty1" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty10" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty11" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty12" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty2" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty3" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty4" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty5" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty6" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty7" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty8" type="xs:double" />
+      <xs:element minOccurs="0" name="TarQty9" type="xs:double" />
+      <xs:element minOccurs="0" name="intBonusQty" type="xs:double" />
+      <xs:element minOccurs="0" name="intDilutionMode" type="xs:int" />
+      <xs:element minOccurs="0" name="intSalesQty" type="xs:double" />
+      <xs:element minOccurs="0" name="intTargetQty" type="xs:double" />
+      <xs:element minOccurs="0" name="intTotalQty" type="xs:double" />
+      <xs:element minOccurs="0" name="strAddress1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strAddress2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strCopy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLederCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerGroupParent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerGroupPrimary" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerTerritory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strOrderDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strOrderNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strParyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPowrClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strRefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strSALESREP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStockCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStockGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStockItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strString1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strString2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTerritorycode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strVDDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strVoucheDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RProductSales" nillable="true" type="tns:RProductSales" />
+  <xs:complexType name="ArrayOfRSalesPurchase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RSalesPurchase" nillable="true" type="tns:RSalesPurchase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRSalesPurchase" nillable="true" type="tns:ArrayOfRSalesPurchase" />
+  <xs:complexType name="RSalesPurchase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StrSing" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dblAddLess" type="xs:double" />
+      <xs:element minOccurs="0" name="dblAddamount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblBilQty" type="xs:double" />
+      <xs:element minOccurs="0" name="dblBillAddLessAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblBillAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblBillRate" type="xs:double" />
+      <xs:element minOccurs="0" name="dblBonusQty" type="xs:double" />
+      <xs:element minOccurs="0" name="dblDiscountAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblFROM_QTY" type="xs:double" />
+      <xs:element minOccurs="0" name="dblNetBillAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty1" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty10" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty11" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty12" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty2" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty3" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty4" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty5" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty6" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty7" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty8" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalQty9" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTO_QTY" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty1" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty10" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty11" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty12" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty2" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty3" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty4" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty5" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty6" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty7" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty8" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTarQty9" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTargetAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="dblVtype" type="xs:double" />
+      <xs:element minOccurs="0" name="dbllessamount" type="xs:double" />
+      <xs:element minOccurs="0" name="intLedgerPhone" type="xs:double" />
+      <xs:element minOccurs="0" name="intRCount" type="xs:double" />
+      <xs:element minOccurs="0" name="intstatus" type="xs:int" />
+      <xs:element minOccurs="0" name="lngAreaTotal" type="xs:long" />
+      <xs:element minOccurs="0" name="lngZoneTotal" type="xs:long" />
+      <xs:element minOccurs="0" name="lngdivTotal" type="xs:long" />
+      <xs:element minOccurs="0" name="srtDisvision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strAddress1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strAddress2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strAreaCorporetNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strAreaPersonalNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBILL_Per" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBILL_UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strChalanDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strCheNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strComments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strContactPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDSMCorporetNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDSMPersonalNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDiscountAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="strDueDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strEffDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strFDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strFax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGRName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGodowns" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGroupAMFM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGroupColoerteam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGroupRsmDSM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strInvDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerGroupParent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerGroupPrimary" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerNameAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerNameMerze" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strOrderNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPostal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPowerClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPriceLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strRate" type="xs:double" />
+      <xs:element minOccurs="0" name="strRefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strRouteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStockGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStockGroupPrimary" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTerritory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTerritoryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strVDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strZone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strZoneCorporetNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strZonePersonalNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strvouchearDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strvouchearNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RSalesPurchase" nillable="true" type="tns:RSalesPurchase" />
+  <xs:complexType name="ArrayOfRPSalesCollectionPerformance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RPSalesCollectionPerformance" nillable="true" type="tns:RPSalesCollectionPerformance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRPSalesCollectionPerformance" nillable="true" type="tns:ArrayOfRPSalesCollectionPerformance" />
+  <xs:complexType name="RPSalesCollectionPerformance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dblCollection" type="xs:double" />
+      <xs:element minOccurs="0" name="dblCollectionAchPer" type="xs:double" />
+      <xs:element minOccurs="0" name="dblOpeningAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblPreviousSales" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSales" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSalesAchPer" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTotalCollTarget" type="xs:double" />
+      <xs:element minOccurs="0" name="dblTotalSalesTarget" type="xs:double" />
+      <xs:element minOccurs="0" name="dblUPDCollTarget" type="xs:double" />
+      <xs:element minOccurs="0" name="dblUPDSalesTarget" type="xs:double" />
+      <xs:element minOccurs="0" name="strArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strCPSPGP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDivision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerNameMerze" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTeritorry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strZONE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RPSalesCollectionPerformance" nillable="true" type="tns:RPSalesCollectionPerformance" />
+</xs:schema>

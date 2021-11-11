@@ -20,15 +20,23 @@ namespace DPL.WEB.Controllers
         //
         // GET: /LogIn/
         public ActionResult LogIn()
-        
-        
-        
         {
             LogInMo login = new LogInMo();
             return View("LogIn");
         }
 
-   
+        public ActionResult Logout()
+        {
+            LogInMo login = new LogInMo();
+            Session["USERID"] = null;
+            //Removes all keys and values from the session-state collection.
+            Session.Clear();
+
+            //Cancels the current session.
+            Session.Abandon();
+            return RedirectToAction("LogIn", "LogIn");
+            //return View("LogIn");
+        }
      
 
         [HttpPost]
@@ -52,32 +60,20 @@ namespace DPL.WEB.Controllers
 
             if (!(String.IsNullOrEmpty(name)))
             {
-                //Session["UserName"] = name;
-                //var emp = _leaveAppService.mFillEmployeeImage("0001", Session["UserName"].ToString());
-                //Session["User"] = emp;
-                //return RedirectToAction("Index", "LeaveApplication");
-
-
 
                 if (login.userLevel == 0)
                 {
-
-
-                    //string UserID = login.username;
-                    //Session["USERID"] = login.username;
-                    //Session["userLevel"] = login.userLevel;
-                    //return RedirectToAction("Index", "Home");
                     string UserID = login.username;
                     Session["USERID"] = login.username;
                     Session["userLevel"] = login.userLevel;
-                    return RedirectToAction("AreaHeadView", "SalesOrder", new { Area = "Transaction" });
+                    return RedirectToAction("AdminUserView", "SalesOrder", new { Area = "Transaction" });
                 }
                 else if (login.userLevel == 1)
                 {
                     string UserID = login.username;
                     Session["USERID"] = login.username;
                     Session["userLevel"] = login.userLevel;
-                    return RedirectToAction("AreaHeadView", "SalesOrder", new { Area = "Transaction" });
+                    return RedirectToAction("AdminUserView", "SalesOrder", new { Area = "Transaction" });
                 }
                 else if (login.userLevel == 2)
                 {
@@ -95,7 +91,7 @@ namespace DPL.WEB.Controllers
                     return RedirectToAction("AreaHeadView", "SalesOrder", new { Area = "Transaction" });
                 }
             }
-
+            ViewBag.checkfals = "ok";
             return RedirectToAction("LogIn", "LogIn", new { returnUrl = UrlParameter.Optional });
 
 

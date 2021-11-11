@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WSalesPurchase" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:92/SRPT/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:92/SRPT/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:92/SRPT/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JA.ReportsSP.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWSalesPurchase_mGetSalesInvoiceReportPriviewSubReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesInvoiceReportPriviewSubReport" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesInvoiceReportPriviewSubReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesInvoiceReportPriviewSubReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mFillDisGraceLimitSPical_InputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisGraceLimitSPical" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mFillDisGraceLimitSPical_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mFillDisGraceLimitSPicalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mgetGraceLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:mgetGraceLimit" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mgetGraceLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mgetGraceLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_gFillPendingOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:gFillPendingOrder" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_gFillPendingOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gFillPendingOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetCPSPCollectionPerformanceRepYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetCPSPCollectionPerformanceRepYear" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetCPSPCollectionPerformanceRepYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetCPSPCollectionPerformanceRepYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_gOpenComID_InputMessage">
+    <wsdl:part name="parameters" element="tns:gOpenComID" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_gOpenComID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gOpenComIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSpcialProduct12MonthSales_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSpcialProduct12MonthSales" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSpcialProduct12MonthSales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSpcialProduct12MonthSalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSpcialProductPackSiseWise_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSpcialProductPackSiseWise" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSpcialProductPackSiseWise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSpcialProductPackSiseWiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSpcialProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSpcialProduct" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSpcialProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSpcialProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSpecialProductLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSpecialProductLoad" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSpecialProductLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSpecialProductLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPartyProductSalesAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPartyProductSalesAmount" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPartyProductSalesAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPartyProductSalesAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPartyLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPartyLoad" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPartyLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPartyLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSpecialPartyGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSpecialPartyGroup" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSpecialPartyGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSpecialPartyGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetTargetSalesStatementYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetTargetSalesStatementYearly" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetTargetSalesStatementYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetTargetSalesStatementYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetChalanPending_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetChalanPending" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetChalanPending_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetChalanPendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesChalan_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesChalan" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesChalan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesChalanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesStatement_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesStatement" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesStatement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesStatementIndividual_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesStatementIndividual" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesStatementIndividual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesStatementIndividualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetItemWiseSales_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetItemWiseSales" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetItemWiseSales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetItemWiseSalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPartyWiseProductsales2_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPartyWiseProductsales2" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPartyWiseProductsales2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPartyWiseProductsales2Response" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetLedgerlistnew_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetLedgerlistnew" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetLedgerlistnew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetLedgerlistnewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetProductShortSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetProductShortSummary" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetProductShortSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetProductShortSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetProductShortDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetProductShortDetails" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetProductShortDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetProductShortDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesTargetStatement_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesTargetStatement" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesTargetStatement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesTargetStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesStatementIndividuall_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesStatementIndividuall" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesStatementIndividuall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesStatementIndividuallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mDisplayItemGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayItemGroup" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mDisplayItemGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mDisplayItemGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPricelistReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPricelistReport" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPricelistReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPricelistReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesInvoiceReportPriview_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesInvoiceReportPriview" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesInvoiceReportPriview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesInvoiceReportPriviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSupplierList_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSupplierList" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSupplierList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSupplierListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_LEDGERPARENTGROUP_InputMessage">
+    <wsdl:part name="parameters" element="tns:LEDGERPARENTGROUP" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_LEDGERPARENTGROUP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LEDGERPARENTGROUPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetVoucherReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherReport" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetVoucherReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetVoucherReportRefNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherReportRefNo" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetVoucherReportRefNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherReportRefNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetVoucherRefNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherRefNo" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetVoucherRefNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherRefNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPayablesReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPayablesReport" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPayablesReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPayablesReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetVoucherAddless_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherAddless" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetVoucherAddless_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetVoucherAddlessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPRoductLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPRoductLoad" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetPRoductLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetPRoductLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetMpoGroupLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetMpoGroupLoad" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetMpoGroupLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetMpoGroupLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetBkash_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetBkash" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetBkash_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetBkashResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesCollectionPerformanceRep_InputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesCollectionPerformanceRep" />
+  </wsdl:message>
+  <wsdl:message name="IWSalesPurchase_mGetSalesCollectionPerformanceRep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:mGetSalesCollectionPerformanceRepResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWSalesPurchase">
+    <wsdl:operation name="mGetSalesInvoiceReportPriviewSubReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesInvoiceReportPriviewSubReport" message="tns:IWSalesPurchase_mGetSalesInvoiceReportPriviewSubReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesInvoiceReportPriviewSubReportResponse" message="tns:IWSalesPurchase_mGetSalesInvoiceReportPriviewSubReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisGraceLimitSPical">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mFillDisGraceLimitSPical" message="tns:IWSalesPurchase_mFillDisGraceLimitSPical_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mFillDisGraceLimitSPicalResponse" message="tns:IWSalesPurchase_mFillDisGraceLimitSPical_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mgetGraceLimit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mgetGraceLimit" message="tns:IWSalesPurchase_mgetGraceLimit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mgetGraceLimitResponse" message="tns:IWSalesPurchase_mgetGraceLimit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gFillPendingOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/gFillPendingOrder" message="tns:IWSalesPurchase_gFillPendingOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/gFillPendingOrderResponse" message="tns:IWSalesPurchase_gFillPendingOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetCPSPCollectionPerformanceRepYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetCPSPCollectionPerformanceRepYear" message="tns:IWSalesPurchase_mGetCPSPCollectionPerformanceRepYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetCPSPCollectionPerformanceRepYearResponse" message="tns:IWSalesPurchase_mGetCPSPCollectionPerformanceRepYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gOpenComID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/gOpenComID" message="tns:IWSalesPurchase_gOpenComID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/gOpenComIDResponse" message="tns:IWSalesPurchase_gOpenComID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSpcialProduct12MonthSales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSpcialProduct12MonthSales" message="tns:IWSalesPurchase_mGetSpcialProduct12MonthSales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSpcialProduct12MonthSalesResponse" message="tns:IWSalesPurchase_mGetSpcialProduct12MonthSales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSpcialProductPackSiseWise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSpcialProductPackSiseWise" message="tns:IWSalesPurchase_mGetSpcialProductPackSiseWise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSpcialProductPackSiseWiseResponse" message="tns:IWSalesPurchase_mGetSpcialProductPackSiseWise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSpcialProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSpcialProduct" message="tns:IWSalesPurchase_mGetSpcialProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSpcialProductResponse" message="tns:IWSalesPurchase_mGetSpcialProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSpecialProductLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSpecialProductLoad" message="tns:IWSalesPurchase_mGetSpecialProductLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSpecialProductLoadResponse" message="tns:IWSalesPurchase_mGetSpecialProductLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetPartyProductSalesAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPartyProductSalesAmount" message="tns:IWSalesPurchase_mGetPartyProductSalesAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPartyProductSalesAmountResponse" message="tns:IWSalesPurchase_mGetPartyProductSalesAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetPartyLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPartyLoad" message="tns:IWSalesPurchase_mGetPartyLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPartyLoadResponse" message="tns:IWSalesPurchase_mGetPartyLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSpecialPartyGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSpecialPartyGroup" message="tns:IWSalesPurchase_mGetSpecialPartyGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSpecialPartyGroupResponse" message="tns:IWSalesPurchase_mGetSpecialPartyGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetTargetSalesStatementYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetTargetSalesStatementYearly" message="tns:IWSalesPurchase_mGetTargetSalesStatementYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetTargetSalesStatementYearlyResponse" message="tns:IWSalesPurchase_mGetTargetSalesStatementYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetChalanPending">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetChalanPending" message="tns:IWSalesPurchase_mGetChalanPending_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetChalanPendingResponse" message="tns:IWSalesPurchase_mGetChalanPending_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesChalan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesChalan" message="tns:IWSalesPurchase_mGetSalesChalan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesChalanResponse" message="tns:IWSalesPurchase_mGetSalesChalan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesStatement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesStatement" message="tns:IWSalesPurchase_mGetSalesStatement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesStatementResponse" message="tns:IWSalesPurchase_mGetSalesStatement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesStatementIndividual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesStatementIndividual" message="tns:IWSalesPurchase_mGetSalesStatementIndividual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesStatementIndividualResponse" message="tns:IWSalesPurchase_mGetSalesStatementIndividual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetItemWiseSales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetItemWiseSales" message="tns:IWSalesPurchase_mGetItemWiseSales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetItemWiseSalesResponse" message="tns:IWSalesPurchase_mGetItemWiseSales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetPartyWiseProductsales2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPartyWiseProductsales2" message="tns:IWSalesPurchase_mGetPartyWiseProductsales2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPartyWiseProductsales2Response" message="tns:IWSalesPurchase_mGetPartyWiseProductsales2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetLedgerlistnew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetLedgerlistnew" message="tns:IWSalesPurchase_mGetLedgerlistnew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetLedgerlistnewResponse" message="tns:IWSalesPurchase_mGetLedgerlistnew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetProductShortSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetProductShortSummary" message="tns:IWSalesPurchase_mGetProductShortSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetProductShortSummaryResponse" message="tns:IWSalesPurchase_mGetProductShortSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetProductShortDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetProductShortDetails" message="tns:IWSalesPurchase_mGetProductShortDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetProductShortDetailsResponse" message="tns:IWSalesPurchase_mGetProductShortDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesTargetStatement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesTargetStatement" message="tns:IWSalesPurchase_mGetSalesTargetStatement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesTargetStatementResponse" message="tns:IWSalesPurchase_mGetSalesTargetStatement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesStatementIndividuall">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesStatementIndividuall" message="tns:IWSalesPurchase_mGetSalesStatementIndividuall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesStatementIndividuallResponse" message="tns:IWSalesPurchase_mGetSalesStatementIndividuall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesInvoice" message="tns:IWSalesPurchase_mGetSalesInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesInvoiceResponse" message="tns:IWSalesPurchase_mGetSalesInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayItemGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mDisplayItemGroup" message="tns:IWSalesPurchase_mDisplayItemGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mDisplayItemGroupResponse" message="tns:IWSalesPurchase_mDisplayItemGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetPricelistReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPricelistReport" message="tns:IWSalesPurchase_mGetPricelistReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPricelistReportResponse" message="tns:IWSalesPurchase_mGetPricelistReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesInvoiceReportPriview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesInvoiceReportPriview" message="tns:IWSalesPurchase_mGetSalesInvoiceReportPriview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesInvoiceReportPriviewResponse" message="tns:IWSalesPurchase_mGetSalesInvoiceReportPriview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSupplierList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSupplierList" message="tns:IWSalesPurchase_mGetSupplierList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSupplierListResponse" message="tns:IWSalesPurchase_mGetSupplierList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LEDGERPARENTGROUP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/LEDGERPARENTGROUP" message="tns:IWSalesPurchase_LEDGERPARENTGROUP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/LEDGERPARENTGROUPResponse" message="tns:IWSalesPurchase_LEDGERPARENTGROUP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetVoucherReport" message="tns:IWSalesPurchase_mGetVoucherReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetVoucherReportResponse" message="tns:IWSalesPurchase_mGetVoucherReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherReportRefNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetVoucherReportRefNo" message="tns:IWSalesPurchase_mGetVoucherReportRefNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetVoucherReportRefNoResponse" message="tns:IWSalesPurchase_mGetVoucherReportRefNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherRefNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetVoucherRefNo" message="tns:IWSalesPurchase_mGetVoucherRefNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetVoucherRefNoResponse" message="tns:IWSalesPurchase_mGetVoucherRefNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetPayablesReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPayablesReport" message="tns:IWSalesPurchase_mGetPayablesReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPayablesReportResponse" message="tns:IWSalesPurchase_mGetPayablesReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherAddless">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetVoucherAddless" message="tns:IWSalesPurchase_mGetVoucherAddless_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetVoucherAddlessResponse" message="tns:IWSalesPurchase_mGetVoucherAddless_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetPRoductLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPRoductLoad" message="tns:IWSalesPurchase_mGetPRoductLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetPRoductLoadResponse" message="tns:IWSalesPurchase_mGetPRoductLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetMpoGroupLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetMpoGroupLoad" message="tns:IWSalesPurchase_mGetMpoGroupLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetMpoGroupLoadResponse" message="tns:IWSalesPurchase_mGetMpoGroupLoad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetBkash">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetBkash" message="tns:IWSalesPurchase_mGetBkash_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetBkashResponse" message="tns:IWSalesPurchase_mGetBkash_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesCollectionPerformanceRep">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesCollectionPerformanceRep" message="tns:IWSalesPurchase_mGetSalesCollectionPerformanceRep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSalesPurchase/mGetSalesCollectionPerformanceRepResponse" message="tns:IWSalesPurchase_mGetSalesCollectionPerformanceRep_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWSalesPurchase" type="tns:IWSalesPurchase">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mGetSalesInvoiceReportPriviewSubReport">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSalesInvoiceReportPriviewSubReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mFillDisGraceLimitSPical">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mFillDisGraceLimitSPical" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mgetGraceLimit">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mgetGraceLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gFillPendingOrder">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/gFillPendingOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetCPSPCollectionPerformanceRepYear">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetCPSPCollectionPerformanceRepYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gOpenComID">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/gOpenComID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSpcialProduct12MonthSales">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSpcialProduct12MonthSales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSpcialProductPackSiseWise">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSpcialProductPackSiseWise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSpcialProduct">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSpcialProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSpecialProductLoad">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSpecialProductLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetPartyProductSalesAmount">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetPartyProductSalesAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetPartyLoad">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetPartyLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSpecialPartyGroup">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSpecialPartyGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetTargetSalesStatementYearly">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetTargetSalesStatementYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetChalanPending">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetChalanPending" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesChalan">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSalesChalan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesStatement">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSalesStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesStatementIndividual">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSalesStatementIndividual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetItemWiseSales">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetItemWiseSales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetPartyWiseProductsales2">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetPartyWiseProductsales2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetLedgerlistnew">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetLedgerlistnew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetProductShortSummary">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetProductShortSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetProductShortDetails">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetProductShortDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesTargetStatement">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSalesTargetStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesStatementIndividuall">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSalesStatementIndividuall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesInvoice">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSalesInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mDisplayItemGroup">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mDisplayItemGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetPricelistReport">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetPricelistReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesInvoiceReportPriview">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSalesInvoiceReportPriview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSupplierList">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSupplierList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LEDGERPARENTGROUP">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/LEDGERPARENTGROUP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherReport">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetVoucherReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherReportRefNo">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetVoucherReportRefNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherRefNo">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetVoucherRefNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetPayablesReport">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetPayablesReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetVoucherAddless">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetVoucherAddless" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetPRoductLoad">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetPRoductLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetMpoGroupLoad">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetMpoGroupLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetBkash">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetBkash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mGetSalesCollectionPerformanceRep">
+      <soap:operation soapAction="http://tempuri.org/IWSalesPurchase/mGetSalesCollectionPerformanceRep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSalesPurchase">
+    <wsdl:port name="BasicHttpBinding_IWSalesPurchase" binding="tns:BasicHttpBinding_IWSalesPurchase">
+      <soap:address location="http://localhost:92/SRPT/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

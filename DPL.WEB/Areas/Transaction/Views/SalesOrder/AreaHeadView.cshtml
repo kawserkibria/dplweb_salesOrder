@@ -37,7 +37,7 @@
 
                 <div class="btnAllRow">
                     <button title="New Order"
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success"
                             onclick="btnNewOrder();"
                             data-toggle="modal" id="myBtn" data-target=".bd-example-modal-lg">
@@ -46,14 +46,14 @@
                 </div>
                 <div class="btnSearch">
                     <button title="New Order"
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success">
                         <i class="fa fa-search" aria-="true"></i>&nbsp;Search
                     </button>
                 </div>
                 <div class="btnRefresh">
                     <button title="Refresh"
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success"
                             onclick="clikRefresh();">
                         <i class="fa fa-refresh" aria-="true"></i>&nbsp;Refresh
@@ -62,7 +62,7 @@
 
                 <div class="btnZhApprovedList" hidden>
                     <button title="Commission Cal."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success"
                             onclick="ZhApprove();">
                         <i class="fa fa-calculator" aria-="true"></i>&nbsp;Zh Approved List
@@ -70,7 +70,7 @@
                 </div>
                 <div class="btnAllRow" hidden>
                     <button title="Commission Cal."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success"
                             onclick="commtionCal();">
                         <i class="fa fa-calculator" aria-="true"></i>&nbsp;Commission Cal.
@@ -80,7 +80,7 @@
 
                 <div class="btnApprove">
                     <button title="Commission Cal."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success"
                             id="btnsubmit"
                             onclick="App();">
@@ -98,7 +98,9 @@
             </div>
 
         </div>
-
+        <div class="col-5" hidden>
+            <h5 class="modal-title  text-left" id="userLabell" style="margin: 0 auto;">@ViewBag.UserLevel</h5>
+        </div>
         <div class="col-lg-6">
             <div class="row justify-content-end">
 
@@ -107,7 +109,7 @@
 
                 <div class="btnDraftList">
                     <button title="Order List."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success "
                             id="btnnewlist"
                             onclick="rbtnidNeworder();">
@@ -116,7 +118,7 @@
                 </div>
                 <div class="btnareaApprovedList">
                     <button title="Order List."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success "
                             id="btnAHlist"
                             onclick="rbtnidAHApprove();">
@@ -126,7 +128,7 @@
 
                 <div class="btnZhApprovedList">
                     <button title="Order List."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success "
                             id="btnzhlist"
                             onclick="rbtnidZhApprove();">
@@ -136,7 +138,7 @@
 
                 <div class="rbtnidReturnOrder">
                     <button title="Order List."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success "
                             id="btnreturn"
                             onclick="rbtnidReturnOrder();">
@@ -146,7 +148,7 @@
 
                 <div class="rbtnidbilldone">
                     <button title="Order List."
-                            style="margin: 2px;"
+                            style="margin: 2px; text-transform: capitalize;"
                             class="btn btn-success "
                             id="idBillDone"
                             onclick="rbtnidbilldone();">
@@ -167,12 +169,14 @@
     <div class="modal-dialog modal-xl bd-example-modal-lg ">
         <div class="modal-content">
             <div class="modal-header " style="background:  #194771; color: white;">
-                <div class="col-5" hidden>
-                    <h5 class="modal-title  text-left" style="margin: 0 auto;" id="userlevel">@ViewBag.UserLevel</h5>
-                </div>
-                <div class="col-5" >
+
+                <div class="col-5">
                     <h5 class="modal-title  text-left" style="margin: 0 auto;" id="exampleModalLabel">Sales Order</h5>
 
+                </div>
+
+                <div class="col-5" hidden>
+                    <h5 class="modal-title  text-left" style="margin: 0 auto;" id="userlevel"> User Level : @ViewBag.UserLevel</h5>
                 </div>
                 <div class="col-6" hidden>
                     <h5 class="modal-title  text-right" style="margin: 0 auto;" id="exampleModalLabel"> MPO Name : @ViewBag.MNameMerz</h5>
@@ -450,8 +454,8 @@
 
 
                 <div class="modal-footer">
-                    <span><input type="button" class="btn btn-primary" id="btnsaveOrder" onclick="saveOrUpdates();" value="Save"></input></span>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="clearFromData();" (click)="bsModalRef.hide()">Cancel</button>
+                    <span><input type="button" style="margin: 2px; text-transform: capitalize;" class="btn btn-primary" id="btnsaveOrder" onclick="saveOrUpdates();" value="Save"></input></span>
+                    <button type="button" style="margin: 2px; text-transform: capitalize;" class="btn btn-danger" data-dismiss="modal" onclick="clearFromData();" (click)="bsModalRef.hide()">Cancel</button>
                 </div>
             </div>
 
@@ -464,16 +468,16 @@
 </div>
 
 
-    <div class="col text-center" id="idAhApprovelist">
+<div class="col text-center" id="idAhApprovelist">
 
     <button title="Order List."
-            style="margin: 2px; "
+            style="margin: 2px; text-transform: capitalize;"
             class="btn btn-success "
             id="idAhApprove"
             onclick="btniAhApprove();">
         <i class="fa fa-check" aria-="true"></i>&nbsp;Approve
     </button>
-</div>   
+</div>
 
 <script>
     function rbtnidDeliveryAddress() {
@@ -576,9 +580,10 @@
     var deleteColamStatus = true;
     var CreditLimitColamStatus = true;
     var selectMpo = "";
-
+    var approveStatus = 0;
 
     function rbtnidNeworder() {
+        approveStatus = 0;
         $(btnsubmit).css('visibility', 'visible');
         $(idAhApprove).css('visibility', 'hidden');
         document.getElementById('btnnewlist').style.backgroundColor = 'purple';
@@ -587,12 +592,16 @@
         document.getElementById('btnreturn').style.backgroundColor = 'green';
         document.getElementById('idBillDone').style.backgroundColor = 'green';
         rbtnStatus = 1;
+        editColamStatus = true;
         checkboxColamstatus = true;
+        deleteColamStatus = true;
         console.log('rbtnidNeworder', rbtnStatus);
         showGrid();
     }
     function rbtnidAHApprove() {
         $(btnsubmit).css('visibility', 'hidden');
+        var userlevelidd = $("#userLabell").text();
+        approveStatus = 1;
         $(idAhApprove).css('visibility', 'visible');
         document.getElementById('btnnewlist').style.backgroundColor = 'green';
         document.getElementById('btnAHlist').style.backgroundColor = 'purple';
@@ -600,6 +609,8 @@
         document.getElementById('btnreturn').style.backgroundColor = 'green';
         document.getElementById('idBillDone').style.backgroundColor = 'green';
         rbtnStatus = 2;
+        editColamStatus = true;
+        deleteColamStatus = true;
         checkboxColamstatus = true;
         showGrid();
 
@@ -607,19 +618,22 @@
     function rbtnidZhApprove() {
         $(btnsubmit).css('visibility', 'hidden');
         $(idAhApprove).css('visibility', 'hidden');
+        approveStatus = 2;
         document.getElementById('btnnewlist').style.backgroundColor = 'green';
         document.getElementById('btnAHlist').style.backgroundColor = 'green';
         document.getElementById('btnzhlist').style.backgroundColor = 'purple';
         document.getElementById('btnreturn').style.backgroundColor = 'green';
         document.getElementById('idBillDone').style.backgroundColor = 'green';
         rbtnStatus = 3;
+        editColamStatus = false;
         checkboxColamstatus = false;
-         editColamStatus = false;
-         deleteColamStatus = false;
+        editColamStatus = false;
+        deleteColamStatus = false;
         showGrid();
 
     }
     function rbtnidReturnOrder() {
+        approveStatus = 0;
         $(btnsubmit).css('visibility', 'hidden');
         $(idAhApprove).css('visibility', 'hidden');
         document.getElementById('btnnewlist').style.backgroundColor = 'green';
@@ -628,11 +642,14 @@
         document.getElementById('btnreturn').style.backgroundColor = 'purple';
         document.getElementById('idBillDone').style.backgroundColor = 'green';
         rbtnStatus = 4;
+        deleteColamStatus = true;
+        editColamStatus = false;
         checkboxColamstatus = false;
         console.log('rbtnidNeworder', rbtnStatus);
         showGrid();
     }
     function rbtnidbilldone() {
+        approveStatus = 0;
         $(btnsubmit).css('visibility', 'hidden');
         $(idAhApprove).css('visibility', 'hidden');
         document.getElementById('btnnewlist').style.backgroundColor = 'green';
@@ -641,6 +658,8 @@
         document.getElementById('btnreturn').style.backgroundColor = 'green';
         document.getElementById('idBillDone').style.backgroundColor = 'purple';
         rbtnStatus = 5;
+        deleteColamStatus = false;
+        editColamStatus = false;
         checkboxColamstatus = false;
         console.log('rbtnidNeworder', rbtnStatus);
         showGrid();
@@ -702,7 +721,7 @@
 
     $(document).ready(function () {
 
-        
+
         $(btnsubmit).css('visibility', 'visible');
         $(idAhApprove).css('visibility', 'hidden');
         document.getElementById('btnnewlist').style.backgroundColor = 'purple';
@@ -737,7 +756,8 @@
     function MPOLoad() {
         selectBranch = $("#ID_Branch").val();
         var strAreaHeadN = $("#lblledgerName").text();
-        var userlevel = $("#userlevel").text();
+        var userlevelddd = $("#userLabell").text();
+        //alert(strAreaHeadN)
         //alert(userlevel)
         //alert(selectBranch)
         var ddlResponsid3 = $("#responsid3");
@@ -745,9 +765,10 @@
             url: '@Url.Action("mGetAreaMPO")',
             datatype: "json",
             data: {
+                strCompaniID: '0003',
                 strBranchName: selectBranch,
                 strDivision_Area_Head: strAreaHeadN,
-                userlevel: userlevel
+                userlevel: userlevelddd
             },
             success: function (data) {
                 // alert("1");
@@ -756,7 +777,7 @@
                 $.each(data, function (id, option) {
 
 
-                    ddlResponsid3.append($('<option value="' + option.strTC + '">' + option.strLedgerName + '</option>'));
+                    ddlResponsid3.append($('<option value="' + option.strLedgerName + '">' + option.strMereString + '</option>'));
                     //ddlResponsid3.append($('<option></option>').val(option.strLedgerName).html(option.strLedgerName));
 
                 });
@@ -921,7 +942,7 @@
         showGrid();
      }
 
-    
+
     function showGrid() {
         strUserName = document.getElementById('lblledgerName').textContent
         //alert("ok");
@@ -1174,7 +1195,17 @@
         });
 
     }
+    function orderprint(strVNo, strMerzeNamee) {
+        var ddlVal = $('#exportOption').val();
+        console.log('voucher No', strVNo)
+        console.log('voucher led', strMerzeNamee)
+        window.open(
+    "/SalesReport/RptListView?strVoucherNO=" + encodeURIComponent(strVNo) + " &vstrLedgerName=" + strMerzeNamee + "&exportOpt=" + ddlVal,
+    '_blank' // <- This is what makes it open in a new window.
+    );
 
+
+    }
     function checkAll(chk) {
 
         var checked = $('#' + chk.id).prop('checked');
@@ -1204,25 +1235,36 @@
             detailsList: finalList,
 
         };
-        console.log("Order master and details list", empObj);
+ 
+        swal({
+            title: "Do You Want to Submit?",
+            text: "",
+            icon: "warning",
+            buttons: [
+                'No',
+                'Yes'
+            ],
+            dangerMode: true,
+        }).then(function (isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    url: "/SalesOrder/mpoApprove",
+                    type: "POST",
+                    data: JSON.stringify(empObj),
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result == "OK") {
+                        } else {
+                            //alert("resutl is ", result);
+                        };
 
-        $.ajax({
-            url: "/SalesOrder/AHApprove",
-            type: "POST",
-            data: JSON.stringify(empObj),
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-                if (result == "OK") {
-                } else {
-                    //alert("resutl is ", result);
-                };
+                        showGrid();
 
-                showGrid();
-
+                    }
+                });
             }
         });
-
     }
     function btniAhApprove() {
 
@@ -1232,41 +1274,62 @@
             detailsList: finalList,
 
         };
-        console.log("Order master and details list", empObj);
+        swal({
+            title: "Do You Want to Approve?",
+            text: "",
+            icon: "warning",
+            buttons: [
+                'No',
+                'Yes'
+            ],
+            dangerMode: true,
+        }).then(function (isConfirm) {
+            if (isConfirm) {
+                if (approveStatus == 1) {
+                    $.ajax({
+                        url: "/SalesOrder/AHApprove",
+                        type: "POST",
+                        data: JSON.stringify(empObj),
+                        contentType: "application/json;charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            if (result == "OK") {
+                            } else {
+                                //alert("resutl is ", result);
+                            };
 
-        $.ajax({
-            url: "/SalesOrder/AHApprove",
-            type: "POST",
-            data: JSON.stringify(empObj),
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-                if (result == "OK") {
-                } else {
-                    //alert("resutl is ", result);
-                };
+                            showGrid();
 
-                showGrid();
+                        }
+                    });
+                }
+                else {
+                    $.ajax({
+                        url: "/SalesOrder/ZHApprove",
+                        type: "POST",
+                        data: JSON.stringify(empObj),
+                        contentType: "application/json;charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            if (result == "OK") {
+                            } else {
+                                //alert("resutl is ", result);
+                            };
+
+                            showGrid();
+
+                        }
+                    });
+                }
 
             }
         });
-
     }
 
-    
+
     var selectList = [];
 
-    function orderprint(strVNo, strMerzeNamee) {
-        var ddlVal = $('#exportOption').val();
-        console.log('voucher No', strVNo)
-        console.log('voucher led', strMerzeNamee)
-        window.open(
-    "/RptSO/RptNewOrder?strVoucherNO=" + encodeURIComponent(strVNo) + " &vstrLedgerName=" + strMerzeNamee+"&exportOpt=" + ddlVal,
-    '_blank' // <- This is what makes it open in a new window.
-    );
 
-
-    }
 
 
     function addtoList(selectdata) {
@@ -1426,19 +1489,34 @@
     }
 
     function deleteItemsById(id) {
-        alert(id)
-        $.ajax({
-            url: "/SalesOrder/deleteItemById?voucherNo=" + id ,
-            type: "POST",
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-                if (result == "OK") {
+        swal({
+            title: "Do You Want to Delete?",
+            text: "",
+            icon: "warning",
+            buttons: [
+                'No',
+                'Yes'
+            ],
+            dangerMode: true,
+        }).then(function (isConfirm) {
+            if (isConfirm) {
 
-                    cleardatda();
-                    showGrid();
-                };
+                $.ajax({
+                    //url: "/SalesOrder/deleteItemById?voucherNo=" + id,
+                    url: '/SalesOrder/deleteItemById?voucherNo=' + encodeURIComponent(id),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result == "OK") {
+                            swal("Delete!", "Delete success.", "success");
+                            showGrid();
+                            cleardatda();
+                        
+                        };
 
+                    }
+                });
             }
         });
 
@@ -1459,8 +1537,8 @@
 
         var selectedItem = $('#ddlStockItemlist').val();
         var addStaus = "";
-        $.each(addItemList, function (key, itemddd) {
-            console.log('new list add item', gItemList);
+        $.each(tempDataList, function (key, itemddd) {
+            console.log('new list add item', tempDataList);
 
             var aa = $('#ddlStockItemlist').val();
 
@@ -1523,7 +1601,7 @@
 
                 var result = false;
 
-                    addItemList.push({
+                tempDataList.push({
                         strItemGroup: $('#ddlStockGrouplist').val(),
                         strItemName: $('#ddlStockItemlist').val(),
                         strPowerClass: this.strPowerClassGet,
@@ -1541,7 +1619,7 @@
                 $.ajax({
                     type: "POST",
                     url: "/SalesOrder/CommossionCalculet",
-                    data: JSON.stringify(addItemList),
+                    data: JSON.stringify(tempDataList),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (data) {
@@ -1693,37 +1771,51 @@
         };
         console.log("Order master and details list", empObj);
 
-        $.ajax({
-            url: "/SalesOrder/msaveSalesOrder",
-            type: "POST",
-            data: JSON.stringify(empObj),
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-                if (result == "OK") {
 
-                    var toastMixin = Swal.mixin({
-                        toast: true,
-                        icon: 'success',
-                        title: 'General Title',
-                        animation: false,
-                        position: 'center',
-                        showConfirmButton: false,
-                        timer: 2000,
-                        timerProgressBar: true,
+        swal({
+            title: "Do You Want to Save?",
+            text: "",
+            icon: "warning",
+            buttons: [
+                'No',
+                'Yes'
+            ],
+            dangerMode: true,
+        }).then(function (isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    url: "/SalesOrder/msaveSalesOrder",
+                    type: "POST",
+                    data: JSON.stringify(empObj),
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result == "OK") {
+
+                            var toastMixin = Swal.mixin({
+                                toast: true,
+                                icon: 'success',
+                                title: 'General Title',
+                                animation: false,
+                                position: 'center',
+                                showConfirmButton: false,
+                                timer: 2000,
+                                timerProgressBar: true,
 
 
-                    });
-                    toastMixin.fire({
-                        animation: true,
-                        title: 'Save Successfully',
+                            });
+                            toastMixin.fire({
+                                animation: true,
+                                title: 'Save Successfully',
 
-                    });
-                    clearFromData();
-                    showGrid();
-                } else {
-                };
+                            });
+                            clearFromData();
+                            showGrid();
+                        } else {
+                        };
 
+                    }
+                });
             }
         });
     }
@@ -1768,46 +1860,62 @@
             detailsList: this.detailsList,
 
         };
-        $.ajax({
-            url: "/SalesOrder/mUpdateSalesOrder",
-            type: "POST",
-            data: JSON.stringify(empObj),
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: function (result) {
 
-                if (result == "Updated") {
-                    console.log('Update')
+        swal({
+            title: "Do You Want to Update?",
+            text: "",
+            icon: "warning",
+            buttons: [
+                'No',
+                'Yes'
+            ],
+            dangerMode: true,
+        }).then(function (isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    url: "/SalesOrder/mUpdateSalesOrder",
+                    type: "POST",
+                    data: JSON.stringify(empObj),
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
 
-                    var toastMixin = Swal.mixin({
-                        toast: true,
-                        icon: 'success',
-                        title: 'General Title',
-                        animation: false,
-                        //position: 'top-right',
-                        position: 'center',
-                        showConfirmButton: false,
-                        timer: 2000,
-                        timerProgressBar: true,
-                    });
-                        toastMixin.fire({
-                            animation: true,
-                            title: 'Update Successfully',
+                        if (result == "Updated") {
+                            console.log('Update')
 
-                        });
+                            var toastMixin = Swal.mixin({
+                                toast: true,
+                                icon: 'success',
+                                title: 'General Title',
+                                animation: false,
+                                //position: 'top-right',
+                                position: 'center',
+                                showConfirmButton: false,
+                                timer: 2000,
+                                timerProgressBar: true,
+                            });
+                            toastMixin.fire({
+                                animation: true,
+                                title: 'Update Successfully',
 
-                        clearFromData();
+                            });
+                            showGrid();
+                            clearFromData();
 
-                } else {
-                    cleardatda();
-                    //alert("resutl sssssis ", result);
-                };
+                        } else {
+                            cleardatda();
+                            //alert("resutl sssssis ", result);
+                        };
+                    }
+                });
             }
         });
 
-
     }
-
+    function cleardatda() {
+        document.getElementById('intQty').value = 0;
+        document.getElementById('ddlStockItemlist').value = "";
+    }
     function calculateData() {
         var qtyTotalll = 0;
         var qtyTotaAmount = 0;
@@ -1834,5 +1942,3 @@
     }
 
 </script>
-
-

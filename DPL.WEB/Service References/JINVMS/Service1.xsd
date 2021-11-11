@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/JA.Inventory.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JA.Inventory.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Invoice" nillable="true" type="tns:Invoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoice" nillable="true" type="tns:ArrayOfInvoice" />
+  <xs:complexType name="Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dblBillAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblBonusQty" type="xs:double" />
+      <xs:element minOccurs="0" name="dblCommAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblDiscount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblNetAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblQty" type="xs:double" />
+      <xs:element minOccurs="0" name="dblRate" type="xs:double" />
+      <xs:element minOccurs="0" name="intRow" type="xs:int" />
+      <xs:element minOccurs="0" name="strAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBatch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBillKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGodownsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMereString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPurchaseLedger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strRefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strSalesLedger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strSalesRepresentative" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTeritorryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTeritorryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strUom" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Invoice" nillable="true" type="tns:Invoice" />
+  <xs:complexType name="ArrayOfStockItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StockItem" nillable="true" type="tns:StockItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStockItem" nillable="true" type="tns:ArrayOfStockItem" />
+  <xs:complexType name="StockItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dblBranchAmnout" type="xs:double" />
+      <xs:element minOccurs="0" name="dblBranchQty" type="xs:double" />
+      <xs:element minOccurs="0" name="dblBranchRate" type="xs:double" />
+      <xs:element minOccurs="0" name="dblClsBalance" type="xs:double" />
+      <xs:element minOccurs="0" name="dblMinimumStock" type="xs:double" />
+      <xs:element minOccurs="0" name="dblOpnQty" type="xs:double" />
+      <xs:element minOccurs="0" name="dblOpnRate" type="xs:double" />
+      <xs:element minOccurs="0" name="dblOpnValue" type="xs:double" />
+      <xs:element minOccurs="0" name="dblReorderQty" type="xs:double" />
+      <xs:element minOccurs="0" name="intAltUnit" type="xs:int" />
+      <xs:element minOccurs="0" name="intMaintainBatch" type="xs:int" />
+      <xs:element minOccurs="0" name="intSPItem" type="xs:int" />
+      <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+      <xs:element minOccurs="0" name="lngVtype" type="xs:long" />
+      <xs:element minOccurs="0" name="strAgnstRefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strAltUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBatch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBillKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strConversion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDenominator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strFromLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strIOldtemcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strInOUT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strItemCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strItemDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strItemGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strItemNameBangla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strItemcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strManufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMatType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strNarration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strParentGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPowerClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPreserveSQL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strProcess" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strRefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strToLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strToUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strWhere" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StockItem" nillable="true" type="tns:StockItem" />
+  <xs:complexType name="ArrayOfManuProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ManuProcess" nillable="true" type="tns:ManuProcess" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfManuProcess" nillable="true" type="tns:ArrayOfManuProcess" />
+  <xs:complexType name="ManuProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dblCostPercent" type="xs:double" />
+      <xs:element minOccurs="0" name="dblCostPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="dblqnty" type="xs:double" />
+      <xs:element minOccurs="0" name="dblsalesamount" type="xs:double" />
+      <xs:element minOccurs="0" name="intConverttype" type="xs:int" />
+      <xs:element minOccurs="0" name="intTrasnferType" type="xs:int" />
+      <xs:element minOccurs="0" name="intType" type="xs:int" />
+      <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strEntryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGodown" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLogDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strProcessName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strRefNoRaw" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strRefNoWastage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stritemName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ManuProcess" nillable="true" type="tns:ManuProcess" />
+  <xs:complexType name="ArrayOfBatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Batch" nillable="true" type="tns:Batch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBatch" nillable="true" type="tns:ArrayOfBatch" />
+  <xs:complexType name="Batch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lngLogSize" type="xs:long" />
+      <xs:element minOccurs="0" name="lngSlno" type="xs:long" />
+      <xs:element minOccurs="0" name="strEndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strExpireDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGodownsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLogNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strManuDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPreserveSQL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Batch" nillable="true" type="tns:Batch" />
+  <xs:complexType name="ArrayOfDatabaseCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatabaseCompany" nillable="true" type="tns:DatabaseCompany" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatabaseCompany" nillable="true" type="tns:ArrayOfDatabaseCompany" />
+  <xs:complexType name="DatabaseCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="strComID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strComName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strFDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatabaseCompany" nillable="true" type="tns:DatabaseCompany" />
+  <xs:complexType name="ArrayOfStockCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StockCategory" nillable="true" type="tns:StockCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStockCategory" nillable="true" type="tns:ArrayOfStockCategory" />
+  <xs:complexType name="StockCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryUnder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lngslNo" type="xs:long" />
+      <xs:element minOccurs="0" name="strDefaultFroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPrimary" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StockCategory" nillable="true" type="tns:StockCategory" />
+  <xs:complexType name="ArrayOfStockGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StockGroup" nillable="true" type="tns:StockGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStockGroup" nillable="true" type="tns:ArrayOfStockGroup" />
+  <xs:complexType name="StockGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GrName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupUnder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dblGPercent" type="xs:double" />
+      <xs:element minOccurs="0" name="lngslNo" type="xs:long" />
+      <xs:element minOccurs="0" name="strDefaultFroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDilEffect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strOneDown" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPackSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPrimary" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StockGroup" nillable="true" type="tns:StockGroup" />
+  <xs:complexType name="ArrayOfCommissionConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommissionConfig" nillable="true" type="tns:CommissionConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommissionConfig" nillable="true" type="tns:ArrayOfCommissionConfig" />
+  <xs:complexType name="CommissionConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BranchID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupconfigName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dblAmountFrom" type="xs:double" />
+      <xs:element minOccurs="0" name="dblAmountTo" type="xs:double" />
+      <xs:element minOccurs="0" name="strCommissinKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strEffectiveDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPercent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommissionConfig" nillable="true" type="tns:CommissionConfig" />
+  <xs:complexType name="ArrayOfSection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Section" nillable="true" type="tns:Section" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSection" nillable="true" type="tns:ArrayOfSection" />
+  <xs:complexType name="Section">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+      <xs:element minOccurs="0" name="strSection" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Section" nillable="true" type="tns:Section" />
+  <xs:complexType name="ArrayOfMaterialType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaterialType" nillable="true" type="tns:MaterialType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaterialType" nillable="true" type="tns:ArrayOfMaterialType" />
+  <xs:complexType name="MaterialType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+      <xs:element minOccurs="0" name="strMaterialType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaterialType" nillable="true" type="tns:MaterialType" />
+  <xs:complexType name="ArrayOfMFGvouhcer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MFGvouhcer" nillable="true" type="tns:MFGvouhcer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMFGvouhcer" nillable="true" type="tns:ArrayOfMFGvouhcer" />
+  <xs:complexType name="MFGvouhcer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dblAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblCostPercent" type="xs:double" />
+      <xs:element minOccurs="0" name="dblQnty" type="xs:double" />
+      <xs:element minOccurs="0" name="dblReceipe" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSampleFG" type="xs:double" />
+      <xs:element minOccurs="0" name="dblSampleQC" type="xs:double" />
+      <xs:element minOccurs="0" name="dblrate" type="xs:double" />
+      <xs:element minOccurs="0" name="intAppStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="intBatchComp" type="xs:int" />
+      <xs:element minOccurs="0" name="intProcessType" type="xs:int" />
+      <xs:element minOccurs="0" name="intVtype" type="xs:int" />
+      <xs:element minOccurs="0" name="lngSlno" type="xs:long" />
+      <xs:element minOccurs="0" name="strBatch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBatchSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBillKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strCosting" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strFgRefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strINOutFlag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strNarration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strProcess" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strRMRefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strSection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strTLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strUOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strVoucherNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strWmRefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strfgItem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MFGvouhcer" nillable="true" type="tns:MFGvouhcer" />
+  <xs:complexType name="ArrayOfTransport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Transport" nillable="true" type="tns:Transport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransport" nillable="true" type="tns:ArrayOfTransport" />
+  <xs:complexType name="Transport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+      <xs:element minOccurs="0" name="strTransPort" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Transport" nillable="true" type="tns:Transport" />
+  <xs:complexType name="ArrayOfDesignation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Designation" nillable="true" type="tns:Designation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDesignation" nillable="true" type="tns:ArrayOfDesignation" />
+  <xs:complexType name="Designation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+      <xs:element minOccurs="0" name="strDesignation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Designation" nillable="true" type="tns:Designation" />
+  <xs:complexType name="ArrayOfSampleClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SampleClass" nillable="true" type="tns:SampleClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSampleClass" nillable="true" type="tns:ArrayOfSampleClass" />
+  <xs:complexType name="SampleClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dblQty" type="xs:double" />
+      <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+      <xs:element minOccurs="0" name="strClassName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strUOM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SampleClass" nillable="true" type="tns:SampleClass" />
+  <xs:complexType name="ArrayOfSalesTarget">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesTarget" nillable="true" type="tns:SalesTarget" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesTarget" nillable="true" type="tns:ArrayOfSalesTarget" />
+  <xs:complexType name="SalesTarget">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dblAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblOpn" type="xs:double" />
+      <xs:element minOccurs="0" name="dblPer" type="xs:double" />
+      <xs:element minOccurs="0" name="intColPos" type="xs:int" />
+      <xs:element minOccurs="0" name="intRowPos" type="xs:int" />
+      <xs:element minOccurs="0" name="intType" type="xs:int" />
+      <xs:element minOccurs="0" name="lngslNo" type="xs:long" />
+      <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strFromDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLedgerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMerzeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMonthID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strToDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesTarget" nillable="true" type="tns:SalesTarget" />
+  <xs:complexType name="ArrayOfSample">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sample" nillable="true" type="tns:Sample" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSample" nillable="true" type="tns:ArrayOfSample" />
+  <xs:complexType name="Sample">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dblAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblQty" type="xs:double" />
+      <xs:element minOccurs="0" name="dblRate" type="xs:double" />
+      <xs:element minOccurs="0" name="strBatchNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBillKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strCustomer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDueDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strMrName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strNarration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPreserveSQL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strSampleNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strUnit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sample" nillable="true" type="tns:Sample" />
+  <xs:complexType name="ArrayOfDeliveryRoute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeliveryRoute" nillable="true" type="tns:DeliveryRoute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeliveryRoute" nillable="true" type="tns:ArrayOfDeliveryRoute" />
+  <xs:complexType name="DeliveryRoute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+      <xs:element minOccurs="0" name="strDeliveryRoute" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeliveryRoute" nillable="true" type="tns:DeliveryRoute" />
+  <xs:complexType name="ArrayOfInvoiceConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceConfig" nillable="true" type="tns:InvoiceConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceConfig" nillable="true" type="tns:ArrayOfInvoiceConfig" />
+  <xs:complexType name="InvoiceConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gblnStockItemAlias" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mblnDiscountAllowed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mblnItemDescription" type="xs:boolean" />
+      <xs:element minOccurs="0" name="mlngBlockNegativeStock" type="xs:long" />
+      <xs:element minOccurs="0" name="mlngCalcSubTotal" type="xs:long" />
+      <xs:element minOccurs="0" name="mlngIsInvEffinDirPurcInv" type="xs:long" />
+      <xs:element minOccurs="0" name="mlngIsInvEffinDirSalesInv" type="xs:long" />
+      <xs:element minOccurs="0" name="mlngItemDesc" type="xs:long" />
+      <xs:element minOccurs="0" name="mlngSeparateParty" type="xs:long" />
+      <xs:element minOccurs="0" name="strAgnstRefNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strRefNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceConfig" nillable="true" type="tns:InvoiceConfig" />
+  <xs:complexType name="ArrayOfLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Location" nillable="true" type="tns:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocation" nillable="true" type="tns:ArrayOfLocation" />
+  <xs:complexType name="Location">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="intSection" type="xs:int" />
+      <xs:element minOccurs="0" name="lngDefault" type="xs:int" />
+      <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+      <xs:element minOccurs="0" name="strAddres1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strAddres2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strFax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strParentGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strUnder" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Location" nillable="true" type="tns:Location" />
+  <xs:complexType name="ArrayOfSalesPriceLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesPriceLevel" nillable="true" type="tns:SalesPriceLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesPriceLevel" nillable="true" type="tns:ArrayOfSalesPriceLevel" />
+  <xs:complexType name="SalesPriceLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dblDiscount" type="xs:double" />
+      <xs:element minOccurs="0" name="dblFromQty" type="xs:double" />
+      <xs:element minOccurs="0" name="dblRate" type="xs:double" />
+      <xs:element minOccurs="0" name="dblToQty" type="xs:double" />
+      <xs:element minOccurs="0" name="lngSlNo" type="xs:long" />
+      <xs:element minOccurs="0" name="strBonusItem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strPrice" nillable="true" type="tns:StockItem" />
+      <xs:element minOccurs="0" name="strSalesPriceLevel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesPriceLevel" nillable="true" type="tns:SalesPriceLevel" />
+  <xs:complexType name="ArrayOfMeasurementUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MeasurementUnit" nillable="true" type="tns:MeasurementUnit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMeasurementUnit" nillable="true" type="tns:ArrayOfMeasurementUnit" />
+  <xs:complexType name="MeasurementUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lngslNo" type="xs:long" />
+      <xs:element minOccurs="0" name="noodDecimalPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strFommalName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strSymbol" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeasurementUnit" nillable="true" type="tns:MeasurementUnit" />
+</xs:schema>
